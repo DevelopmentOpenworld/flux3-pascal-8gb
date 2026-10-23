@@ -9,6 +9,120 @@
 - [Публичный генератор](docs/INTERFACE.md) – настройки и только текущий результат.
 - [Все контрольные бои](docs/BATTLES.md), [галерея](docs/GALLERY.md), [CSV](results.csv), [JSON](results.json).
 
+## Фрагменты отчёта: изображения и замеры
+
+**[Скачать полный интерактивный отчёт →](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report.html)** · [Все изображения и замечания](docs/GALLERY.md) · [Таблица результатов](docs/RESULTS.md)
+
+Ниже шесть примеров из разных тематик и отдельная перепроверка боёв. Во всём корпусе сохранены 39 первых результатов заданных условий, включая неудачные. Это иллюстрации из ограниченной выборки, не гарантия качества на произвольном промпте. Нажатие на изображение открывает исходный PNG.
+
+**Профиль этих кадров:** GTX 1070 Ti 8 ГБ, Windows 10, 32 ГиБ RAM; FLUX.3 Q4_0, 16 шагов, CFG1, Euler/discrete, seed42 и бюджет движка 6 ГиБ VRAM. Время включает чтение весов новым процессом и сохранение PNG. Файловый кэш Windows не очищался. «VRAM карты» – максимум занятой видеопамяти всей карты по выборке примерно раз в секунду, включая рабочий стол.
+
+<table>
+<tr>
+<td width="50%" valign="top">
+<p><strong>Персоны · Портрет мастерицы</strong></p>
+<a href="results/batch-people-portrait/image.png"><img src="results/batch-people-portrait/image.png" width="420" alt="Персоны · Портрет мастерицы; seed 42"></a>
+<p><strong>59,2 с</strong> · 768×768 · VRAM карты: 5408 МиБ</p>
+<p>Лицо, фактура кожи и свет. Кисти рук в кадр не входят.</p>
+<p><a href="prompts/people-portrait.txt">Промпт</a> · <a href="results/batch-people-portrait/record.json">Параметры и замеры</a></p>
+</td>
+<td width="50%" valign="top">
+<p><strong>Хай-тек · Станция «Орбита»</strong></p>
+<a href="results/batch-hitech-location/image.png"><img src="results/batch-hitech-location/image.png" width="420" alt="Хай-тек · Станция «Орбита»; seed 42"></a>
+<p><strong>60,3 с</strong> · 768×768 · VRAM карты: 5402 МиБ</p>
+<p>Надпись «ОРБИТА», панорамное окно и планета. Табло заметно доминирует в композиции.</p>
+<p><a href="prompts/hitech-location.txt">Промпт</a> · <a href="results/batch-hitech-location/record.json">Параметры и замеры</a></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><strong>Загородный пейзаж · Зимний дом у леса</strong></p>
+<a href="results/batch-rural-winter/image.png"><img src="results/batch-rural-winter/image.png" width="420" alt="Загородный пейзаж · Зимний дом у леса; seed 42"></a>
+<p><strong>46,4 с</strong> · 864×480 · VRAM карты: 4539 МиБ</p>
+<p>Надпись «ТЁПЛЫЙ ДОМ», снег и тёплый свет окон.</p>
+<p><a href="prompts/rural-winter.txt">Промпт</a> · <a href="results/batch-rural-winter/record.json">Параметры и замеры</a></p>
+</td>
+<td width="50%" valign="top">
+<p><strong>Городской пейзаж · Москва после дождя</strong></p>
+<a href="results/batch-urban-moscow/image.png"><img src="results/batch-urban-moscow/image.png" width="420" alt="Городской пейзаж · Москва после дождя; seed 42"></a>
+<p><strong>49,1 с</strong> · 864×480 · VRAM карты: 4539 МиБ</p>
+<p>Надпись «МОСКВА», трамвай и отражения. Это иллюстративная локализация, не проверенный вид реальной улицы.</p>
+<p><a href="prompts/urban-moscow.txt">Промпт</a> · <a href="results/batch-urban-moscow/record.json">Параметры и замеры</a></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><strong>Фэнтези · Звёздный предел</strong></p>
+<a href="results/batch-fantasy-location/image.png"><img src="results/batch-fantasy-location/image.png" width="420" alt="Фэнтези · Звёздный предел; seed 42"></a>
+<p><strong>43,1 с</strong> · 864×480 · VRAM карты: 4539 МиБ</p>
+<p>Длинная надпись читается; структура двух горных пиков и водопады переданы не полностью.</p>
+<p><a href="prompts/fantasy-location.txt">Промпт</a> · <a href="results/batch-fantasy-location/record.json">Параметры и замеры</a></p>
+</td>
+<td width="50%" valign="top">
+<p><strong>Стимпанк · Паровой порт</strong></p>
+<a href="results/batch-steampunk-location/image.png"><img src="results/batch-steampunk-location/image.png" width="420" alt="Стимпанк · Паровой порт; seed 42"></a>
+<p><strong>43,0 с</strong> · 864×480 · VRAM карты: 4819 МиБ</p>
+<p>Надпись «ПАРОВОЙ ПОРТ», дирижабли и пар. Правдоподобность механизмов отдельно не подтверждена.</p>
+<p><a href="prompts/steampunk-location.txt">Промпт</a> · <a href="results/batch-steampunk-location/record.json">Параметры и замеры</a></p>
+</td>
+</tr>
+</table>
+
+### Как меняется время с разрешением
+
+Один и тот же портрет: одинаковые промпт, seed42, 16 шагов и CFG1. Это три одиночных измерения, не усреднение повторов.
+
+| Размер | Время, с | VRAM карты по выборке, МиБ | Исходные данные |
+|---|---:|---:|---|
+| 512×512 | 30,9 | 4733 | [PNG](results/batch-people-portrait-512/image.png) · [Замеры](results/batch-people-portrait-512/record.json) |
+| 768×768 | 59,2 | 5408 | [PNG](results/batch-people-portrait/image.png) · [Замеры](results/batch-people-portrait/record.json) |
+| 1024×1024 | 130,1 | 5322 | [PNG](results/batch-people-portrait-1024/image.png) · [Замеры](results/batch-people-portrait-1024/record.json) |
+
+На 1024² движок автоматически уменьшал плитки декодирования VAE; дополнительное время включено. Для всех первых 18 тематических сцен 14 результатов уложились в 60 с. В [полном отчёте](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report.html) есть другие сцены, размеры и параметры.
+
+### Бои: улучшение хвата ещё не означает корректную сцену
+
+Обе пары ниже имеют seed42 и размер 864×480. Уточнённые промпты упрощают композицию: у рыцарей убран щит, у роботов щит и посох заменены двумя мечами. Поэтому это сравнение условий, а не доказательство исправления исходного сложного действия.
+
+<table>
+<tr>
+<td width="50%" valign="top">
+<p><strong>Бой на крепостном мосту · исходный промпт</strong></p>
+<a href="results/batch-fantasy-battle/image.png"><img src="results/batch-fantasy-battle/image.png" width="420" alt="Бой на крепостном мосту · исходный промпт; seed 42"></a>
+<p><strong>42,7 с</strong> · 864×480 · VRAM карты: 4545 МиБ</p>
+<p>Исходная сцена: у правого воина меч висит без видимого хвата. Итог: FAIL.</p>
+<p><a href="prompts/fantasy-battle.txt">Промпт</a> · <a href="results/batch-fantasy-battle/record.json">Параметры и замеры</a></p>
+</td>
+<td width="50%" valign="top">
+<p><strong>Бой на крепостном мосту · упрощённый промпт</strong></p>
+<a href="results/battle-fantasy-clear-42/image.png"><img src="results/battle-fantasy-clear-42/image.png" width="420" alt="Бой на крепостном мосту · упрощённый промпт; seed 42"></a>
+<p><strong>45,4 с</strong> · 864×480 · VRAM карты: 4761 МиБ</p>
+<p>Уточнённая сцена: хват обоих мечей читается, но левый персонаж держит меч неверной анатомической рукой. Итог: FAIL.</p>
+<p><a href="prompts/fantasy-battle-clear.txt">Промпт</a> · <a href="results/battle-fantasy-clear-42/record.json">Параметры и замеры</a></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><strong>Схватка машин · исходный промпт</strong></p>
+<a href="results/batch-hitech-battle/image.png"><img src="results/batch-hitech-battle/image.png" width="420" alt="Схватка машин · исходный промпт; seed 42"></a>
+<p><strong>42,6 с</strong> · 864×480 · VRAM карты: 4698 МиБ</p>
+<p>Исходная сцена: оружие и кисти пересекаются; конструкция и принадлежность оружия не читаются надёжно. Итог: FAIL.</p>
+<p><a href="prompts/hitech-battle.txt">Промпт</a> · <a href="results/batch-hitech-battle/record.json">Параметры и замеры</a></p>
+</td>
+<td width="50%" valign="top">
+<p><strong>Схватка машин · упрощённый промпт</strong></p>
+<a href="results/battle-robot-clear-42/image.png"><img src="results/battle-robot-clear-42/image.png" width="420" alt="Схватка машин · упрощённый промпт; seed 42"></a>
+<p><strong>47,5 с</strong> · 864×480 · VRAM карты: 4717 МиБ</p>
+<p>Уточнённая сцена: связь кисть–рукоять–клинок читается, но слева неверная рука; фигуры обрезаны снизу. Итог: FAIL.</p>
+<p><a href="prompts/robot-battle-clear.txt">Промпт</a> · <a href="results/battle-robot-clear-42/record.json">Параметры и замеры</a></p>
+</td>
+</tr>
+</table>
+
+Полного PASS нет ни у одного из восьми уточнённых боевых кадров. Визуальную оценку выполнил автор ИИ; независимой оценки не было. [Все бои, seed42/7/123 и критерии](docs/BATTLES.md) сохранены вместе с исходными промптами и PNG.
+
+**[Полный HTML-отчёт: фильтры тем, парные сравнения, разрешения и все 39 запусков →](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report.html)**. Скачайте HTML и откройте локально; обычный просмотр исходника на GitHub не запускает интерактивную часть.
+
 ## Установка и запуск без консоли
 
 [Скачайте Windows Manager](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Manager-Windows-x64.zip), распакуйте весь ZIP и откройте **FLUX3-Manager.exe**. Python уже включён. Выберите папку для файлов; укажите имеющиеся движок, веса и CUDA кнопками «Обзор…» либо нажмите «Скачать недостающее». Окно проверит закреплённые SHA256 и сохранит настройки.
