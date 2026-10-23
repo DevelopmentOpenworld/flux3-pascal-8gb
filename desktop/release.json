@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "version": "0.1.0-preview",
+  "archive": "FLUX3-Manager-Windows-x64.zip",
+  "bytes": 13404987,
+  "sha256": "851977175938bc9779a7168f1f056941e6d83e343358e7a0c6528d4d66038c14",
+  "exe_sha256": "76229747fdd8de447cc42a71518d78405ae3d09b9abb8cf7c43cb2f53afe5d0b",
+  "manifest_sha256": "91ccb877fb7319f15431be8e2f6e4c0cbea38eff5c3815906b9565920d2ab789",
+  "members": 1031,
+  "python": "3.14.4 x64",
+  "tcl_tk": "8.6.15",
+  "pyinstaller": "6.22.3",
+  "openssl": "3.0.19",
+  "zlib": "1.3.1",
+  "kind": "portable onedir; extract entire folder; no separate Python required"
+}

@@ -1,0 +1,9 @@
+{
+  "declared_at": "2026-10-23T14:41:37.460613+00:00",
+  "case": "people-portrait-512",
+  "run_id": "toolkit-only-portrait-512",
+  "change": "CUDA Toolkit bin only; no extra runtime DLL directory",
+  "purpose": "Verify that the published recipe can reuse the existing Toolkit without another project environment",
+  "compared_with": "batch-people-portrait-512",
+  "no_image_selection": true
+}

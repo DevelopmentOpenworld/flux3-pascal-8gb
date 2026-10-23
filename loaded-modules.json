@@ -1,0 +1,42 @@
+[
+  {
+    "file": "stable-diffusion.dll",
+    "version": null,
+    "origin": "pinned sd.cpp archive"
+  },
+  {
+    "file": "ggml.dll",
+    "version": null,
+    "origin": "pinned sd.cpp archive"
+  },
+  {
+    "file": "ggml-base.dll",
+    "version": null,
+    "origin": "pinned sd.cpp archive"
+  },
+  {
+    "file": "ggml-cuda.dll",
+    "version": null,
+    "origin": "pinned sd.cpp archive"
+  },
+  {
+    "file": "cudart64_12.dll",
+    "version": "6,14,11,12060",
+    "origin": "existing CUDA 12.6 compatible DLL directory"
+  },
+  {
+    "file": "cublas64_12.dll",
+    "version": "6,14,11,1264",
+    "origin": "existing CUDA 12.6 compatible DLL directory"
+  },
+  {
+    "file": "cublasLt64_12.dll",
+    "version": "6,14,11,1264",
+    "origin": "existing CUDA 12.6 compatible DLL directory"
+  },
+  {
+    "file": "ggml-cpu-haswell.dll",
+    "version": null,
+    "origin": "pinned sd.cpp archive"
+  }
+]

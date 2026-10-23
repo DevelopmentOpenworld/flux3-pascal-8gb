@@ -1,0 +1,338 @@
+{
+  "schema": 1,
+  "frozen_at": "2026-10-23T14:30:23.619371+00:00",
+  "design": "18 scenes, first result per case; 6 matched resolution conditions; no selection by outcome",
+  "prompt_method": "manually authored detailed English captions; requested visible lettering is Russian; no LLM upsampler",
+  "cases": [
+    {
+      "id": "people-portrait",
+      "scene_id": "people-portrait",
+      "category": "Персоны",
+      "title_ru": "Портрет мастерицы",
+      "width": 768,
+      "height": 768,
+      "seed": 42,
+      "prompt_file": "prompts/people-portrait.txt",
+      "expected_text": [],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "people-musician",
+      "scene_id": "people-musician",
+      "category": "Персоны",
+      "title_ru": "Музыкант с виолончелью",
+      "width": 512,
+      "height": 768,
+      "seed": 42,
+      "prompt_file": "prompts/people-musician.txt",
+      "expected_text": [
+        "МУЗЫКА"
+      ],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "rural-river",
+      "scene_id": "rural-river",
+      "category": "Загородный пейзаж",
+      "title_ru": "Летняя река",
+      "width": 864,
+      "height": 480,
+      "seed": 42,
+      "prompt_file": "prompts/rural-river.txt",
+      "expected_text": [
+        "К РЕКЕ"
+      ],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "rural-winter",
+      "scene_id": "rural-winter",
+      "category": "Загородный пейзаж",
+      "title_ru": "Зимний дом у леса",
+      "width": 864,
+      "height": 480,
+      "seed": 42,
+      "prompt_file": "prompts/rural-winter.txt",
+      "expected_text": [
+        "ТЁПЛЫЙ ДОМ"
+      ],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "urban-moscow",
+      "scene_id": "urban-moscow",
+      "category": "Городской пейзаж",
+      "title_ru": "Москва после дождя",
+      "width": 864,
+      "height": 480,
+      "seed": 42,
+      "prompt_file": "prompts/urban-moscow.txt",
+      "expected_text": [
+        "МОСКВА"
+      ],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "urban-bakery",
+      "scene_id": "urban-bakery",
+      "category": "Городской пейзаж",
+      "title_ru": "Площадь с пекарней",
+      "width": 768,
+      "height": 768,
+      "seed": 42,
+      "prompt_file": "prompts/urban-bakery.txt",
+      "expected_text": [
+        "СВЕЖИЙ ХЛЕБ"
+      ],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "fantasy-character",
+      "scene_id": "fantasy-character",
+      "category": "Фэнтези",
+      "title_ru": "Страж рассвета",
+      "width": 512,
+      "height": 768,
+      "seed": 42,
+      "prompt_file": "prompts/fantasy-character.txt",
+      "expected_text": [
+        "СТРАЖ"
+      ],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "fantasy-location",
+      "scene_id": "fantasy-location",
+      "category": "Фэнтези",
+      "title_ru": "Звёздный предел",
+      "width": 864,
+      "height": 480,
+      "seed": 42,
+      "prompt_file": "prompts/fantasy-location.txt",
+      "expected_text": [
+        "ЗВЁЗДНЫЙ ПРЕДЕЛ"
+      ],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "fantasy-weapon",
+      "scene_id": "fantasy-weapon",
+      "category": "Фэнтези",
+      "title_ru": "Лунный клинок",
+      "width": 768,
+      "height": 768,
+      "seed": 42,
+      "prompt_file": "prompts/fantasy-weapon.txt",
+      "expected_text": [
+        "ЛУННЫЙ КЛИНОК"
+      ],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "fantasy-battle",
+      "scene_id": "fantasy-battle",
+      "category": "Фэнтези",
+      "title_ru": "Бой на крепостном мосту",
+      "width": 864,
+      "height": 480,
+      "seed": 42,
+      "prompt_file": "prompts/fantasy-battle.txt",
+      "expected_text": [
+        "ЗА РАССВЕТ"
+      ],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "hitech-character",
+      "scene_id": "hitech-character",
+      "category": "Хай-тек",
+      "title_ru": "Пилот «Искра»",
+      "width": 512,
+      "height": 768,
+      "seed": 42,
+      "prompt_file": "prompts/hitech-character.txt",
+      "expected_text": [
+        "ИСКРА"
+      ],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "hitech-location",
+      "scene_id": "hitech-location",
+      "category": "Хай-тек",
+      "title_ru": "Станция «Орбита»",
+      "width": 768,
+      "height": 768,
+      "seed": 42,
+      "prompt_file": "prompts/hitech-location.txt",
+      "expected_text": [
+        "ОРБИТА"
+      ],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "hitech-weapon",
+      "scene_id": "hitech-weapon",
+      "category": "Хай-тек",
+      "title_ru": "Энергетический реквизит",
+      "width": 768,
+      "height": 768,
+      "seed": 42,
+      "prompt_file": "prompts/hitech-weapon.txt",
+      "expected_text": [
+        "ИМПУЛЬС"
+      ],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "hitech-battle",
+      "scene_id": "hitech-battle",
+      "category": "Хай-тек",
+      "title_ru": "Схватка машин",
+      "width": 864,
+      "height": 480,
+      "seed": 42,
+      "prompt_file": "prompts/hitech-battle.txt",
+      "expected_text": [
+        "СЕКТОР 7"
+      ],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "steampunk-character",
+      "scene_id": "steampunk-character",
+      "category": "Стимпанк",
+      "title_ru": "Механик воздушного порта",
+      "width": 512,
+      "height": 768,
+      "seed": 42,
+      "prompt_file": "prompts/steampunk-character.txt",
+      "expected_text": [
+        "МАСТЕР"
+      ],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "steampunk-location",
+      "scene_id": "steampunk-location",
+      "category": "Стимпанк",
+      "title_ru": "Паровой порт",
+      "width": 864,
+      "height": 480,
+      "seed": 42,
+      "prompt_file": "prompts/steampunk-location.txt",
+      "expected_text": [
+        "ПАРОВОЙ ПОРТ"
+      ],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "steampunk-weapon",
+      "scene_id": "steampunk-weapon",
+      "category": "Стимпанк",
+      "title_ru": "Медный реквизит «Гроза»",
+      "width": 768,
+      "height": 768,
+      "seed": 42,
+      "prompt_file": "prompts/steampunk-weapon.txt",
+      "expected_text": [
+        "ГРОЗА"
+      ],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "steampunk-battle",
+      "scene_id": "steampunk-battle",
+      "category": "Стимпанк",
+      "title_ru": "Воздушный бой",
+      "width": 864,
+      "height": 480,
+      "seed": 42,
+      "prompt_file": "prompts/steampunk-battle.txt",
+      "expected_text": [
+        "НЕБО"
+      ],
+      "role": "thematic-first-result"
+    },
+    {
+      "id": "people-portrait-512",
+      "scene_id": "people-portrait",
+      "category": "Персоны",
+      "title_ru": "Портрет мастерицы",
+      "width": 512,
+      "height": 512,
+      "seed": 42,
+      "prompt_file": "prompts/people-portrait.txt",
+      "expected_text": [],
+      "role": "matched-resolution"
+    },
+    {
+      "id": "people-portrait-1024",
+      "scene_id": "people-portrait",
+      "category": "Персоны",
+      "title_ru": "Портрет мастерицы",
+      "width": 1024,
+      "height": 1024,
+      "seed": 42,
+      "prompt_file": "prompts/people-portrait.txt",
+      "expected_text": [],
+      "role": "matched-resolution"
+    },
+    {
+      "id": "fantasy-weapon-512",
+      "scene_id": "fantasy-weapon",
+      "category": "Фэнтези",
+      "title_ru": "Лунный клинок",
+      "width": 512,
+      "height": 512,
+      "seed": 42,
+      "prompt_file": "prompts/fantasy-weapon.txt",
+      "expected_text": [
+        "ЛУННЫЙ КЛИНОК"
+      ],
+      "role": "matched-resolution"
+    },
+    {
+      "id": "fantasy-weapon-1024",
+      "scene_id": "fantasy-weapon",
+      "category": "Фэнтези",
+      "title_ru": "Лунный клинок",
+      "width": 1024,
+      "height": 1024,
+      "seed": 42,
+      "prompt_file": "prompts/fantasy-weapon.txt",
+      "expected_text": [
+        "ЛУННЫЙ КЛИНОК"
+      ],
+      "role": "matched-resolution"
+    },
+    {
+      "id": "hitech-location-512",
+      "scene_id": "hitech-location",
+      "category": "Хай-тек",
+      "title_ru": "Станция «Орбита»",
+      "width": 512,
+      "height": 512,
+      "seed": 42,
+      "prompt_file": "prompts/hitech-location.txt",
+      "expected_text": [
+        "ОРБИТА"
+      ],
+      "role": "matched-resolution"
+    },
+    {
+      "id": "hitech-location-1024",
+      "scene_id": "hitech-location",
+      "category": "Хай-тек",
+      "title_ru": "Станция «Орбита»",
+      "width": 1024,
+      "height": 1024,
+      "seed": 42,
+      "prompt_file": "prompts/hitech-location.txt",
+      "expected_text": [
+        "ОРБИТА"
+      ],
+      "role": "matched-resolution"
+    }
+  ]
+}

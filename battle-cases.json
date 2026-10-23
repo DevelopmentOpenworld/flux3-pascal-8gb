@@ -1,0 +1,199 @@
+{
+  "schema": 1,
+  "frozen_at": "2026-10-23T15:54:51.668497+00:00",
+  "design": "Matched seeds 42/7/123 for fantasy and robots; original seed42 retained from initial corpus. Two additional steampunk conditions. All first results retained.",
+  "cases": [
+    {
+      "id": "fantasy-original-7",
+      "scene_id": "fantasy-battle",
+      "category": "Фэнтези",
+      "title_ru": "Бой на крепостном мосту",
+      "width": 864,
+      "height": 480,
+      "seed": 7,
+      "prompt_file": "prompts/fantasy-battle.txt",
+      "expected_text": [
+        "ЗА РАССВЕТ"
+      ],
+      "role": "battle-recheck",
+      "variant": "original",
+      "family": "fantasy"
+    },
+    {
+      "id": "fantasy-original-123",
+      "scene_id": "fantasy-battle",
+      "category": "Фэнтези",
+      "title_ru": "Бой на крепостном мосту",
+      "width": 864,
+      "height": 480,
+      "seed": 123,
+      "prompt_file": "prompts/fantasy-battle.txt",
+      "expected_text": [
+        "ЗА РАССВЕТ"
+      ],
+      "role": "battle-recheck",
+      "variant": "original",
+      "family": "fantasy"
+    },
+    {
+      "id": "robot-original-7",
+      "scene_id": "hitech-battle",
+      "category": "Хай-тек",
+      "title_ru": "Схватка машин",
+      "width": 864,
+      "height": 480,
+      "seed": 7,
+      "prompt_file": "prompts/hitech-battle.txt",
+      "expected_text": [
+        "СЕКТОР 7"
+      ],
+      "role": "battle-recheck",
+      "variant": "original",
+      "family": "robot"
+    },
+    {
+      "id": "robot-original-123",
+      "scene_id": "hitech-battle",
+      "category": "Хай-тек",
+      "title_ru": "Схватка машин",
+      "width": 864,
+      "height": 480,
+      "seed": 123,
+      "prompt_file": "prompts/hitech-battle.txt",
+      "expected_text": [
+        "СЕКТОР 7"
+      ],
+      "role": "battle-recheck",
+      "variant": "original",
+      "family": "robot"
+    },
+    {
+      "id": "fantasy-clear-42",
+      "scene_id": "fantasy-battle",
+      "category": "Фэнтези",
+      "title_ru": "Бой на крепостном мосту",
+      "width": 864,
+      "height": 480,
+      "seed": 42,
+      "prompt_file": "prompts/fantasy-battle-clear.txt",
+      "expected_text": [
+        "ЗА РАССВЕТ"
+      ],
+      "role": "battle-recheck",
+      "variant": "clear",
+      "family": "fantasy"
+    },
+    {
+      "id": "fantasy-clear-7",
+      "scene_id": "fantasy-battle",
+      "category": "Фэнтези",
+      "title_ru": "Бой на крепостном мосту",
+      "width": 864,
+      "height": 480,
+      "seed": 7,
+      "prompt_file": "prompts/fantasy-battle-clear.txt",
+      "expected_text": [
+        "ЗА РАССВЕТ"
+      ],
+      "role": "battle-recheck",
+      "variant": "clear",
+      "family": "fantasy"
+    },
+    {
+      "id": "fantasy-clear-123",
+      "scene_id": "fantasy-battle",
+      "category": "Фэнтези",
+      "title_ru": "Бой на крепостном мосту",
+      "width": 864,
+      "height": 480,
+      "seed": 123,
+      "prompt_file": "prompts/fantasy-battle-clear.txt",
+      "expected_text": [
+        "ЗА РАССВЕТ"
+      ],
+      "role": "battle-recheck",
+      "variant": "clear",
+      "family": "fantasy"
+    },
+    {
+      "id": "robot-clear-42",
+      "scene_id": "hitech-battle",
+      "category": "Хай-тек",
+      "title_ru": "Схватка машин",
+      "width": 864,
+      "height": 480,
+      "seed": 42,
+      "prompt_file": "prompts/robot-battle-clear.txt",
+      "expected_text": [
+        "СЕКТОР 7"
+      ],
+      "role": "battle-recheck",
+      "variant": "clear",
+      "family": "robot"
+    },
+    {
+      "id": "robot-clear-7",
+      "scene_id": "hitech-battle",
+      "category": "Хай-тек",
+      "title_ru": "Схватка машин",
+      "width": 864,
+      "height": 480,
+      "seed": 7,
+      "prompt_file": "prompts/robot-battle-clear.txt",
+      "expected_text": [
+        "СЕКТОР 7"
+      ],
+      "role": "battle-recheck",
+      "variant": "clear",
+      "family": "robot"
+    },
+    {
+      "id": "robot-clear-123",
+      "scene_id": "hitech-battle",
+      "category": "Хай-тек",
+      "title_ru": "Схватка машин",
+      "width": 864,
+      "height": 480,
+      "seed": 123,
+      "prompt_file": "prompts/robot-battle-clear.txt",
+      "expected_text": [
+        "СЕКТОР 7"
+      ],
+      "role": "battle-recheck",
+      "variant": "clear",
+      "family": "robot"
+    },
+    {
+      "id": "steampunk-clear-42",
+      "scene_id": "steampunk-battle",
+      "category": "Стимпанк",
+      "title_ru": "Воздушный бой",
+      "width": 864,
+      "height": 480,
+      "seed": 42,
+      "prompt_file": "prompts/steampunk-battle-clear.txt",
+      "expected_text": [
+        "НЕБО"
+      ],
+      "role": "battle-recheck",
+      "variant": "clear",
+      "family": "steampunk"
+    },
+    {
+      "id": "steampunk-clear-7",
+      "scene_id": "steampunk-battle",
+      "category": "Стимпанк",
+      "title_ru": "Воздушный бой",
+      "width": 864,
+      "height": 480,
+      "seed": 7,
+      "prompt_file": "prompts/steampunk-battle-clear.txt",
+      "expected_text": [
+        "НЕБО"
+      ],
+      "role": "battle-recheck",
+      "variant": "clear",
+      "family": "steampunk"
+    }
+  ]
+}

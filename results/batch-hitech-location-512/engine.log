@@ -1,0 +1,113 @@
+[V] version: stable-diffusion.cpp version unknown, commit 39bc9d0 --- main.cpp:696
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 8191 MiB):
+  Device 0: NVIDIA GeForce GTX 1070 Ti, compute capability 6.1, VMM: yes, VRAM: 8191 MiB
+load_backend: loaded CUDA backend from runtime\ggml-cuda.dll
+load_backend: loaded CPU backend from runtime\ggml-cpu-haswell.dll
+[V] System Info: 
+   SSE3 = 1 |    SSSE3 = 1 |    AVX = 1 |    AVX2 = 1 |    F16C = 1 |    FMA = 1 |    BMI2 = 1 |    OPENMP = 1 |    REPACK = 1 |  --- main.cpp:697
+[V] using 4 threads for model loading --- model_loader.cpp:190
+[I] loading diffusion model from 'models/flux3-image-klein-Q4_0.gguf' --- diffusion_engine.cpp:739
+[I] load models/flux3-image-klein-Q4_0.gguf using gguf format --- model_loader.cpp:216
+[V] init from 'models/flux3-image-klein-Q4_0.gguf' --- model_loader.cpp:262
+[V] GGUF v3, tensor_count=359, metadata_kv_count=0 --- gguf_reader_ext.h:220
+[I] loading llm from 'models/Qwen3VL-4B-Instruct-Q4_K_M.gguf' --- diffusion_engine.cpp:796
+[I] load models/Qwen3VL-4B-Instruct-Q4_K_M.gguf using gguf format --- model_loader.cpp:216
+[V] init from 'models/Qwen3VL-4B-Instruct-Q4_K_M.gguf' --- model_loader.cpp:262
+[V] GGUF v3, tensor_count=398, metadata_kv_count=32 --- gguf_reader_ext.h:220
+[I] loading vae from 'models/flux2-vae.safetensors' --- diffusion_engine.cpp:810
+[I] load models/flux2-vae.safetensors using safetensors format --- model_loader.cpp:222
+[V] init from 'models/flux2-vae.safetensors', prefix = 'vae.' --- model_loader.cpp:290
+[I] Version: Flux.3 Image Klein  --- diffusion_engine.cpp:1017
+[V] Found 2 backend devices: --- ggml_extend_backend.cpp:714
+[V] #0: CUDA0 --- ggml_extend_backend.cpp:717
+[V] #1: CPU --- ggml_extend_backend.cpp:717
+[V] Initializing backend: CUDA0 --- ggml_extend_backend.cpp:420
+[V] Initializing backend: CPU --- ggml_extend_backend.cpp:420
+[V] using 4 threads for model loading --- model_loader.cpp:190
+[I] Weight type stat:                      f32: 395  |    q4_0: 258  |    q4_K: 216  |    q6_K: 37   |     i32: 1    |    bf16: 101   --- diffusion_engine.cpp:1650
+[I] Conditioner weight type stat:          f32: 145  |    q4_K: 216  |    q6_K: 37    --- diffusion_engine.cpp:1651
+[I] Diffusion model weight type stat:     q4_0: 258  |    bf16: 101   --- diffusion_engine.cpp:1652
+[I] VAE weight type stat:                  f32: 250  |     i32: 1     --- diffusion_engine.cpp:1653
+[V] using mmap for I/O --- model_loader.cpp:894
+[I] using mmap for 'models/flux3-image-klein-Q4_0.gguf' --- model_loader.cpp:900
+[V] using mmap for I/O --- model_loader.cpp:894
+[I] using mmap for 'models/Qwen3VL-4B-Instruct-Q4_K_M.gguf' --- model_loader.cpp:900
+[V] using mmap for I/O --- model_loader.cpp:894
+[I] using mmap for 'models/flux2-vae.safetensors' --- model_loader.cpp:900
+[V] llm: num_layers = 36, vocab_size = 151936, hidden_size = 2560, intermediate_size = 9728 --- llm.hpp:446
+[V] flux3: hidden_size = 3072, context_dim = 20480, depth = 5, single_depth = 28, flow_map = true --- flux3.hpp:52
+[I] using VAE for encoding / decoding --- model_builders.cpp:664
+[I] vae decoder: ch = 128 --- auto_encoder_kl.hpp:529
+[I] conv2d direct auto: CUDA0 -> off (no implicit GEMM path) --- conv_direct.cpp:90
+[I] conv3d direct auto: CUDA0 -> on (implicit GEMM) --- conv_direct.cpp:87
+[V] validating model metadata --- diffusion_engine.cpp:1328
+[V] model metadata validated; weights will be prepared lazily --- diffusion_engine.cpp:1398
+[I] total params memory size = 5891.57MB (VRAM 0.00MB, RAM 5891.57MB): text_encoders 2375.91MB(RAM), diffusion_model 3351.23MB(RAM), vae 164.43MB(RAM), controlnet 0.00MB(N/A), extensions 0.00MB(N/A) --- diffusion_engine.cpp:1459
+[I] running in Flux FLOW mode --- diffusion_engine.cpp:1596
+[I] generate_image 512x512 --- image.cpp:822
+[V] using 4 threads for model loading --- model_loader.cpp:190
+[I] Using 'flux2' preset for reference images --- diffusion_engine.cpp:3261
+[I] sampling using Euler method --- request.cpp:422
+[V] parse '<|im_start|>user\nAn atmospheric science-fiction environment image of a spacious observation concourse on a fictional orbital station. A huge curved window reveals a blue planet and distant stars; a few small adult travelers establish scale. Clean white structural ribs, dark floor panels, indoor plants and restrained amber guide lights create a lived-in futuristic interior. Above the main passage, a large flat illuminated sign facing the camera reads exactly "ОРБИТА" in clear Russian Cyrillic capitals. Keep the sign unobstructed and do not add any other legible text. Believable perspective and connections between floor, walls and window, cinematic realistic rendering, soft indirect light and detailed materials. No franchise symbols, logos or recognizable fictional-world references.\r\n<|im_end|>\n<|im_start|>assistant\n' to [['<|im_start|>user\n', 1], ['An atmospheric science-fiction environment image of a spacious observation concourse on a fictional orbital station. A huge curved window reveals a blue planet and distant stars; a few small adult travelers establish scale. Clean white structural ribs, dark floor panels, indoor plants and restrained amber guide lights create a lived-in futuristic interior. Above the main passage, a large flat illuminated sign facing the camera reads exactly "ОРБИТА" in clear Russian Cyrillic capitals. Keep the sign unobstructed and do not add any other legible text. Believable perspective and connections between floor, walls and window, cinematic realistic rendering, soft indirect light and detailed materials. No franchise symbols, logos or recognizable fictional-world references.\r\n', 1], ['<|im_end|>\n<|im_start|>assistant\n', 1], ] --- conditioner.hpp:2183
+[V] split prompt "<|im_start|>user\n" to 3 tokens ["<|im_start|>", "user", "Ċ", ] --- bpe_tokenizer.cpp:245
+[V] split prompt "An atmospheric science-fiction environment image of a spacious observation concourse on a fictional orbital station. A huge curved window reveals a blue planet and distant stars; a few small adult travelers establish scale. Clean white structural ribs, dark floor panels, indoor plants and restrained amber guide lights create a lived-in futuristic interior. Above the main passage, a large flat illuminated sign facing the camera reads exactly "ОРБИТА" in clear Russian Cyrillic capitals. Keep the sign unobstructed and do not add any other legible text. Believable perspective and connections between floor, walls and window, cinematic realistic rendering, soft indirect light and detailed materials. No franchise symbols, logos or recognizable fictional-world references.\r\n" to 141 tokens ["An", "Ġatmospheric", "Ġscience", "-fiction", "Ġenvironment", "Ġimage", "Ġof", "Ġa", "Ġspacious", "Ġobservation", "Ġconc", "ourse", "Ġon", "Ġa", "Ġfictional", "Ġorbital", "Ġstation", ".", "ĠA", "Ġhuge", "Ġcurved", "Ġwindow", "Ġreveals", "Ġa", "Ġblue", "Ġplanet", "Ġand", "Ġdistant", "Ġstars", ";", "Ġa", "Ġfew", "Ġsmall", "Ġadult", "Ġtravelers", "Ġestablish", "Ġscale", ".", "ĠClean", "Ġwhite", "Ġstructural", "Ġribs", ",", "Ġdark", "Ġfloor", "Ġpanels", ",", "Ġindoor", "Ġplants", "Ġand", "Ġrestrained", "Ġamber", "Ġguide", "Ġlights", "Ġcreate", "Ġa", "Ġlived", "-in", "Ġfuturistic", "Ġinterior", ".", "ĠAbove", "Ġthe", "Ġmain", "Ġpassage", ",", "Ġa", "Ġlarge", "Ġflat", "Ġilluminated", "Ġsign", "Ġfacing", "Ġthe", "Ġcamera", "Ġreads", "Ġexactly", "Ġ"", "ÐŀÐł", "Ðĳ", "Ðĺ", "Ð¢ÐĲ", """, "Ġin", "Ġclear", "ĠRussian", "ĠCyril", "lic", "Ġcapitals", ".", "ĠKeep", "Ġthe", "Ġsign", "Ġun", "ob", "struct", "ed", "Ġand", "Ġdo", "Ġnot", "Ġadd", "Ġany", "Ġother", "Ġleg", "ible", "Ġtext", ".", "ĠBel", "ie", "vable", "Ġperspective", "Ġand", "Ġconnections", "Ġbetween", "Ġfloor", ",", "Ġwalls", "Ġand", "Ġwindow", ",", "Ġcinematic", "Ġrealistic", "Ġrendering", ",", "Ġsoft", "Ġindirect", "Ġlight", "Ġand", "Ġdetailed", "Ġmaterials", ".", "ĠNo", "Ġfranchise", "Ġsymbols", ",", "Ġlogos", "Ġor", "Ġrecognizable", "Ġfictional", "-world", "Ġreferences", ".čĊ", ] --- bpe_tokenizer.cpp:245
+[V] split prompt "<|im_end|>\n<|im_start|>assistant\n" to 5 tokens ["<|im_end|>", "Ċ", "<|im_start|>", "assistant", "Ċ", ] --- bpe_tokenizer.cpp:245
+[I] qwen3vl build cached graph cut plan done (taking 4 ms) --- ggml_graph_cut.cpp:1034
+[V] memory-mapping tensors... --- model_loader.cpp:934
+[I] memory-mapped 353 tensors in 1 files (2132.19 MB), taking 0.00s --- model_loader.cpp:1049
+[V] loading 353/398 tensors from models/Qwen3VL-4B-Instruct-Q4_K_M.gguf --- model_loader.cpp:1133
+
+  |##################################################| 353/353 -   0.00MB/s
+[I] loading tensors completed, taking 0.21s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s) --- model_loader.cpp:1405
+[V] model manager staged compute params (2132.19 MB, 353 tensors, 3 blocks) to CUDA0, taking 1.32s --- model_manager.cpp:623
+[V] qwen3vl compute buffer size: 31.35 MB(VRAM) on CUDA0 (peak across 1 segment) --- ggml_runner.cpp:1022
+[V] computing condition graph completed, taking 1837 ms --- conditioner.hpp:3265
+[I] get_learned_condition completed, taking 1.84s --- image.cpp:537
+[I] generating image: 1/1 - seed 42 --- image.cpp:874
+[I] flux3 build cached graph cut plan done (taking 2 ms) --- ggml_graph_cut.cpp:1034
+[V] memory-mapping tensors... --- model_loader.cpp:934
+[I] memory-mapped 240 tensors in 1 files (2913.38 MB), taking 0.00s --- model_loader.cpp:1049
+[V] loading 316/359 tensors from models/flux3-image-klein-Q4_0.gguf --- model_loader.cpp:1133
+
+  |##################################################| 316/316 -   0.09MB/s
+[I] loading tensors completed, taking 0.20s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s) --- model_loader.cpp:1405
+[V] model manager prepared params backend buffers (  0.04 MB, 76 tensors, 1 blocks, RAM) on CUDA_Host --- model_manager.cpp:494
+[V] model manager staged compute params (2913.41 MB, 316 tensors, 3 blocks) to CUDA0, taking 1.76s --- model_manager.cpp:623
+[V] flux3 compute buffer size: 232.41 MB(VRAM) on CUDA0 (peak across 1 segment) --- ggml_runner.cpp:1022
+
+  |===>                                              |  1/16 -   3.46s/it - ETA 00:51
+  |======>                                           |  2/16 -   1.52s/it - ETA 00:34
+  |=========>                                        |  3/16 -   1.51s/it - ETA 00:28
+  |============>                                     |  4/16 -   1.52s/it - ETA 00:24
+  |===============>                                  |  5/16 -   1.58s/it - ETA 00:21
+  |==================>                               |  6/16 -   1.56s/it - ETA 00:18
+  |=====================>                            |  7/16 -   1.56s/it - ETA 00:16
+  |=========================>                        |  8/16 -   1.52s/it - ETA 00:14
+  |============================>                     |  9/16 -   1.55s/it - ETA 00:12
+  |===============================>                  | 10/16 -   1.52s/it - ETA 00:10
+  |==================================>               | 11/16 -   1.53s/it - ETA 00:08
+  |=====================================>            | 12/16 -   1.52s/it - ETA 00:06
+  |========================================>         | 13/16 -   1.51s/it - ETA 00:05
+  |===========================================>      | 14/16 -   1.51s/it - ETA 00:03
+  |==============================================>   | 15/16 -   1.60s/it - ETA 00:01
+  |==================================================| 16/16 -   1.56s/it
+[I] sampling completed, taking 26.56s --- image.cpp:907
+[I] generating 1 latent images completed, taking 26.56s --- image.cpp:921
+[I] decoding 1 latents --- image.cpp:562
+[I] vae build cached graph cut plan done (taking 0 ms) --- ggml_graph_cut.cpp:1034
+[V] memory-mapping tensors... --- model_loader.cpp:934
+[I] memory-mapped 104 tensors in 1 files (4.14 MB), taking 0.00s --- model_loader.cpp:1049
+[V] loading 140/251 tensors from models/flux2-vae.safetensors --- model_loader.cpp:1133
+
+  |##################################################| 140/140 - 898.75MB/s
+[I] loading tensors completed, taking 0.21s (read: 0.03s, memcpy: 0.00s, convert: 0.05s, copy_to_backend: 0.00s) --- model_loader.cpp:1405
+[V] model manager prepared params backend buffers ( 92.57 MB, 36 tensors, 1 blocks, RAM) on CUDA_Host --- model_manager.cpp:494
+[V] model manager staged compute params ( 96.72 MB, 140 tensors, 1 blocks) to CUDA0, taking 0.02s --- model_manager.cpp:623
+[V] vae compute buffer size: 1664.50 MB(VRAM) on CUDA0 (peak across 1 segment) --- ggml_runner.cpp:1022
+[V] computing vae decode graph completed, taking 1.80s --- vae.hpp:384
+[I] latent 1 decoded, taking 1.80s --- image.cpp:628
+[I] decode_first_stage completed, taking 1.80s --- image.cpp:632
+[I] generate_image completed in 30.24s --- image.cpp:1058
+[V] model manager released params backend buffers ( 92.61 MB, 112 tensors, 2 blocks, RAM) from CUDA_Host --- model_manager.cpp:1299
+[I] save result image 0 to '.\results\batch-hitech-location-512\image.png' (success) --- main.cpp:496
+[I] 1/1 images saved --- main.cpp:572

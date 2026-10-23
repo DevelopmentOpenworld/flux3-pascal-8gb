@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "matrix_frozen_at": "2026-10-23T15:54:51.668497+00:00",
+  "matrix_sha256_recorded_before_runs": "284d799a6870e7253886683adb3ac8f3adfc99b83476e961d0fc51a9822748b3",
+  "first_started_at": "2026-10-23T15:57:06.915473+00:00",
+  "new_conditions": 12,
+  "all_first_results_retained": true,
+  "design": "Matched seeds 42/7/123 for fantasy and robots; original seed42 retained from initial corpus. Two additional steampunk conditions. All first results retained.",
+  "prompt_sha256_from_run_records": {
+    "prompts/fantasy-battle.txt": "4335ccf1ce10928b5f3ef28ffb3f4107e09c5c490b834e5aaab8278c08952cb8",
+    "prompts/hitech-battle.txt": "6bdbc78d85c6f9da8d5d78aaa80e70ba6dab35d69b3ead81ba23af23d71bff08",
+    "prompts/fantasy-battle-clear.txt": "60a920a4274985a9b4fcb2caf25d25cee954e6991cc608c795b689f7cc37c669",
+    "prompts/robot-battle-clear.txt": "c179fa4255b1a5c0f06f9e424f0ff9ebe1832a13065490cce394bed79baa83e2",
+    "prompts/steampunk-battle-clear.txt": "f31a4c726bc04977ee86dc315c19752d826c4944381aac8a1a8e58e8af29b2b2"
+  },
+  "note": "Prompt hashes above are measured from run records; the separately captured pre-run hash seals the case matrix. No statistical power or independent review is claimed."
+}

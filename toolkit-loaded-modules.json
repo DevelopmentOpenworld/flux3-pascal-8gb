@@ -1,0 +1,14 @@
+[
+  {
+    "file": "cublasLt64_12.dll",
+    "from_toolkit": true
+  },
+  {
+    "file": "cublas64_12.dll",
+    "from_toolkit": true
+  },
+  {
+    "file": "cudart64_12.dll",
+    "from_toolkit": true
+  }
+]

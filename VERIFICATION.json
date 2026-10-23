@@ -1,0 +1,139 @@
+{
+  "schema": 4,
+  "version": "0.1.0-preview",
+  "status": "Prepared for owner review; PASS within explicit scope",
+  "recorded_at": "2026-10-23T21:07:32.122144+00:00",
+  "stored_evidence_before_manifest": {
+    "status": "PASS",
+    "checks": 546,
+    "stored_runs": 39,
+    "models_run": false
+  },
+  "unchanged_control_pngs": 39,
+  "report_sha256": "5776d5bf6c9b58dbb6d7641029f524263fde4f4f1a1ade80b825a43f9f5941ed",
+  "application_tests": {
+    "count": 23,
+    "duration_seconds": 15.065,
+    "result": "PASS",
+    "command": "python -B -m unittest discover -s tests -v",
+    "models_run": false,
+    "rechecked_at": "2026-10-23T21:02:55.172155+00:00"
+  },
+  "dom": {
+    "status": "PASS",
+    "checks": 22,
+    "scope": "Report DOM fixture preserves metadata/scripts with short image URIs; every full original embedded PNG checked separately. GUI DOM uses mocked API. Actual application window evidence is separate.",
+    "results": [
+      {
+        "name": "complete initial corpus and counts",
+        "status": "PASS"
+      },
+      {
+        "name": "category filters select exactly the matching first results",
+        "status": "PASS"
+      },
+      {
+        "name": "tabs show exactly one selected section",
+        "status": "PASS"
+      },
+      {
+        "name": "battle pair binds original and revised same seed",
+        "status": "PASS"
+      },
+      {
+        "name": "robot pair and complete retained battle set",
+        "status": "PASS"
+      },
+      {
+        "name": "unmeasured steampunk original is explicit",
+        "status": "PASS"
+      },
+      {
+        "name": "three resolutions map to the exact matching prompt and seed",
+        "status": "PASS"
+      },
+      {
+        "name": "all 39 rows carry measured data",
+        "status": "PASS"
+      },
+      {
+        "name": "every embedded PNG equals its original file",
+        "status": "PASS"
+      },
+      {
+        "name": "identifiers and labelled controls",
+        "status": "PASS"
+      },
+      {
+        "name": "offline report has no script errors or automatic external requests",
+        "status": "PASS"
+      },
+      {
+        "name": "public GUI starts empty with no saved-run list",
+        "status": "PASS"
+      },
+      {
+        "name": "public GUI submits exact settings once",
+        "status": "PASS"
+      },
+      {
+        "name": "public GUI exposes only the current PNG",
+        "status": "PASS"
+      },
+      {
+        "name": "accepting another job clears the previous preview",
+        "status": "PASS"
+      },
+      {
+        "name": "public GUI cancellation releases the button",
+        "status": "PASS"
+      },
+      {
+        "name": "rejected input remains visible across status polls",
+        "status": "PASS"
+      },
+      {
+        "name": "connection failure gives a recovery action",
+        "status": "PASS"
+      },
+      {
+        "name": "reconnect preserves settings without resubmitting",
+        "status": "PASS"
+      },
+      {
+        "name": "lost POST response cannot cause an automatic duplicate",
+        "status": "PASS"
+      },
+      {
+        "name": "reconnect reconciles the single active operation",
+        "status": "PASS"
+      },
+      {
+        "name": "public GUI never requests a saved-run API",
+        "status": "PASS"
+      }
+    ]
+  },
+  "browser_evidence": "ui-proof/verification.json",
+  "desktop_evidence": "desktop/verification.json",
+  "windows_release": "desktop/release.json",
+  "privacy": "No machine-specific configuration, user paths, literal session tokens or personal run store is included. Source and the decompressed bundled Python code are checked separately; exact contents are fixed by archive manifests.",
+  "limitations": [
+    "No clean-machine installation test; existing models and installed CUDA were reused.",
+    "Only the small cudart package was transferred from NVIDIA in the recorded download check; model, engine and cuBLAS transfer paths use the same checked downloader and pinned metadata, with local HTTP failure/resume tests.",
+    "The packaged server and worker were tested through authenticated HTTP and their program controller, not by clicking the native Manager buttons.",
+    "Optional external launch wrappers are supported only by the source route; the Windows package is qualified for its direct bundled worker.",
+    "Worker timing is a functional observation, not an additional quality or speed benchmark.",
+    "No independent review or full offline report layout validation.",
+    "Report DOM uses short image URIs in the fixture; every full embedded original PNG is separately checked. No full standalone report browser layout QA."
+  ],
+  "publication_preflight": {
+    "version": "0.1.0-preview",
+    "native_manager_ui_verified": false,
+    "local_markdown_targets": 86,
+    "missing_targets": 0,
+    "standalone_links": "Absolute repository/release links; all images and scripts embedded",
+    "report_seal_excludes_source_control_and_local_data": true,
+    "future_release_links": "Prepared for fixed v0.1.0-preview; available only after publication"
+  }
+}

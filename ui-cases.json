@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "design": "Observed GUI verification runs, recorded after execution; not part of the frozen thematic or battle experiment.",
+  "cases": [
+    {
+      "id": "ui-67b47e1c51d34841",
+      "title_ru": "Портрет из интерфейса",
+      "category": "Персоны",
+      "width": 512,
+      "height": 512,
+      "seed": 42,
+      "prompt_file": "prompts/ui-portrait.txt",
+      "expected_text": [],
+      "role": "ui-proof",
+      "steps": 16,
+      "cfg_scale": 1
+    },
+    {
+      "id": "ui-a5e49cdf769f4b2a",
+      "title_ru": "Портрет из интерфейса",
+      "category": "Персоны",
+      "width": 512,
+      "height": 512,
+      "seed": 7,
+      "prompt_file": "prompts/ui-portrait.txt",
+      "expected_text": [],
+      "role": "ui-proof",
+      "steps": 16,
+      "cfg_scale": 1
+    }
+  ]
+}

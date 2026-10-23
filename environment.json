@@ -1,0 +1,172 @@
+{
+  "collected_at": "2026-10-23T14:31:06.498531+00:00",
+  "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "windows": "Windows-10-10.0.19045-SP0",
+  "assets": [
+    {
+      "role": "diffusion_model",
+      "file": "flux3-image-klein-Q4_0.gguf",
+      "bytes": 3514023104,
+      "sha256": "22d0b1fa05f5ef63fa68eebe801a680e0456cb786af28be5952e10fb5c9004b2"
+    },
+    {
+      "role": "llm",
+      "file": "Qwen3VL-4B-Instruct-Q4_K_M.gguf",
+      "bytes": 2497281664,
+      "sha256": "66358cb18bb6b3b1b6675aa412c7a88ef01d228f481184d13668e5201c730a0a"
+    },
+    {
+      "role": "vae",
+      "file": "flux2-vae.safetensors",
+      "bytes": 336213556,
+      "sha256": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+    },
+    {
+      "role": "runner",
+      "file": "ggml-base.dll",
+      "bytes": 685056,
+      "sha256": "65bf72505baba87603037db20feee3ad8590ae77124f7800f1c5851da9ffbb1d"
+    },
+    {
+      "role": "runner",
+      "file": "ggml-cpu-alderlake.dll",
+      "bytes": 999424,
+      "sha256": "ddf638786242e61aa04fdbe95350e217d11e020ce48ac4caba6e0a051f3a11ac"
+    },
+    {
+      "role": "runner",
+      "file": "ggml-cpu-cannonlake.dll",
+      "bytes": 1044480,
+      "sha256": "f48bbc19bb64bed2f010a2802078e832fcb7fb4999f7f220755ecfe784e1747b"
+    },
+    {
+      "role": "runner",
+      "file": "ggml-cpu-cascadelake.dll",
+      "bytes": 1043456,
+      "sha256": "f79e7e278ee817d97b74c4de91901d51310b848ec51683740a289d654616c91b"
+    },
+    {
+      "role": "runner",
+      "file": "ggml-cpu-haswell.dll",
+      "bytes": 1000448,
+      "sha256": "545dab316a7459d550553aace406c6e7db3eaacb50b91e69fd32bf6b3eee8a10"
+    },
+    {
+      "role": "runner",
+      "file": "ggml-cpu-icelake.dll",
+      "bytes": 1043456,
+      "sha256": "aaabd2e90f83e90b0d7647cfccea05e4dcbf60c775199c80362918b398460fd0"
+    },
+    {
+      "role": "runner",
+      "file": "ggml-cpu-sandybridge.dll",
+      "bytes": 1028608,
+      "sha256": "5de56fd31cc5b96aeabd94c10929c338c93e214e657f5df1f2f5284575999c5b"
+    },
+    {
+      "role": "runner",
+      "file": "ggml-cpu-skylakex.dll",
+      "bytes": 1044480,
+      "sha256": "79268d8a82e1d347d1135a5e0b14ddb8d5521d8c5c4ef87ff3ea510577ae2fef"
+    },
+    {
+      "role": "runner",
+      "file": "ggml-cpu-sse42.dll",
+      "bytes": 865792,
+      "sha256": "8082d2c4f29c1833069662d8c19659accc5ef1ec66589c39bdaae6b71bf613ff"
+    },
+    {
+      "role": "runner",
+      "file": "ggml-cpu-x64.dll",
+      "bytes": 867328,
+      "sha256": "0096a171a85885bd7063e869ccc6bd996b123a9ba06d6534d634781b2373098e"
+    },
+    {
+      "role": "runner",
+      "file": "ggml-cuda.dll",
+      "bytes": 340561408,
+      "sha256": "7112d5651e6e817dae06b5a650f34b5eea79e8462853394355fdfac807342db0"
+    },
+    {
+      "role": "runner",
+      "file": "ggml.dll",
+      "bytes": 58368,
+      "sha256": "a34a37bdf4daabcdc6baa43eb6f73fe08e0a68d64c566b763aa9e5f6d95bba43"
+    },
+    {
+      "role": "runner",
+      "file": "libsharpyuv.dll",
+      "bytes": 24576,
+      "sha256": "2d4205517bfa736ae14397a55635284a22898e3b1daf4b91779e8f6e0b8acd65"
+    },
+    {
+      "role": "runner",
+      "file": "libwebp.dll",
+      "bytes": 373248,
+      "sha256": "1681ea6b8c2690bfe1702d595a2fe4568879433bbcb97d12cf83b9840da54262"
+    },
+    {
+      "role": "runner",
+      "file": "libwebpmux.dll",
+      "bytes": 41984,
+      "sha256": "9d5e36fa7a55e28e04c4c95dd232ffae60b25a01a75dae6a70df7460d8b069d6"
+    },
+    {
+      "role": "runner",
+      "file": "sd-cli.exe",
+      "bytes": 661504,
+      "sha256": "201449ae94b718090d175baab0ffb8c85bb7a68c6346b8ea565ebf057315be90"
+    },
+    {
+      "role": "runner",
+      "file": "sd-server.exe",
+      "bytes": 1493504,
+      "sha256": "337202c5b5b0930d2122daadc3ae8a96d7dc4f896b74c1d1d4afc2c8fdc0abfb"
+    },
+    {
+      "role": "runner",
+      "file": "stable-diffusion.dll",
+      "bytes": 35664896,
+      "sha256": "c4079bbecc2af03ba4c90c0564e0a246b46e8957909abb69de09d0ac67134381"
+    },
+    {
+      "role": "runner",
+      "file": "webm.dll",
+      "bytes": 328192,
+      "sha256": "8b1c65716271bd45f7df4e9bdc9d11a4fb536c40f46b7ea471de02e3d73531f4"
+    },
+    {
+      "role": "reused-cuda-dll",
+      "file": "cudart64_12.dll",
+      "bytes": 556544,
+      "sha256": "d954ca542b3b6bcf03cc2b798a7d00051501cf734ca751050e986af505cf9dad"
+    },
+    {
+      "role": "reused-cuda-dll",
+      "file": "cublas64_12.dll",
+      "bytes": 104883712,
+      "sha256": "01d8172b25d8e2d2cb6a276e76e719f5908c6124f484c8c8ca310fbe7b6634f3"
+    },
+    {
+      "role": "reused-cuda-dll",
+      "file": "cublasLt64_12.dll",
+      "bytes": 531812352,
+      "sha256": "0d59d264782cec2782b9ac72483e53c9ba485a9d3a1e19b34071a17b8152102e"
+    }
+  ],
+  "cases_sha256": "d196a81630e67bfceb7caab06278621d53c25b0938f620a1896d4fef6c98f16d",
+  "installed_or_downloaded_for_this_batch": false,
+  "cuda_toolkit": "12.6.85",
+  "engine_release": "master-992-39bc9d0",
+  "engine_commit": "39bc9d0b4bad86750fcb1fd2d711bc57a4c6018f",
+  "gpu": {
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce GTX 1070 Ti, 8192 MiB, 917 MiB, 581.80, 6.1\n",
+    "stderr": ""
+  },
+  "nvcc": {
+    "returncode": 0,
+    "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2024 NVIDIA Corporation\nBuilt on Wed_Oct_30_01:18:48_Pacific_Daylight_Time_2024\nCuda compilation tools, release 12.6, V12.6.85\nBuild cuda_12.6.r12.6/compiler.35059454_0\n",
+    "stderr": ""
+  }
+}

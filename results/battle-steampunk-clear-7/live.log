@@ -1,0 +1,113 @@
+[V] version: stable-diffusion.cpp version unknown, commit 39bc9d0 --- main.cpp:696
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 8191 MiB):
+  Device 0: NVIDIA GeForce GTX 1070 Ti, compute capability 6.1, VMM: yes, VRAM: 8191 MiB
+load_backend: loaded CUDA backend from runtime\ggml-cuda.dll
+load_backend: loaded CPU backend from runtime\ggml-cpu-haswell.dll
+[V] System Info: 
+   SSE3 = 1 |    SSSE3 = 1 |    AVX = 1 |    AVX2 = 1 |    F16C = 1 |    FMA = 1 |    BMI2 = 1 |    OPENMP = 1 |    REPACK = 1 |  --- main.cpp:697
+[V] using 4 threads for model loading --- model_loader.cpp:190
+[I] loading diffusion model from 'models/flux3-image-klein-Q4_0.gguf' --- diffusion_engine.cpp:739
+[I] load models/flux3-image-klein-Q4_0.gguf using gguf format --- model_loader.cpp:216
+[V] init from 'models/flux3-image-klein-Q4_0.gguf' --- model_loader.cpp:262
+[V] GGUF v3, tensor_count=359, metadata_kv_count=0 --- gguf_reader_ext.h:220
+[I] loading llm from 'models/Qwen3VL-4B-Instruct-Q4_K_M.gguf' --- diffusion_engine.cpp:796
+[I] load models/Qwen3VL-4B-Instruct-Q4_K_M.gguf using gguf format --- model_loader.cpp:216
+[V] init from 'models/Qwen3VL-4B-Instruct-Q4_K_M.gguf' --- model_loader.cpp:262
+[V] GGUF v3, tensor_count=398, metadata_kv_count=32 --- gguf_reader_ext.h:220
+[I] loading vae from 'models/flux2-vae.safetensors' --- diffusion_engine.cpp:810
+[I] load models/flux2-vae.safetensors using safetensors format --- model_loader.cpp:222
+[V] init from 'models/flux2-vae.safetensors', prefix = 'vae.' --- model_loader.cpp:290
+[I] Version: Flux.3 Image Klein  --- diffusion_engine.cpp:1017
+[V] Found 2 backend devices: --- ggml_extend_backend.cpp:714
+[V] #0: CUDA0 --- ggml_extend_backend.cpp:717
+[V] #1: CPU --- ggml_extend_backend.cpp:717
+[V] Initializing backend: CUDA0 --- ggml_extend_backend.cpp:420
+[V] Initializing backend: CPU --- ggml_extend_backend.cpp:420
+[V] using 4 threads for model loading --- model_loader.cpp:190
+[I] Weight type stat:                      f32: 395  |    q4_0: 258  |    q4_K: 216  |    q6_K: 37   |     i32: 1    |    bf16: 101   --- diffusion_engine.cpp:1650
+[I] Conditioner weight type stat:          f32: 145  |    q4_K: 216  |    q6_K: 37    --- diffusion_engine.cpp:1651
+[I] Diffusion model weight type stat:     q4_0: 258  |    bf16: 101   --- diffusion_engine.cpp:1652
+[I] VAE weight type stat:                  f32: 250  |     i32: 1     --- diffusion_engine.cpp:1653
+[V] using mmap for I/O --- model_loader.cpp:894
+[I] using mmap for 'models/flux3-image-klein-Q4_0.gguf' --- model_loader.cpp:900
+[V] using mmap for I/O --- model_loader.cpp:894
+[I] using mmap for 'models/Qwen3VL-4B-Instruct-Q4_K_M.gguf' --- model_loader.cpp:900
+[V] using mmap for I/O --- model_loader.cpp:894
+[I] using mmap for 'models/flux2-vae.safetensors' --- model_loader.cpp:900
+[V] llm: num_layers = 36, vocab_size = 151936, hidden_size = 2560, intermediate_size = 9728 --- llm.hpp:446
+[V] flux3: hidden_size = 3072, context_dim = 20480, depth = 5, single_depth = 28, flow_map = true --- flux3.hpp:52
+[I] using VAE for encoding / decoding --- model_builders.cpp:664
+[I] vae decoder: ch = 128 --- auto_encoder_kl.hpp:529
+[I] conv2d direct auto: CUDA0 -> off (no implicit GEMM path) --- conv_direct.cpp:90
+[I] conv3d direct auto: CUDA0 -> on (implicit GEMM) --- conv_direct.cpp:87
+[V] validating model metadata --- diffusion_engine.cpp:1328
+[V] model metadata validated; weights will be prepared lazily --- diffusion_engine.cpp:1398
+[I] total params memory size = 5891.57MB (VRAM 0.00MB, RAM 5891.57MB): text_encoders 2375.91MB(RAM), diffusion_model 3351.23MB(RAM), vae 164.43MB(RAM), controlnet 0.00MB(N/A), extensions 0.00MB(N/A) --- diffusion_engine.cpp:1459
+[I] running in Flux FLOW mode --- diffusion_engine.cpp:1596
+[I] generate_image 864x480 --- image.cpp:822
+[V] using 4 threads for model loading --- model_loader.cpp:190
+[I] Using 'flux2' preset for reference images --- diffusion_engine.cpp:3261
+[I] sampling using Euler method --- request.cpp:422
+[V] parse '<|im_start|>user\nA wide steampunk battle illustration of exactly two large armored zeppelin airships above a sea of clouds, viewed clearly from the side at sunset. Both vessels have a complete visible oval gas envelope, a rigid gondola attached underneath and clearly connected propeller frames. The nearer copper airship on the left fires a single bright blue electrical beam from one solid forward-mounted emitter turret. The emitter is visibly bolted to a sturdy metal bracket on its gondola; the beam begins exactly at its muzzle and ends at a bright impact point on the right airship's armored side. The distant dark airship on the right has one separate emitter fixed to its own gondola, currently not firing. No floating weapons, detached barrels, extra beams or decorative lightning across empty sky. Keep both whole vessels in the frame, with clear air between their silhouettes. A large pale panel on the nearer hull reads exactly "НЕБО" in Russian Cyrillic capitals. A distant clock tower establishes the steampunk setting. Detailed copper, rivets, rigging and restrained steam, readable construction and attack direction, no falling people or gore.\n<|im_end|>\n<|im_start|>assistant\n' to [['<|im_start|>user\n', 1], ['A wide steampunk battle illustration of exactly two large armored zeppelin airships above a sea of clouds, viewed clearly from the side at sunset. Both vessels have a complete visible oval gas envelope, a rigid gondola attached underneath and clearly connected propeller frames. The nearer copper airship on the left fires a single bright blue electrical beam from one solid forward-mounted emitter turret. The emitter is visibly bolted to a sturdy metal bracket on its gondola; the beam begins exactly at its muzzle and ends at a bright impact point on the right airship's armored side. The distant dark airship on the right has one separate emitter fixed to its own gondola, currently not firing. No floating weapons, detached barrels, extra beams or decorative lightning across empty sky. Keep both whole vessels in the frame, with clear air between their silhouettes. A large pale panel on the nearer hull reads exactly "НЕБО" in Russian Cyrillic capitals. A distant clock tower establishes the steampunk setting. Detailed copper, rivets, rigging and restrained steam, readable construction and attack direction, no falling people or gore.\n', 1], ['<|im_end|>\n<|im_start|>assistant\n', 1], ] --- conditioner.hpp:2183
+[V] split prompt "<|im_start|>user\n" to 3 tokens ["<|im_start|>", "user", "Ċ", ] --- bpe_tokenizer.cpp:245
+[V] split prompt "A wide steampunk battle illustration of exactly two large armored zeppelin airships above a sea of clouds, viewed clearly from the side at sunset. Both vessels have a complete visible oval gas envelope, a rigid gondola attached underneath and clearly connected propeller frames. The nearer copper airship on the left fires a single bright blue electrical beam from one solid forward-mounted emitter turret. The emitter is visibly bolted to a sturdy metal bracket on its gondola; the beam begins exactly at its muzzle and ends at a bright impact point on the right airship's armored side. The distant dark airship on the right has one separate emitter fixed to its own gondola, currently not firing. No floating weapons, detached barrels, extra beams or decorative lightning across empty sky. Keep both whole vessels in the frame, with clear air between their silhouettes. A large pale panel on the nearer hull reads exactly "НЕБО" in Russian Cyrillic capitals. A distant clock tower establishes the steampunk setting. Detailed copper, rivets, rigging and restrained steam, readable construction and attack direction, no falling people or gore.\n" to 230 tokens ["A", "Ġwide", "Ġste", "amp", "unk", "Ġbattle", "Ġillustration", "Ġof", "Ġexactly", "Ġtwo", "Ġlarge", "Ġarmored", "Ġze", "ppelin", "Ġair", "ships", "Ġabove", "Ġa", "Ġsea", "Ġof", "Ġclouds", ",", "Ġviewed", "Ġclearly", "Ġfrom", "Ġthe", "Ġside", "Ġat", "Ġsunset", ".", "ĠBoth", "Ġvessels", "Ġhave", "Ġa", "Ġcomplete", "Ġvisible", "Ġoval", "Ġgas", "Ġenvelope", ",", "Ġa", "Ġrigid", "Ġg", "ond", "ola", "Ġattached", "Ġunderneath", "Ġand", "Ġclearly", "Ġconnected", "Ġprop", "eller", "Ġframes", ".", "ĠThe", "Ġnearer", "Ġcopper", "Ġair", "ship", "Ġon", "Ġthe", "Ġleft", "Ġfires", "Ġa", "Ġsingle", "Ġbright", "Ġblue", "Ġelectrical", "Ġbeam", "Ġfrom", "Ġone", "Ġsolid", "Ġforward", "-mounted", "Ġemitter", "Ġturret", ".", "ĠThe", "Ġemitter", "Ġis", "Ġvisibly", "Ġbolt", "ed", "Ġto", "Ġa", "Ġsturdy", "Ġmetal", "Ġbracket", "Ġon", "Ġits", "Ġg", "ond", "ola", ";", "Ġthe", "Ġbeam", "Ġbegins", "Ġexactly", "Ġat", "Ġits", "Ġmuzzle", "Ġand", "Ġends", "Ġat", "Ġa", "Ġbright", "Ġimpact", "Ġpoint", "Ġon", "Ġthe", "Ġright", "Ġair", "ship", "'s", "Ġarmored", "Ġside", ".", "ĠThe", "Ġdistant", "Ġdark", "Ġair", "ship", "Ġon", "Ġthe", "Ġright", "Ġhas", "Ġone", "Ġseparate", "Ġemitter", "Ġfixed", "Ġto", "Ġits", "Ġown", "Ġg", "ond", "ola", ",", "Ġcurrently", "Ġnot", "Ġfiring", ".", "ĠNo", "Ġfloating", "Ġweapons", ",", "Ġdetached", "Ġbarrels", ",", "Ġextra", "Ġbeams", "Ġor", "Ġdecorative", "Ġlightning", "Ġacross", "Ġempty", "Ġsky", ".", "ĠKeep", "Ġboth", "Ġwhole", "Ġvessels", "Ġin", "Ġthe", "Ġframe", ",", "Ġwith", "Ġclear", "Ġair", "Ġbetween", "Ġtheir", "Ġsil", "hou", "ettes", ".", "ĠA", "Ġlarge", "Ġpale", "Ġpanel", "Ġon", "Ġthe", "Ġnearer", "Ġhull", "Ġreads", "Ġexactly", "Ġ"", "ÐĿÐķ", "Ðĳ", "Ðŀ", """, "Ġin", "ĠRussian", "ĠCyril", "lic", "Ġcapitals", ".", "ĠA", "Ġdistant", "Ġclock", "Ġtower", "Ġestablishes", "Ġthe", "Ġste", "amp", "unk", "Ġsetting", ".", "ĠDetailed", "Ġcopper", ",", "Ġriv", "ets", ",", "Ġrig", "ging", "Ġand", "Ġrestrained", "Ġsteam", ",", "Ġreadable", "Ġconstruction", "Ġand", "Ġattack", "Ġdirection", ",", "Ġno", "Ġfalling", "Ġpeople", "Ġor", "Ġgore", ".Ċ", ] --- bpe_tokenizer.cpp:245
+[V] split prompt "<|im_end|>\n<|im_start|>assistant\n" to 5 tokens ["<|im_end|>", "Ċ", "<|im_start|>", "assistant", "Ċ", ] --- bpe_tokenizer.cpp:245
+[I] qwen3vl build cached graph cut plan done (taking 3 ms) --- ggml_graph_cut.cpp:1034
+[V] memory-mapping tensors... --- model_loader.cpp:934
+[I] memory-mapped 353 tensors in 1 files (2132.19 MB), taking 0.00s --- model_loader.cpp:1049
+[V] loading 353/398 tensors from models/Qwen3VL-4B-Instruct-Q4_K_M.gguf --- model_loader.cpp:1133
+
+  |##################################################| 353/353 -   0.00MB/s[K
+[I] loading tensors completed, taking 0.21s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s) --- model_loader.cpp:1405
+[V] model manager staged compute params (2132.19 MB, 353 tensors, 3 blocks) to CUDA0, taking 1.22s --- model_manager.cpp:623
+[V] qwen3vl compute buffer size: 47.10 MB(VRAM) on CUDA0 (peak across 1 segment) --- ggml_runner.cpp:1022
+[V] computing condition graph completed, taking 1771 ms --- conditioner.hpp:3265
+[I] get_learned_condition completed, taking 1.77s --- image.cpp:537
+[I] generating image: 1/1 - seed 7 --- image.cpp:874
+[I] flux3 build cached graph cut plan done (taking 2 ms) --- ggml_graph_cut.cpp:1034
+[V] memory-mapping tensors... --- model_loader.cpp:934
+[I] memory-mapped 240 tensors in 1 files (2913.38 MB), taking 0.00s --- model_loader.cpp:1049
+[V] loading 316/359 tensors from models/flux3-image-klein-Q4_0.gguf --- model_loader.cpp:1133
+
+  |##################################################| 316/316 -   0.09MB/s[K
+[I] loading tensors completed, taking 0.20s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s) --- model_loader.cpp:1405
+[V] model manager prepared params backend buffers (  0.04 MB, 76 tensors, 1 blocks, RAM) on CUDA_Host --- model_manager.cpp:494
+[V] model manager staged compute params (2913.41 MB, 316 tensors, 3 blocks) to CUDA0, taking 1.71s --- model_manager.cpp:623
+[V] flux3 compute buffer size: 367.30 MB(VRAM) on CUDA0 (peak across 1 segment) --- ggml_runner.cpp:1022
+
+  |===>                                              |  1/16 -   4.21s/it - ETA 01:03[K
+  |======>                                           |  2/16 -   2.26s/it - ETA 00:45[K
+  |=========>                                        |  3/16 -   2.27s/it - ETA 00:37[K
+  |============>                                     |  4/16 -   2.27s/it - ETA 00:33[K
+  |===============>                                  |  5/16 -   2.26s/it - ETA 00:29[K
+  |==================>                               |  6/16 -   2.28s/it - ETA 00:25[K
+  |=====================>                            |  7/16 -   2.34s/it - ETA 00:23[K
+  |=========================>                        |  8/16 -   2.49s/it - ETA 00:20[K
+  |============================>                     |  9/16 -   2.40s/it - ETA 00:17[K
+  |===============================>                  | 10/16 -   2.32s/it - ETA 00:15[K
+  |==================================>               | 11/16 -   2.33s/it - ETA 00:12[K
+  |=====================================>            | 12/16 -   2.43s/it - ETA 00:09[K
+  |========================================>         | 13/16 -   2.32s/it - ETA 00:07[K
+  |===========================================>      | 14/16 -   2.26s/it - ETA 00:04[K
+  |==============================================>   | 15/16 -   2.27s/it - ETA 00:02[K
+  |==================================================| 16/16 -   2.29s/it[K
+[I] sampling completed, taking 39.05s --- image.cpp:907
+[I] generating 1 latent images completed, taking 39.05s --- image.cpp:921
+[I] decoding 1 latents --- image.cpp:562
+[I] vae build cached graph cut plan done (taking 0 ms) --- ggml_graph_cut.cpp:1034
+[V] memory-mapping tensors... --- model_loader.cpp:934
+[I] memory-mapped 104 tensors in 1 files (4.14 MB), taking 0.00s --- model_loader.cpp:1049
+[V] loading 140/251 tensors from models/flux2-vae.safetensors --- model_loader.cpp:1133
+
+  |##################################################| 140/140 - 877.45MB/s[K
+[I] loading tensors completed, taking 0.21s (read: 0.03s, memcpy: 0.00s, convert: 0.04s, copy_to_backend: 0.00s) --- model_loader.cpp:1405
+[V] model manager prepared params backend buffers ( 92.57 MB, 36 tensors, 1 blocks, RAM) on CUDA_Host --- model_manager.cpp:494
+[V] model manager staged compute params ( 96.72 MB, 140 tensors, 1 blocks) to CUDA0, taking 0.02s --- model_manager.cpp:623
+[V] vae compute buffer size: 2633.29 MB(VRAM) on CUDA0 (peak across 1 segment) --- ggml_runner.cpp:1022
+[V] computing vae decode graph completed, taking 2.46s --- vae.hpp:384
+[I] latent 1 decoded, taking 2.46s --- image.cpp:628
+[I] decode_first_stage completed, taking 2.46s --- image.cpp:632
+[I] generate_image completed in 43.31s --- image.cpp:1058
+[V] model manager released params backend buffers ( 92.61 MB, 112 tensors, 2 blocks, RAM) from CUDA_Host --- model_manager.cpp:1299
+[I] save result image 0 to '.\results\battle-steampunk-clear-7\image.png' (success) --- main.cpp:496
+[I] 1/1 images saved --- main.cpp:572

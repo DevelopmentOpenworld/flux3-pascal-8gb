@@ -1,0 +1,1 @@
+FLUX.3 Image Klein on GTX 1070 Ti 8GB/Pascal: pinned Windows/CUDA reproduction, preview setup GUI, single-result generator, 39 control images with prompts/timings, and an offline report.

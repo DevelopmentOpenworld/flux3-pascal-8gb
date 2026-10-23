@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "version": "0.1.0-preview",
+  "recorded_at": "2026-10-23T20:35:27.964199+00:00",
+  "status": "PASS within stated checks; native window interaction still needs review",
+  "automated_tests": {
+    "count": 23,
+    "duration_seconds": 15.065,
+    "result": "PASS",
+    "command": "python -B -m unittest discover -s tests -v",
+    "models_run": false,
+    "rechecked_at": "2026-10-23T21:02:55.172155+00:00"
+  },
+  "frozen_resources": {
+    "frozen": true,
+    "app_root_ok": true,
+    "generator_root_ok": true,
+    "resource_checks": {
+      "ui/index.html": true,
+      "assets.lock.json": true,
+      "config.example.json": true,
+      "cases.json": true,
+      "battle-cases.json": true,
+      "prompts/people-portrait.txt": true
+    }
+  },
+  "server_lifecycle": {
+    "status": "PASS",
+    "method": "Backend commands against actual frozen EXE, not native UI controls",
+    "checks": [
+      "starts real bundled server",
+      "serves authenticated empty result",
+      "reuses same instance",
+      "stops owned server",
+      "restarts at same bookmark",
+      "new process starts empty",
+      "all own test processes stopped"
+    ],
+    "models_run": false
+  },
+  "real_worker": {
+    "status": "PASS",
+    "method": "Authenticated HTTP on bundled server, real bundled worker and native engine; not a native-window click test",
+    "width": 512,
+    "height": 512,
+    "seed": 42,
+    "steps": 16,
+    "seconds": 30.1924,
+    "image_sha256": "25ec8e2dce56bf1ed5c53b4c03b9c6e119a815cea778b1406f4f1238b3b43e3b",
+    "existing_resources_reused": true
+  },
+  "real_download": {
+    "status": "PASS",
+    "network": "real official NVIDIA HTTPS",
+    "file": "cuda_cudart-windows-x86_64-12.6.77-archive.zip",
+    "bytes": 2512007,
+    "sha256": "7a313bc0c93b1a50bb03aa9783a199ae70c3b66e2d8084da65e8254a8577b925",
+    "dll_present": true,
+    "license_present": true
+  },
+  "privacy": {
+    "status": "PASS",
+    "native_and_resource_files": 1031,
+    "compiled_code_objects": 10685,
+    "decoded_strings": 40108,
+    "findings": 0
+  },
+  "exe_sha256": "76229747fdd8de447cc42a71518d78405ae3d09b9abb8cf7c43cb2f53afe5d0b",
+  "source_sha256": {
+    "desktop/launcher.py": "8b71bb7c8eab384a84ad504645727fc76d7a27bdb5a1ee503e1d9c747ba44b97",
+    "desktop/core.py": "6bc8d19b6c8e8f6978372f91a4923478c1591dc82d317496a631eb680ee0427c",
+    "scripts/app.py": "7910799d5d7e8c1a7a1d81f85b9b424be5d2ae4aee8153ba32708eb37da11c8b",
+    "scripts/generate.py": "1c6c7a26b83f6fa8320b0ea29112c306b4458d275eaec981363633c3eb7c1ae5",
+    "scripts/process_env.py": "253a8c8a4a0dc9465611e4f3e236cba43da45fdd79a0204923f025d25fd394c5",
+    "ui/index.html": "48b467e3b83fc5af76e44ad23ad75aa7ce5f9855c0c449e0589c30afc98695fd",
+    "assets.lock.json": "495369ef5f674ee7a81184103af64b2a485f53ed94233048f44e1df362311f67"
+  },
+  "native_window": {
+    "opened": true,
+    "window_title_observed": "FLUX.3 · Установка и запуск",
+    "controls_and_layout_verified": false,
+    "reason": "Window capture did not complete; no native button or folder-dialog result is claimed"
+  },
+  "limitations": [
+    "No clean-machine installation test; existing models and installed CUDA were reused.",
+    "Only the small cudart package was transferred from NVIDIA in the recorded download check; model, engine and cuBLAS transfer paths use the same checked downloader and pinned metadata, with local HTTP failure/resume tests.",
+    "The packaged server and worker were tested through authenticated HTTP and their program controller, not by clicking the native Manager buttons.",
+    "Optional external launch wrappers are supported only by the source route; the Windows package is qualified for its direct bundled worker.",
+    "Worker timing is a functional observation, not an additional quality or speed benchmark.",
+    "No independent review or full offline report layout validation."
+  ]
+}

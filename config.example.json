@@ -1,0 +1,10 @@
+{
+  "sd_cli": "runtime/sd-cli.exe",
+  "diffusion_model": "models/flux3-image-klein-Q4_0.gguf",
+  "llm": "models/Qwen3VL-4B-Instruct-Q4_K_M.gguf",
+  "vae": "models/flux2-vae.safetensors",
+  "cuda_bin": "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/bin",
+  "cuda_runtime_dir": "",
+  "max_vram_gib": 6,
+  "timeout_seconds": 900
+}

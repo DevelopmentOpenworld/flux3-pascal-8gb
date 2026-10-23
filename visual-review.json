@@ -1,0 +1,461 @@
+{
+  "reviewed_at": "2026-10-23T16:22:58.381758+00:00",
+  "method": "Visual inspection of every original PNG, with separate lettering, weapon connection and instruction checks. Exploratory author AI assessment, not a preregistered quality benchmark.",
+  "reviews": [
+    {
+      "run_id": "batch-people-portrait",
+      "image_sha256": "59dc4a56e421fbfbc4af6e0725817fc638ad4b60d2db7948062606eceef9bb2c",
+      "observed_text": [],
+      "text_status": "not-requested",
+      "observation_ru": "Фотореалистичный портрет: читаются текстура кожи, волосы и мягкий свет из окна. Кисти рук не входят в кадр; этот опыт не проверяет анатомию рук.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-people-musician",
+      "image_sha256": "d28e07e051882f2f19c1c4f4ceef50249560d497eb10a2b5534344ba2a8151ce",
+      "observed_text": [
+        "МУЗЫКА"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Основное слово читается. Под ним добавлена незапрошенная мелкая строка, содержание неразборчиво. Низ фигуры и инструмента тесно обрезан; условие полного роста соблюдено не полностью. Обе кисти видны, точность техники игры отдельно не подтверждена.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-rural-river",
+      "image_sha256": "8efb658dbb970995b996bfec8189b0ed7883c7a75ff89e1dee54255d78375a47",
+      "observed_text": [
+        "К РЕКЕ"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Надпись читается. Указатель показывает вправо, тогда как видимая река находится слева от него: направление к воде не соблюдено. Река, растительность и дальние планы различимы.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-rural-winter",
+      "image_sha256": "f12e23e10b288618de45c13a33fc92c6d917da5d236fd0f00ff80725fb85b709",
+      "observed_text": [
+        "ТЁПЛЫЙ ДОМ"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Надпись читается, две точки над Ё видны. Снег, тёплые окна и дым присутствуют; табличка заметно занимает передний план.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-urban-moscow",
+      "image_sha256": "3a8c858fa03bfda6a73aed5ea6d7eb92a7f24f4a8e9a8f188b444e7a75987505",
+      "observed_text": [
+        "МОСКВА"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Крупная надпись читается. Дождь, трамвай и отражения соответствуют теме. На фоне добавлены мелкие вывески и обозначения. Соответствие реальной улице Москвы не проверялось; это иллюстративная локализация.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-urban-bakery",
+      "image_sha256": "4a4cb8262140729d6a12d498fe636aab3cb466b01455f924fac6fef88ae1a836",
+      "observed_text": [
+        "СВЕЖИЙ ХЛЕБ"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Оба слова читаются. Витрина с хлебом и утренний свет присутствуют. В группе велосипедов мелкие детали пересекаются и перегружены; точная геометрия каждого велосипеда не подтверждена.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-fantasy-character",
+      "image_sha256": "e00352536435d17328c3664a0ab2b8b149275dcde7fbaac3880e4defc7b9d208",
+      "observed_text": [
+        "СТРАЖ"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Надпись на щите читается, фигура показана целиком. Плащ, броня, меч в ножнах и горное окружение присутствуют. Один спокойный персонаж не доказывает устойчивость модели на сложных позах.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-fantasy-location",
+      "image_sha256": "75047a02d3669900cb09838a147694276c44a33235f39f46b9548daafbc2b83e",
+      "observed_text": [
+        "ЗВЁЗДНЫЙ ПРЕДЕЛ"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Длинная надпись в две строки читается, включая Ё и Й. Замок, мост и глубина сцены присутствуют. Замок расположен на одной доминирующей скале; запрошенная структура между двумя пиками и водопады выражены не полностью.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-fantasy-weapon",
+      "image_sha256": "8d01e5601556b935e651fe094633303347d9ea9be36f10b7626ea69eff0dc0cb",
+      "observed_text": [
+        "ЛУННЫЙ КЛИНОК"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Оба слова читаются на наклонной табличке. Меч целиком помещается в кадре, фактура металла и бархата различима. Запрошенное навершие в форме полумесяца передано неявно.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-fantasy-battle",
+      "image_sha256": "78773a55df36a17ec7b4c62fca764992a74cc90d552a8ca2a8398d4832797181",
+      "observed_text": [
+        "ЗА РАССВЕТ"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "У правого воина кисти заняты щитом и опущенной рукой, а отдельный меч висит между фигурами без хвата. Это подтверждает замечание о неподдерживаемом клинке; кадр не проходит проверку физической связности.",
+      "reviewer": "Author visual inspection (AI); not independent review",
+      "battle": {
+        "connection": "FAIL",
+        "instruction": "FAIL",
+        "overall": "FAIL"
+      },
+      "human_feedback": "A viewer reported this defect before the recheck; the image was then re-inspected by the author AI."
+    },
+    {
+      "run_id": "batch-hitech-character",
+      "image_sha256": "9e2ee5a41c431b8c1bc5faa50c25879f2db6407341bad6561464ac74a5b47369",
+      "observed_text": [
+        "ИСКРА"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Надпись на груди читается. Фигура и шлем видны целиком, материалы скафандра различимы. Пять отдельных пальцев на опущенной кисти не читаются достаточно отчётливо, поэтому точный счёт пальцев не подтверждён.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-hitech-location",
+      "image_sha256": "86361f6534969fd638e04f8c05a453d546ae5d1244b35a1a4c927d1768ecb679",
+      "observed_text": [
+        "ОРБИТА"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Надпись читается. Панорамное окно, планета, растения и небольшие фигуры присутствуют. Табло занимает большую долю верхней части композиции.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-hitech-weapon",
+      "image_sha256": "89c5d073558b040ff2b156eef1bc06be17601fbf738a1242c1faeb55696c1172",
+      "observed_text": [
+        "ИМПУЛЬС"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Надпись читается. Форма предмета и светящаяся камера различимы. Материалы сдвинуты к потёртому металлу и ретрофутуризму; запрошенные керамические панели выражены слабо.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-hitech-battle",
+      "image_sha256": "4e26c592e7cc84c44424b6fe1e4afd578c6036d8c079e8518d018914aa993b34",
+      "observed_text": [
+        "СЕКТОР 7"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "В области щита оранжевого робота светящийся стержень и его кисть сливаются с древком тёмного робота: принадлежность и конструкция не читаются надёжно. Замечание о странном оружии подтверждено. Исходный промпт задавал оранжевому щит, тёмному посох; отдельный левый меч не требовался.",
+      "reviewer": "Author visual inspection (AI); not independent review",
+      "battle": {
+        "connection": "UNCERTAIN",
+        "instruction": "FAIL",
+        "overall": "FAIL"
+      },
+      "human_feedback": "A viewer reported this defect before the recheck; the image was then re-inspected by the author AI."
+    },
+    {
+      "run_id": "batch-steampunk-character",
+      "image_sha256": "4939e471b6eb0734689a33c045e479ed005ec26bd202b09773c3ab3170d4d01d",
+      "observed_text": [
+        "МАСТЕР"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Надпись на кейсе читается. Фигура, очки, кейс и рабочая поверхность представлены. Костюм и мастерская выдержаны в теме; точная механика декоративных устройств не оценивается.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-steampunk-location",
+      "image_sha256": "09fc5cc73e85a287c1888b7fb7ec02b5127de617ced3cb4f106a2c2aa028f8ec",
+      "observed_text": [
+        "ПАРОВОЙ ПОРТ"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Оба слова читаются. Дирижабли, башни, трубы и пар присутствуют. Сцена насыщена мелкими механизмами, конструкционная правдоподобность которых не подтверждена.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-steampunk-weapon",
+      "image_sha256": "340bf49860411e364566542a9af35f577094cb3739e11b4f904ad53e342ba23d",
+      "observed_text": [
+        "ГРОЗА"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Надпись читается. Медные катушки, стеклянная камера, кожа и деревянная подставка переданы. На циферблате появляются дополнительные мелкие обозначения; это декоративный вымышленный реквизит, его техническая работоспособность не оценивается.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-steampunk-battle",
+      "image_sha256": "7eaf32f040fe514b971e86feafcf00ae69a144e09d30e86df7c770c237a7bc4f",
+      "observed_text": [
+        "НЕБО"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Дуги тянутся через область башни и обшивки; их концы нельзя надёжно сопоставить отдельным защитным устройствам каждого корабля. Эффектная композиция не доказывает согласованную механику оружия.",
+      "reviewer": "Author visual inspection (AI); not independent review",
+      "battle": {
+        "connection": "UNCERTAIN",
+        "instruction": "UNCERTAIN",
+        "overall": "UNCERTAIN"
+      }
+    },
+    {
+      "run_id": "batch-people-portrait-512",
+      "image_sha256": "e34ef515173a1a233c3bd634428fb280cc17eb6d536cb46e5ec1a5eda952f792",
+      "observed_text": [],
+      "text_status": "not-requested",
+      "observation_ru": "Натуральный портрет с различимыми волосами, кожей и тканью. Свет и кадрирование отличаются от 768²; это новая генерация с тем же описанием и seed, а не уменьшенная копия.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-people-portrait-1024",
+      "image_sha256": "01d60b5508211d13d725a1e14d03d68507ffed785d9e22007dc07b381698eded",
+      "observed_text": [],
+      "text_status": "not-requested",
+      "observation_ru": "Более крупная и подробная фактура кожи и волос; изменились освещение, цвет и кадрирование. Явных границ плиток при этом просмотре не отмечено. Декодирование автоматически повторялось плитками 512×512; времени потребовалось значительно больше.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-fantasy-weapon-512",
+      "image_sha256": "ca5a2647cfbde90cf522d53922c80e3e48c6efd5816c98ff743162149f4f8c87",
+      "observed_text": [
+        "ЛУННЫЙ КЛИНОК"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Оба слова читаются. Меч целиком в кадре; форма предмета и орнамента отличается от 768². Табличка остаётся крупной и простой, поэтому этот результат не проверяет мелкую гравировку.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-fantasy-weapon-1024",
+      "image_sha256": "79449e7799e0b488e6483bfa8f5fcb984603388e3c48b8371787f28ff2be8d21",
+      "observed_text": [
+        "ЛУННЫЙ КЛИНОК"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Оба слова читаются, текст размещён в две строки. Материалы и орнамент проработаны; композиция отличается от меньших разрешений. Явных швов плиток при просмотре не отмечено; полного совпадения формы с 512² или 768² нет.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-hitech-location-512",
+      "image_sha256": "57a49aa3b6a534e47ee9d7d61a5ec8d2b5ac9ffefd597ce3e7557958e6a52b60",
+      "observed_text": [
+        "ОРБИТА"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Надпись читается. Окно и планета занимают большую часть кадра, интерьер симметричен. Мелкие фигуры людей имеют ограниченную детализацию.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "batch-hitech-location-1024",
+      "image_sha256": "69f54f5e3269e42af71ea49fea700e72095e72ba7aa44fe0f400c1488ab35b81",
+      "observed_text": [
+        "ОРБИТА"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Надпись читается. Добавились потолок, перила и больше видимых деталей интерьера; композиция существенно отличается от 512² и 768². Мелкая анатомия фоновых людей остаётся неопределённой. Явные границы плиток при просмотре не отмечены.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "toolkit-only-portrait-512",
+      "image_sha256": "e34ef515173a1a233c3bd634428fb280cc17eb6d536cb46e5ec1a5eda952f792",
+      "observed_text": [],
+      "text_status": "not-requested",
+      "observation_ru": "PNG побайтно совпадает с уже просмотренным batch-people-portrait-512. Повторяет его визуальные свойства; это опыт загрузки DLL из Toolkit, а не новый независимый образец качества.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "battle-fantasy-original-7",
+      "image_sha256": "34637e895cf032b89ba80cd2ff4c6eb409631cc4b3eca9cccc4b7ebccd5e5a69",
+      "observed_text": [
+        "ЗА РАССВЕТ"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Левый воин держит меч, правый держит щит. Явно подвешенного меча нет, но клинок и щит разделены видимым зазором; искры не подтверждают контакт. Смена seed устранила один дефект, не обеспечив выполнение сцены.",
+      "reviewer": "Author visual inspection (AI); not independent review",
+      "battle": {
+        "connection": "PASS",
+        "instruction": "FAIL",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "run_id": "battle-fantasy-original-123",
+      "image_sha256": "43dee7223abd1337b8bdd95850439d1bb9be83a5304fa2297b41b4cca2493f6c",
+      "observed_text": [
+        "ЗА РАССВЕТ"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Второй клинок выходит из области за щитом, где хват закрыт и неоднозначен. Нельзя уверенно проследить отдельную кисть–рукоять–клинок у правого воина. Не засчитан как корректный бой.",
+      "reviewer": "Author visual inspection (AI); not independent review",
+      "battle": {
+        "connection": "UNCERTAIN",
+        "instruction": "UNCERTAIN",
+        "overall": "UNCERTAIN"
+      }
+    },
+    {
+      "run_id": "battle-robot-original-7",
+      "image_sha256": "f4a8ac79d461b59d63a966526850e524239b5a72688977f6087782945b85e99b",
+      "observed_text": [
+        "СЕКТОР 7"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Посох виден в опущенной руке тёмного робота справа, а в щит упирается другая рука. Хват оружия виден, но требуемого удара посохом по щиту нет.",
+      "reviewer": "Author visual inspection (AI); not independent review",
+      "battle": {
+        "connection": "PASS",
+        "instruction": "FAIL",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "run_id": "battle-robot-original-123",
+      "image_sha256": "c5994e971a9932647a6ed8b9722c368ed7756efa6d9d0ae0036f71d53e410fec",
+      "observed_text": [
+        "СЕКТОР 7"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "У тёмного робота нет различимого энергетического посоха: удар выглядит как контакт руки со щитом. Крупная надпись читается, но главное действие промпта отсутствует.",
+      "reviewer": "Author visual inspection (AI); not independent review",
+      "battle": {
+        "connection": "FAIL",
+        "instruction": "FAIL",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "run_id": "battle-steampunk-clear-42",
+      "image_sha256": "d743a164205fd3991dd4a35498cadc0bbaf7d31fb19516af4864acf85f1cf686",
+      "observed_text": [
+        "НЕБО"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Главный луч непрерывно идёт от левого ствола к корпусу правого корабля. Однако левый корабль обрезан, справа появился лишний луч, а излучатели закреплены на оболочках вместо заданных кронштейнов гондол.",
+      "reviewer": "Author visual inspection (AI); not independent review",
+      "battle": {
+        "connection": "PASS",
+        "instruction": "FAIL",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "run_id": "battle-steampunk-clear-7",
+      "image_sha256": "6f82e6939fe58f4fc8e649a45bb37752b1504f763b2a06c8e98b7886890c6d5e",
+      "observed_text": [
+        "НЕБО"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "Главный луч начинается у ствола и заканчивается на корпусе второго корабля, оба корабля целиком видны. Но излучатели расположены на оболочке, а не на кронштейнах гондол, как требовал уточнённый промпт. Улучшена читаемость атаки, не исполнены все ограничения.",
+      "reviewer": "Author visual inspection (AI); not independent review",
+      "battle": {
+        "connection": "PASS",
+        "instruction": "FAIL",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "run_id": "battle-fantasy-clear-42",
+      "image_sha256": "9425b6981d0810c49f627238e58da7355c46b7f910e0618168f0fd83e4e6b30b",
+      "observed_text": [
+        "ЗА РАССВЕТ"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "У обоих персонажей видна непрерывная связь кисти, рукояти и клинка; подвешенного оружия не видно. Однако персонаж слева держит меч левой анатомической рукой вместо заданной правой. Фигуры помещаются целиком, но композиция стала статичной и упрощённой.",
+      "reviewer": "Author visual inspection (AI); not independent review",
+      "battle": {
+        "connection": "PASS",
+        "instruction": "FAIL",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "run_id": "battle-fantasy-clear-7",
+      "image_sha256": "b435207bede8034b518837e079788a2bb838e9cf181372b9a206efa8b74075f3",
+      "observed_text": [
+        "ЗА РАССВЕТ"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "У обоих персонажей видна непрерывная связь кисти, рукояти и клинка; подвешенного оружия не видно. Однако персонаж слева держит меч левой анатомической рукой вместо заданной правой. Фигуры помещаются целиком, но композиция стала статичной и упрощённой.",
+      "reviewer": "Author visual inspection (AI); not independent review",
+      "battle": {
+        "connection": "PASS",
+        "instruction": "FAIL",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "run_id": "battle-fantasy-clear-123",
+      "image_sha256": "68b586658025fa3ada54b5e45c0b2f50da8f2e6b5811d382e139095a164567ef",
+      "observed_text": [
+        "ЗА РАССВЕТ"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "У обоих персонажей видна непрерывная связь кисти, рукояти и клинка; подвешенного оружия не видно. Однако персонаж слева держит меч левой анатомической рукой вместо заданной правой. Фигуры помещаются целиком, но композиция стала статичной и упрощённой.",
+      "reviewer": "Author visual inspection (AI); not independent review",
+      "battle": {
+        "connection": "PASS",
+        "instruction": "FAIL",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "run_id": "battle-robot-clear-42",
+      "image_sha256": "a6617618d530f811eb4dca834b7b723d512cd5953196d6463d50e8c3e66161e2",
+      "observed_text": [
+        "СЕКТОР 7"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "У обоих персонажей видна непрерывная связь кисти, рукояти и клинка; подвешенного оружия не видно. Однако персонаж слева держит меч левой анатомической рукой вместо заданной правой. Фигуры дополнительно обрезаны снизу, хотя требовались полные тела.",
+      "reviewer": "Author visual inspection (AI); not independent review",
+      "battle": {
+        "connection": "PASS",
+        "instruction": "FAIL",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "run_id": "battle-robot-clear-7",
+      "image_sha256": "6cce7a58788cddfb3ea7a4a6959d4740a79ab3f35b974d01a1cf6f7140edada0",
+      "observed_text": [
+        "СЕКТОР 7"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "У обоих персонажей видна непрерывная связь кисти, рукояти и клинка; подвешенного оружия не видно. Однако персонаж слева держит меч левой анатомической рукой вместо заданной правой. Фигуры дополнительно обрезаны снизу, хотя требовались полные тела.",
+      "reviewer": "Author visual inspection (AI); not independent review",
+      "battle": {
+        "connection": "PASS",
+        "instruction": "FAIL",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "run_id": "battle-robot-clear-123",
+      "image_sha256": "b179aa32079a33c5c3092d0e4d8a7a05c3558affba85d887a63ece017fa70199",
+      "observed_text": [
+        "СЕКТОР 7"
+      ],
+      "text_status": "exact-visible",
+      "observation_ru": "У обоих персонажей видна непрерывная связь кисти, рукояти и клинка; подвешенного оружия не видно. Однако персонаж слева держит меч левой анатомической рукой вместо заданной правой. Фигуры дополнительно обрезаны снизу, хотя требовались полные тела.",
+      "reviewer": "Author visual inspection (AI); not independent review",
+      "battle": {
+        "connection": "PASS",
+        "instruction": "FAIL",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "run_id": "ui-67b47e1c51d34841",
+      "image_sha256": "25ec8e2dce56bf1ed5c53b4c03b9c6e119a815cea778b1406f4f1238b3b43e3b",
+      "observed_text": [],
+      "text_status": "not-requested",
+      "observation_ru": "Портрет получен нажатием кнопки в браузерном интерфейсе; PNG и параметры сохранены. Этот опыт проверяет пользовательский путь, не анатомию рук вне кадра.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    },
+    {
+      "run_id": "ui-a5e49cdf769f4b2a",
+      "image_sha256": "bfaafe27ba6d4daeefe4958f10f645a5f9ac193eb57600f443eb0745c87c6e86",
+      "observed_text": [],
+      "text_status": "not-requested",
+      "observation_ru": "Портрет получен нажатием кнопки в браузерном интерфейсе; PNG и параметры сохранены. Этот опыт проверяет пользовательский путь, не анатомию рук вне кадра.",
+      "reviewer": "Author visual inspection (AI); not independent review"
+    }
+  ]
+}

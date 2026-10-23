@@ -1,0 +1,106 @@
+[
+  {
+    "id": "SD-FLUX3",
+    "title": "sd.cpp: FLUX.3 usage",
+    "url": "https://github.com/leejet/stable-diffusion.cpp/blob/master/docs/flux3.md",
+    "checked": "2026-10-23",
+    "kind": "documentation",
+    "applied": "Component choice, distilled 16 steps and CFG 1.0. Current documentation; binary used in experiment is separately pinned."
+  },
+  {
+    "id": "SD-MEMORY",
+    "title": "sd.cpp: memory placement and segmented execution",
+    "url": "https://github.com/leejet/stable-diffusion.cpp/blob/master/docs/performance.md",
+    "checked": "2026-10-23",
+    "kind": "documentation",
+    "applied": "Explanation of CPU parameter storage, max-vram and GPU compute. No speed guarantee is copied."
+  },
+  {
+    "id": "SD-RELEASE",
+    "title": "Measured Windows CUDA 12 release",
+    "url": "https://github.com/leejet/stable-diffusion.cpp/releases/tag/master-992-39bc9d0",
+    "checked": "2026-10-22 / binary SHA rechecked 2026-10-23",
+    "kind": "release metadata + local measurement",
+    "applied": "Exact archive URL, release and commit. Release metadata saved before this batch; extracted files hashed again for this batch."
+  },
+  {
+    "id": "FLUX-GGUF",
+    "title": "FLUX.3 Q4_0 weights",
+    "url": "https://huggingface.co/leejet/flux-3-image-klein-GGUF/tree/1c2ad2f9b9247ccca6506a23bdb033fdb0873321",
+    "checked": "2026-10-22 / file SHA rechecked 2026-10-23",
+    "kind": "repository metadata + local hash",
+    "applied": "Exact revision, file size and SHA; no claim of a separate public Pascal benchmark."
+  },
+  {
+    "id": "QWEN-GGUF",
+    "title": "Qwen3-VL 4B text encoder",
+    "url": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct-GGUF/blob/1cd86afb9a95c410a6038ab3b40d8b578c892266/Qwen3VL-4B-Instruct-Q4_K_M.gguf",
+    "checked": "2026-10-23",
+    "kind": "repository metadata + local hash",
+    "applied": "Reused encoder is Qwen3-VL, not the older Qwen3-4B without VL."
+  },
+  {
+    "id": "VAE",
+    "title": "FLUX.2 VAE exact file",
+    "url": "https://huggingface.co/Comfy-Org/Flux-2-Dev/commit/ca4ac7c84eb42f3200fffc85b5fbee67129e6ffa",
+    "checked": "2026-10-23",
+    "kind": "repository metadata + local hash",
+    "applied": "Published pointer gives exact matching SHA and 336213556 bytes."
+  },
+  {
+    "id": "NVIDIA",
+    "title": "NVIDIA: CUDA architecture support",
+    "url": "https://developer.nvidia.com/blog/navigating-gpu-architecture-support-a-guide-for-nvidia-cuda-developers/",
+    "checked": "2026-10-23",
+    "kind": "documentation",
+    "applied": "CUDA 13 drops offline compilation for Pascal. Tested profile reuses CUDA 12.6.85."
+  },
+  {
+    "id": "BFL",
+    "title": "Black Forest Labs: reference implementation",
+    "url": "https://github.com/black-forest-labs/flux-3-image-klein",
+    "checked": "2026-10-23",
+    "kind": "documentation",
+    "applied": "Official model context and 8 GB INT8 recommendation explicitly naming RTX 3070; this is not Pascal validation."
+  },
+  {
+    "id": "BFL-TERMS",
+    "title": "Model distribution and applicable upstream terms",
+    "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein",
+    "checked": "link supplied; full gated model card not re-read in this batch",
+    "kind": "upstream reference",
+    "applied": "Weights are not redistributed in this project; consult the upstream terms before obtaining them."
+  },
+  {
+    "id": "STRATA",
+    "title": "Strata current project scope",
+    "url": "https://github.com/Niko1221/Strata",
+    "checked": "2026-10-23",
+    "kind": "documentation",
+    "applied": "README presents a Qwen inference application. No Strata FLUX backend or speed-up is claimed in this experiment."
+  },
+  {
+    "id": "CUDA-REDIST-1263",
+    "title": "NVIDIA CUDA 12.6.3 redistributable manifest",
+    "url": "https://developer.download.nvidia.com/compute/cuda/redist/redistrib_12.6.3.json",
+    "checked": "2026-10-23",
+    "kind": "official JSON manifest + small real HTTPS transfer",
+    "applied": "Pinned Windows cudart 12.6.77 and cuBLAS 12.6.4.1 package URLs, sizes and SHA256; full cuBLAS transfer is not repeated on a computer with working CUDA."
+  },
+  {
+    "id": "PYINSTALLER-BUILD",
+    "title": "PyInstaller 6.22.3 usage",
+    "url": "https://pyinstaller.org/en/stable/usage.html",
+    "checked": "2026-10-23",
+    "kind": "official documentation + local build",
+    "applied": "Windows onedir/windowed build with Python 3.14.4 and Tk; no separate Python installation for the packaged application."
+  },
+  {
+    "id": "PYINSTALLER-DLL",
+    "title": "PyInstaller external program DLL search",
+    "url": "https://pyinstaller.org/en/stable/common-issues-and-pitfalls.html#launching-external-programs-from-the-frozen-application",
+    "checked": "2026-10-23",
+    "kind": "official documentation",
+    "applied": "Restore system DLL search during external subprocess creation and then restore bundled DLL search in the parent process."
+  }
+]

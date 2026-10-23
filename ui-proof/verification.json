@@ -1,0 +1,55 @@
+{
+  "schema": 3,
+  "version": "0.1.0-preview",
+  "recorded_at": "2026-10-23T19:29:17.063928+00:00",
+  "method": "Actual local browser controls on the public single-operation application; current PNG also checked through its authenticated API",
+  "public_smoke": {
+    "width": 512,
+    "height": 512,
+    "seed": 42,
+    "steps": 16,
+    "seconds": 37.3071,
+    "image_sha256": "25ec8e2dce56bf1ed5c53b4c03b9c6e119a815cea778b1406f4f1238b3b43e3b"
+  },
+  "control_image": "results/ui-67b47e1c51d34841/image.png",
+  "checks": [
+    {
+      "check": "Fresh public app has an empty result and no list of past runs",
+      "result": "PASS"
+    },
+    {
+      "check": "Generation submitted via browser button, output and parameters visible",
+      "result": "PASS"
+    },
+    {
+      "check": "Original PNG bytes match current image SHA256",
+      "result": "PASS"
+    },
+    {
+      "check": "Old saved-run API returns HTTP 404",
+      "result": "PASS"
+    },
+    {
+      "check": "Screenshot contains only controls and current result; no paths or session URL",
+      "result": "PASS"
+    },
+    {
+      "check": "Same bookmark authenticates after a real server restart",
+      "result": "PASS"
+    },
+    {
+      "check": "Restarted server exposes an empty current result and old PNG returns 404",
+      "result": "PASS"
+    }
+  ],
+  "source_sha256": {
+    "scripts/app.py": "dbb9252fd697918e9f8b60384f0bd6cf175d53db3b966106107d5166053d6248",
+    "scripts/generate.py": "5c47062c0f1654fe8b376579865d76a009786fa1da68167db81bf37fe3ff47ba",
+    "ui/index.html": "48b467e3b83fc5af76e44ad23ad75aa7ce5f9855c0c449e0589c30afc98695fd",
+    "tests/test_app.py": "9016d574c1638f97d371ee35dbfb0885597bef0cb1ec54e487b621b1c4f24aed"
+  },
+  "limitations": [
+    "Smoke timing is a functional observation, not an additional controlled quality benchmark.",
+    "Full standalone report browser layout is not verified; DOM mechanics and embedded image bytes are checked separately."
+  ]
+}

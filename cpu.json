@@ -1,0 +1,7 @@
+{
+  "cpu": "Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz",
+  "logical_processors": 8,
+  "windows_build": "19045",
+  "windows_ubr": 6466,
+  "windows_release": "22H2"
+}

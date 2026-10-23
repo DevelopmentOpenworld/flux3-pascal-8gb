@@ -1,0 +1,40 @@
+﻿run_id,role,category,width,height,seed,steps,seconds,sampling_seconds,vae_seconds,peak_gpu_used_mib,peak_engine_private_mib,minimum_available_mib,text_status,connection,instruction,overall,image_sha256
+batch-fantasy-battle,thematic-first-result,Фэнтези,864,480,42,16,42.6779,36.44,2.49,4545,4276,10416,exact-visible,FAIL,FAIL,FAIL,78773a55df36a17ec7b4c62fca764992a74cc90d552a8ca2a8398d4832797181
+batch-fantasy-character,thematic-first-result,Фэнтези,512,768,42,16,41.8009,35.89,2.33,4524,4298,16870,exact-visible,,,,e00352536435d17328c3664a0ab2b8b149275dcde7fbaac3880e4defc7b9d208
+batch-fantasy-location,thematic-first-result,Фэнтези,864,480,42,16,43.1449,36.89,2.74,4539,4299,16846,exact-visible,,,,75047a02d3669900cb09838a147694276c44a33235f39f46b9548daafbc2b83e
+batch-fantasy-weapon,thematic-first-result,Фэнтези,768,768,42,16,60.0585,52.72,3.5,5435,5246,15254,exact-visible,,,,8d01e5601556b935e651fe094633303347d9ea9be36f10b7626ea69eff0dc0cb
+batch-fantasy-weapon-1024,matched-resolution,Фэнтези,1024,1024,42,16,141.3942,123.55,13.69,5352,4754,10138,exact-visible,,,,79449e7799e0b488e6483bfa8f5fcb984603388e3c48b8371787f28ff2be8d21
+batch-fantasy-weapon-512,matched-resolution,Фэнтези,512,512,42,16,31.8346,26.22,1.8,4767,4149,10184,exact-visible,,,,ca5a2647cfbde90cf522d53922c80e3e48c6efd5816c98ff743162149f4f8c87
+batch-hitech-battle,thematic-first-result,Хай-тек,864,480,42,16,42.6106,36.21,2.4,4698,4300,10922,exact-visible,UNCERTAIN,FAIL,FAIL,4e26c592e7cc84c44424b6fe1e4afd578c6036d8c079e8518d018914aa993b34
+batch-hitech-character,thematic-first-result,Хай-тек,512,768,42,16,41.5306,35.34,2.39,4525,4296,12126,exact-visible,,,,9e2ee5a41c431b8c1bc5faa50c25879f2db6407341bad6561464ac74a5b47369
+batch-hitech-location,thematic-first-result,Хай-тек,768,768,42,16,60.2865,53.22,3.45,5402,5341,12126,exact-visible,,,,86361f6534969fd638e04f8c05a453d546ae5d1244b35a1a4c927d1768ecb679
+batch-hitech-location-1024,matched-resolution,Хай-тек,1024,1024,42,16,136.0223,118.27,13.48,5341,4757,9819,exact-visible,,,,69f54f5e3269e42af71ea49fea700e72095e72ba7aa44fe0f400c1488ab35b81
+batch-hitech-location-512,matched-resolution,Хай-тек,512,512,42,16,32.3136,26.56,1.8,4736,4169,10071,exact-visible,,,,57a49aa3b6a534e47ee9d7d61a5ec8d2b5ac9ffefd597ce3e7557958e6a52b60
+batch-hitech-weapon,thematic-first-result,Хай-тек,768,768,42,16,59.7895,52.6,3.35,5527,5277,10867,exact-visible,,,,89c5d073558b040ff2b156eef1bc06be17601fbf738a1242c1faeb55696c1172
+batch-people-musician,thematic-first-result,Персоны,512,768,42,16,42.8653,36.68,2.41,4507,4297,15838,exact-visible,,,,d28e07e051882f2f19c1c4f4ceef50249560d497eb10a2b5534344ba2a8151ce
+batch-people-portrait,thematic-first-result,Персоны,768,768,42,16,59.1862,51.41,3.38,5408,5250,16655,not-requested,,,,59dc4a56e421fbfbc4af6e0725817fc638ad4b60d2db7948062606eceef9bb2c
+batch-people-portrait-1024,matched-resolution,Персоны,1024,1024,42,16,130.1415,113.15,13.09,5322,4754,10573,not-requested,,,,01d60b5508211d13d725a1e14d03d68507ffed785d9e22007dc07b381698eded
+batch-people-portrait-512,matched-resolution,Персоны,512,512,42,16,30.8787,25.32,1.73,4733,4170,10426,not-requested,,,,e34ef515173a1a233c3bd634428fb280cc17eb6d536cb46e5ec1a5eda952f792
+batch-rural-river,thematic-first-result,Загородный пейзаж,864,480,42,16,45.4813,39.14,2.42,4557,4301,16127,exact-visible,,,,8efb658dbb970995b996bfec8189b0ed7883c7a75ff89e1dee54255d78375a47
+batch-rural-winter,thematic-first-result,Загородный пейзаж,864,480,42,16,46.3555,40.36,2.58,4539,4298,16491,exact-visible,,,,f12e23e10b288618de45c13a33fc92c6d917da5d236fd0f00ff80725fb85b709
+batch-steampunk-battle,thematic-first-result,Стимпанк,864,480,42,16,45.4966,39.0,2.65,4857,4303,10276,exact-visible,UNCERTAIN,UNCERTAIN,UNCERTAIN,7eaf32f040fe514b971e86feafcf00ae69a144e09d30e86df7c770c237a7bc4f
+batch-steampunk-character,thematic-first-result,Стимпанк,512,768,42,16,40.308,34.35,2.42,4683,4301,10855,exact-visible,,,,4939e471b6eb0734689a33c045e479ed005ec26bd202b09773c3ab3170d4d01d
+batch-steampunk-location,thematic-first-result,Стимпанк,864,480,42,16,42.9572,36.62,2.48,4819,4302,10507,exact-visible,,,,09fc5cc73e85a287c1888b7fb7ec02b5127de617ced3cb4f106a2c2aa028f8ec
+batch-steampunk-weapon,thematic-first-result,Стимпанк,768,768,42,16,62.292,53.89,4.5,5728,5246,9954,exact-visible,,,,340bf49860411e364566542a9af35f577094cb3739e11b4f904ad53e342ba23d
+batch-urban-bakery,thematic-first-result,Городской пейзаж,768,768,42,16,61.2905,53.91,3.64,5402,5342,16629,exact-visible,,,,4a4cb8262140729d6a12d498fe636aab3cb466b01455f924fac6fef88ae1a836
+batch-urban-moscow,thematic-first-result,Городской пейзаж,864,480,42,16,49.0985,42.72,2.79,4539,4296,16420,exact-visible,,,,3a8c858fa03bfda6a73aed5ea6d7eb92a7f24f4a8e9a8f188b444e7a75987505
+battle-fantasy-clear-123,battle-recheck,Фэнтези,864,480,123,16,45.7978,38.78,2.6,4775,4339,8249,exact-visible,PASS,FAIL,FAIL,68b586658025fa3ada54b5e45c0b2f50da8f2e6b5811d382e139095a164567ef
+battle-fantasy-clear-42,battle-recheck,Фэнтези,864,480,42,16,45.4012,38.94,2.53,4761,4339,7461,exact-visible,PASS,FAIL,FAIL,9425b6981d0810c49f627238e58da7355c46b7f910e0618168f0fd83e4e6b30b
+battle-fantasy-clear-7,battle-recheck,Фэнтези,864,480,7,16,45.4362,38.81,2.47,4719,4336,7835,exact-visible,PASS,FAIL,FAIL,b435207bede8034b518837e079788a2bb838e9cf181372b9a206efa8b74075f3
+battle-fantasy-original-123,battle-recheck,Фэнтези,864,480,123,16,42.1127,35.86,2.41,4731,4303,8730,exact-visible,UNCERTAIN,UNCERTAIN,UNCERTAIN,43dee7223abd1337b8bdd95850439d1bb9be83a5304fa2297b41b4cca2493f6c
+battle-fantasy-original-7,battle-recheck,Фэнтези,864,480,7,16,40.7897,34.55,2.39,4834,4302,8391,exact-visible,PASS,FAIL,FAIL,34637e895cf032b89ba80cd2ff4c6eb409631cc4b3eca9cccc4b7ebccd5e5a69
+battle-robot-clear-123,battle-recheck,Хай-тек,864,480,123,16,47.4979,40.91,2.48,4815,4318,11319,exact-visible,PASS,FAIL,FAIL,b179aa32079a33c5c3092d0e4d8a7a05c3558affba85d887a63ece017fa70199
+battle-robot-clear-42,battle-recheck,Хай-тек,864,480,42,16,47.4971,40.71,2.52,4717,4311,7350,exact-visible,PASS,FAIL,FAIL,a6617618d530f811eb4dca834b7b723d512cd5953196d6463d50e8c3e66161e2
+battle-robot-clear-7,battle-recheck,Хай-тек,864,480,7,16,46.2203,39.93,2.48,4680,4318,11149,exact-visible,PASS,FAIL,FAIL,6cce7a58788cddfb3ea7a4a6959d4740a79ab3f35b974d01a1cf6f7140edada0
+battle-robot-original-123,battle-recheck,Хай-тек,864,480,123,16,41.0361,34.61,2.39,4760,4301,8381,exact-visible,FAIL,FAIL,FAIL,c5994e971a9932647a6ed8b9722c368ed7756efa6d9d0ae0036f71d53e410fec
+battle-robot-original-7,battle-recheck,Хай-тек,864,480,7,16,42.2628,35.88,2.49,4737,4302,7907,exact-visible,PASS,FAIL,FAIL,f4a8ac79d461b59d63a966526850e524239b5a72688977f6087782945b85e99b
+battle-steampunk-clear-42,battle-recheck,Стимпанк,864,480,42,16,45.3313,38.72,2.48,4810,4336,11652,exact-visible,PASS,FAIL,FAIL,d743a164205fd3991dd4a35498cadc0bbaf7d31fb19516af4864acf85f1cf686
+battle-steampunk-clear-7,battle-recheck,Стимпанк,864,480,7,16,45.2632,39.05,2.46,4897,4336,11615,exact-visible,PASS,FAIL,FAIL,6f82e6939fe58f4fc8e649a45bb37752b1504f763b2a06c8e98b7886890c6d5e
+toolkit-only-portrait-512,cuda-check,Персоны,512,512,42,16,28.3818,23.09,1.64,4529,4172,10771,not-requested,,,,e34ef515173a1a233c3bd634428fb280cc17eb6d536cb46e5ec1a5eda952f792
+ui-67b47e1c51d34841,ui-proof,Персоны,512,512,42,16,28.0308,22.42,1.59,4599,4171,6850,not-requested,,,,25ec8e2dce56bf1ed5c53b4c03b9c6e119a815cea778b1406f4f1238b3b43e3b
+ui-a5e49cdf769f4b2a,ui-proof,Персоны,512,512,7,16,28.0763,22.63,1.6,4617,4169,8022,not-requested,,,,bfaafe27ba6d4daeefe4958f10f645a5f9ac193eb57600f443eb0745c87c6e86

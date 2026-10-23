@@ -1,0 +1,1260 @@
+{
+  "schema": 2,
+  "created_at": "2026-10-23T21:07:54.423827+00:00",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 56,
+      "sha256": "f4e6e7af5e993a52262b80bf4acc270a0c3c502685a473966fcca28d62d7b0d7"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 257,
+      "sha256": "b97f39e063e789c8e2542ed7a3ca8ecaa6273f018578dda96b9ad53f76659de7"
+    },
+    {
+      "path": "assets.lock.json",
+      "bytes": 7575,
+      "sha256": "495369ef5f674ee7a81184103af64b2a485f53ed94233048f44e1df362311f67"
+    },
+    {
+      "path": "battle-cases.json",
+      "bytes": 5617,
+      "sha256": "284d799a6870e7253886683adb3ac8f3adfc99b83476e961d0fc51a9822748b3"
+    },
+    {
+      "path": "battle-design.json",
+      "bytes": 1242,
+      "sha256": "561659d290f51beeecdee275d7828a9d76ecc8ed82b7176f962618746fff8624"
+    },
+    {
+      "path": "cases.json",
+      "bytes": 9753,
+      "sha256": "d196a81630e67bfceb7caab06278621d53c25b0938f620a1896d4fef6c98f16d"
+    },
+    {
+      "path": "config.example.json",
+      "bytes": 339,
+      "sha256": "ad4b73fd770df5171210cd1bbbaa1b6b49a55df11dc2dbf82cfab2834b5050b2"
+    },
+    {
+      "path": "cpu.json",
+      "bytes": 169,
+      "sha256": "3e9110cffa2375afb6a6957ccd038aea27a6c8b5ca4fee8ece1419105790a9bf"
+    },
+    {
+      "path": "cuda-dll-comparison.json",
+      "bytes": 745,
+      "sha256": "60532c9f4b369293639feee5b0c3b50a140541dc02bc5bd4fda843b6f8e6f70e"
+    },
+    {
+      "path": "desktop/__init__.py",
+      "bytes": 72,
+      "sha256": "f0bcba2426e5c2092b97526f4936bd3900f999439a65e390033714f5a141a898"
+    },
+    {
+      "path": "desktop/build-requirements.txt",
+      "bytes": 146,
+      "sha256": "15e576e1fb960c5f834238056472d5e969aef0fa5ce4d2f15537db7ee29ef471"
+    },
+    {
+      "path": "desktop/build_windows.py",
+      "bytes": 2586,
+      "sha256": "ab874d952363cfd8a9f4ad000b0f4e3da253288108031b2658e32f0102b87993"
+    },
+    {
+      "path": "desktop/core.py",
+      "bytes": 17857,
+      "sha256": "6bc8d19b6c8e8f6978372f91a4923478c1591dc82d317496a631eb680ee0427c"
+    },
+    {
+      "path": "desktop/launcher.py",
+      "bytes": 18352,
+      "sha256": "8b71bb7c8eab384a84ad504645727fc76d7a27bdb5a1ee503e1d9c747ba44b97"
+    },
+    {
+      "path": "desktop/licenses/OpenSSL-3.0.19.txt",
+      "bytes": 10175,
+      "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a"
+    },
+    {
+      "path": "desktop/licenses/RUNTIME_NOTICES.md",
+      "bytes": 1035,
+      "sha256": "13e08a32e0e968f556e330378900b6f4b76147f928033e6c829f8765b0b675e0"
+    },
+    {
+      "path": "desktop/licenses/Tcl-license.terms",
+      "bytes": 2255,
+      "sha256": "c0a69a2bfd757361ec7e6143973b103c90409316b49e9c88db26ad6388e79f16"
+    },
+    {
+      "path": "desktop/licenses/zlib-1.3.1.txt",
+      "bytes": 1002,
+      "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
+    },
+    {
+      "path": "desktop/release.json",
+      "bytes": 585,
+      "sha256": "911b613e3df7f912ee5aa19162f51ffd353c45269a247b0cece871956f1d1a69"
+    },
+    {
+      "path": "desktop/START_HERE.txt",
+      "bytes": 2320,
+      "sha256": "b2ffed3ea2f9f68d57b48e3810f99e6d0e3c8e4a0393caa8b68bcf8f1e83e81d"
+    },
+    {
+      "path": "desktop/verification.json",
+      "bytes": 3887,
+      "sha256": "1fed4db60219529363b19253899faf87f5708e513d0dd3a84fc48747999096fe"
+    },
+    {
+      "path": "docs/BATTLES.md",
+      "bytes": 13761,
+      "sha256": "18fe47d8f79e664a7de95aea9b51c469440a7f35d3cca3a340dfd4fbe4a25c9c"
+    },
+    {
+      "path": "docs/BUILD_WINDOWS.md",
+      "bytes": 2408,
+      "sha256": "2a97c289e8dec03caa1b119b15aa72ed2cbc057c53c6018b83d7ca8e022dcde3"
+    },
+    {
+      "path": "docs/GALLERY.md",
+      "bytes": 9695,
+      "sha256": "ec97156b4dff154c181a72a21346ac295981673766f91e5f6a6939f51772f3c6"
+    },
+    {
+      "path": "docs/INTERFACE.md",
+      "bytes": 11740,
+      "sha256": "141aa33e5fca7196a954f97fe53b7620b9b0e247472b3dae0aea88385475869e"
+    },
+    {
+      "path": "docs/REPRODUCE.md",
+      "bytes": 14144,
+      "sha256": "462b71e2aa9e40287879bdd76a665e876ee7a5ba07e38b010f9f78371b5cd89c"
+    },
+    {
+      "path": "docs/RESULTS.md",
+      "bytes": 4707,
+      "sha256": "b097c74f6db07a84d9bc97e0098021722cef3c0629ad8dee6a6d7638c8616800"
+    },
+    {
+      "path": "environment.json",
+      "bytes": 5612,
+      "sha256": "40d9ac606b20edef2ce6ea119799832680b89855c5b3ddb44898b56bbe3b4f7e"
+    },
+    {
+      "path": "FLUX3.pyw",
+      "bytes": 128,
+      "sha256": "18fa52d2a2e2e4728b1adf3493b770a808aeb27ddc1515ae16ab8c9df135a4d4"
+    },
+    {
+      "path": "GITHUB_DESCRIPTION.txt",
+      "bytes": 188,
+      "sha256": "294ea305bfee15d020fbe82f333dccb0b3920e4bd5dd0dd90ef512a8a74a3848"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1069,
+      "sha256": "72380798af61d6131287b0dd3c8dc5345535df641002fece3a02d7ef109c5f8e"
+    },
+    {
+      "path": "loaded-modules.json",
+      "bytes": 935,
+      "sha256": "108076004e3ee13c29fb4be2ca200b462b93e7f66e81a582656d6efca65a0a04"
+    },
+    {
+      "path": "prompts/fantasy-battle-clear.txt",
+      "bytes": 1152,
+      "sha256": "60a920a4274985a9b4fcb2caf25d25cee954e6991cc608c795b689f7cc37c669"
+    },
+    {
+      "path": "prompts/fantasy-battle.txt",
+      "bytes": 728,
+      "sha256": "4335ccf1ce10928b5f3ef28ffb3f4107e09c5c490b834e5aaab8278c08952cb8"
+    },
+    {
+      "path": "prompts/fantasy-character.txt",
+      "bytes": 744,
+      "sha256": "8dea66600df70e26abd4f1f6b53160986a3f8982041c0bcbf182bb8b1d4a308d"
+    },
+    {
+      "path": "prompts/fantasy-location.txt",
+      "bytes": 738,
+      "sha256": "f0235a58580c9109095948c218cfc6932feaa0fa5ed2558f46358c6487fb7011"
+    },
+    {
+      "path": "prompts/fantasy-weapon.txt",
+      "bytes": 768,
+      "sha256": "aa1054be24a2fb542376aab8d83451263d68c54dffab8d3174c8d6a1f7c458f2"
+    },
+    {
+      "path": "prompts/hitech-battle.txt",
+      "bytes": 745,
+      "sha256": "6bdbc78d85c6f9da8d5d78aaa80e70ba6dab35d69b3ead81ba23af23d71bff08"
+    },
+    {
+      "path": "prompts/hitech-character.txt",
+      "bytes": 741,
+      "sha256": "83147903539efd9500cdfcf130d96bc933bc6c34dc33bbf6002ebf8896832ba0"
+    },
+    {
+      "path": "prompts/hitech-location.txt",
+      "bytes": 782,
+      "sha256": "0a7be70f94ede178b5ac657470e0047dcea13e8d6db8062f4341dfd99d12d57b"
+    },
+    {
+      "path": "prompts/hitech-weapon.txt",
+      "bytes": 744,
+      "sha256": "34361d5d898fdbea1f0541b0a370959cc50210b7c804742be28abb34b9560805"
+    },
+    {
+      "path": "prompts/people-musician.txt",
+      "bytes": 718,
+      "sha256": "0f58932381f24649e7da5b34bcf9d3805af8e144bf44f684bf360f0ee6c25dbd"
+    },
+    {
+      "path": "prompts/people-portrait.txt",
+      "bytes": 737,
+      "sha256": "bf81ea2cb7de9c1e13e8369756c55934f7efd7f23398cc0d2152ed5f9bd01c32"
+    },
+    {
+      "path": "prompts/robot-battle-clear.txt",
+      "bytes": 1179,
+      "sha256": "c179fa4255b1a5c0f06f9e424f0ff9ebe1832a13065490cce394bed79baa83e2"
+    },
+    {
+      "path": "prompts/rural-river.txt",
+      "bytes": 735,
+      "sha256": "67e43e612a7350b0bbc1bfa9e68560f6bd936fb03fcbf68e94f02d42ead9ee81"
+    },
+    {
+      "path": "prompts/rural-winter.txt",
+      "bytes": 700,
+      "sha256": "97ade63d868f43ba6524515571f5d24290bf711043a73ab1d499b9acf5a19362"
+    },
+    {
+      "path": "prompts/steampunk-battle-clear.txt",
+      "bytes": 1148,
+      "sha256": "f31a4c726bc04977ee86dc315c19752d826c4944381aac8a1a8e58e8af29b2b2"
+    },
+    {
+      "path": "prompts/steampunk-battle.txt",
+      "bytes": 724,
+      "sha256": "72268bbeeb29eb96e23d8b4d051ca3a7cabcdcd111f6bb1aea6b41c72a127b1c"
+    },
+    {
+      "path": "prompts/steampunk-character.txt",
+      "bytes": 727,
+      "sha256": "2d727606eb8eb96f4d6f21c7d8c9e7000393f53c31d4e5d57b417c2c6e4871af"
+    },
+    {
+      "path": "prompts/steampunk-location.txt",
+      "bytes": 735,
+      "sha256": "b86c23b6001106fd455fb81e23d87ece51e2f00ebef91f74ca060c3ef0f08d0c"
+    },
+    {
+      "path": "prompts/steampunk-weapon.txt",
+      "bytes": 721,
+      "sha256": "29a005077714fc5b6b61b81c6a873947665b418d7bc6d1aeb1c61b140d5d698c"
+    },
+    {
+      "path": "prompts/ui-portrait.txt",
+      "bytes": 736,
+      "sha256": "0f9d91e42b786267607f56fd246f2c7e58d536fa207d97553b9e550cdbfea16b"
+    },
+    {
+      "path": "prompts/urban-bakery.txt",
+      "bytes": 732,
+      "sha256": "c156a2e7a2f8c0be154bda30c7907e71ac7897879b01d1ec0fe2a2618ff4cd9d"
+    },
+    {
+      "path": "prompts/urban-moscow.txt",
+      "bytes": 717,
+      "sha256": "1d229aaddb41fc9e38f12df7f8dff59d5cbdba491bdb1d648dec6a4aa24ea8d3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9436,
+      "sha256": "094b6fa0800beaf9b65f8c63f4ff8a1a14c383d02f4afbb68a3df671b3d5e0f7"
+    },
+    {
+      "path": "RELEASE_NOTES.md",
+      "bytes": 2538,
+      "sha256": "05b486daee28e0c350bde7815a55019aa7cbb1d9a023a9b867a863cf1ea4ce64"
+    },
+    {
+      "path": "report.html",
+      "bytes": 58835377,
+      "sha256": "5776d5bf6c9b58dbb6d7641029f524263fde4f4f1a1ade80b825a43f9f5941ed"
+    },
+    {
+      "path": "report.template.html",
+      "bytes": 29017,
+      "sha256": "6d074a7ad0aecd4808b23e1001a55a9d5c5603b3a8f911e0d896e912bc4e4f6d"
+    },
+    {
+      "path": "results/batch-fantasy-battle/engine.log",
+      "bytes": 12930,
+      "sha256": "092d9ca9b57e8147b110c91316566d9616f986abf5108ff07dc27920d803631c"
+    },
+    {
+      "path": "results/batch-fantasy-battle/image.png",
+      "bytes": 1067937,
+      "sha256": "78773a55df36a17ec7b4c62fca764992a74cc90d552a8ca2a8398d4832797181"
+    },
+    {
+      "path": "results/batch-fantasy-battle/record.json",
+      "bytes": 2162,
+      "sha256": "6f1de4b9df416d3938b9498aa62ce035c0afa4077a49be4464e3fa8d55c60a51"
+    },
+    {
+      "path": "results/batch-fantasy-battle/sensors.jsonl",
+      "bytes": 9669,
+      "sha256": "9c537e396da586b612441d979bd0e4fdd2058ed85d70fe403b684e007bf8b276"
+    },
+    {
+      "path": "results/batch-fantasy-character/engine.log",
+      "bytes": 12979,
+      "sha256": "ed1f4b5c6974e5bf67e8c9362c61522f341f9b8c9db6b848676c8bc7fb1fb709"
+    },
+    {
+      "path": "results/batch-fantasy-character/image.png",
+      "bytes": 943093,
+      "sha256": "e00352536435d17328c3664a0ab2b8b149275dcde7fbaac3880e4defc7b9d208"
+    },
+    {
+      "path": "results/batch-fantasy-character/record.json",
+      "bytes": 2150,
+      "sha256": "555ad6c53e38a0e7f20e7a7e747d6c6af2c5a1f8efa566880eaa9ee3d6a0f953"
+    },
+    {
+      "path": "results/batch-fantasy-character/sensors.jsonl",
+      "bytes": 9470,
+      "sha256": "f8af4611dd1aa5bcc194eb55a1af0ad41c6c9e021ae82f2e0a8f88003a13c1af"
+    },
+    {
+      "path": "results/batch-fantasy-location/engine.log",
+      "bytes": 12976,
+      "sha256": "0f60c828e0662344dfbdb0e4a372173fdc23f7ca507426065429c158754a57e7"
+    },
+    {
+      "path": "results/batch-fantasy-location/image.png",
+      "bytes": 1083378,
+      "sha256": "75047a02d3669900cb09838a147694276c44a33235f39f46b9548daafbc2b83e"
+    },
+    {
+      "path": "results/batch-fantasy-location/record.json",
+      "bytes": 2168,
+      "sha256": "d7f40c924dc4ed3b44634b8eb4028217e80c8a758c90b3be403f671318b362c0"
+    },
+    {
+      "path": "results/batch-fantasy-location/sensors.jsonl",
+      "bytes": 9675,
+      "sha256": "b6d22efd87ccb77b793ba56c5b8e8d93054d34701dff225c666d0458d8e53ca7"
+    },
+    {
+      "path": "results/batch-fantasy-weapon/engine.log",
+      "bytes": 13105,
+      "sha256": "68906ce47c019d95b2a1324c9830c3e81b80fe880f4c8db4a28f04ef0baa683e"
+    },
+    {
+      "path": "results/batch-fantasy-weapon/image.png",
+      "bytes": 1332695,
+      "sha256": "8d01e5601556b935e651fe094633303347d9ea9be36f10b7626ea69eff0dc0cb"
+    },
+    {
+      "path": "results/batch-fantasy-weapon/record.json",
+      "bytes": 2149,
+      "sha256": "ecbc2c46a44a2038a73add4bb449370fd56795a449055d38eafb78d6401c414c"
+    },
+    {
+      "path": "results/batch-fantasy-weapon/sensors.jsonl",
+      "bytes": 13538,
+      "sha256": "ed382f4235293eff484059b5dfc2a1eba4430b6e9e898d51387500f9db20ddd6"
+    },
+    {
+      "path": "results/batch-fantasy-weapon-1024/engine.log",
+      "bytes": 14776,
+      "sha256": "e0e25e4eb7cf67280349c72a284b09033c59084c438e616c27ab3b2d2f5d2f82"
+    },
+    {
+      "path": "results/batch-fantasy-weapon-1024/image.png",
+      "bytes": 2394932,
+      "sha256": "79449e7799e0b488e6483bfa8f5fcb984603388e3c48b8371787f28ff2be8d21"
+    },
+    {
+      "path": "results/batch-fantasy-weapon-1024/record.json",
+      "bytes": 2174,
+      "sha256": "63faa1a1a66b7fc25ed70746446ec3ea544a607cdab0c000c7270ce70e6d6451"
+    },
+    {
+      "path": "results/batch-fantasy-weapon-1024/sensors.jsonl",
+      "bytes": 31617,
+      "sha256": "78f219816c00f3d1b15bad896701d11086d3e9774f550fb004f9124a937a79b7"
+    },
+    {
+      "path": "results/batch-fantasy-weapon-512/engine.log",
+      "bytes": 13109,
+      "sha256": "31d9da8d771460d305f7e635ff611a0f5b46014bff5b24a64dbe0ee391d97a56"
+    },
+    {
+      "path": "results/batch-fantasy-weapon-512/image.png",
+      "bytes": 643210,
+      "sha256": "ca5a2647cfbde90cf522d53922c80e3e48c6efd5816c98ff743162149f4f8c87"
+    },
+    {
+      "path": "results/batch-fantasy-weapon-512/record.json",
+      "bytes": 2160,
+      "sha256": "13d50589ebe5f5dfaa25d112792178975e2dc00a1b78ffa59790f76336804a00"
+    },
+    {
+      "path": "results/batch-fantasy-weapon-512/sensors.jsonl",
+      "bytes": 6954,
+      "sha256": "3c83a5048692ac00d3d3e3a91685c8b20fb23cbab3e60ed5a399c9091634769d"
+    },
+    {
+      "path": "results/batch-hitech-battle/engine.log",
+      "bytes": 12977,
+      "sha256": "9061cc9e2700b262f15f73abb910d3bf49d08ff22c6686d908e2cf154c53e03b"
+    },
+    {
+      "path": "results/batch-hitech-battle/image.png",
+      "bytes": 1062375,
+      "sha256": "4e26c592e7cc84c44424b6fe1e4afd578c6036d8c079e8518d018914aa993b34"
+    },
+    {
+      "path": "results/batch-hitech-battle/record.json",
+      "bytes": 2132,
+      "sha256": "9aa3f9718b73f5c2bf6789f0dac4101ca0fdf704acc5610e22621e6e3a9f8de1"
+    },
+    {
+      "path": "results/batch-hitech-battle/sensors.jsonl",
+      "bytes": 9673,
+      "sha256": "ef91095120e094c2c91a22ff8393b62d064c19fff3a15616403e40cab507994b"
+    },
+    {
+      "path": "results/batch-hitech-character/engine.log",
+      "bytes": 12917,
+      "sha256": "eb60e18265221d64feaa585ba6b6e6a820affc4867a8417349b2dea2a97d84da"
+    },
+    {
+      "path": "results/batch-hitech-character/image.png",
+      "bytes": 863309,
+      "sha256": "9e2ee5a41c431b8c1bc5faa50c25879f2db6407341bad6561464ac74a5b47369"
+    },
+    {
+      "path": "results/batch-hitech-character/record.json",
+      "bytes": 2143,
+      "sha256": "62482c8c0554e98899c9a97e49cf84c371e825dd70cc0a7ffdd96d929be05ff9"
+    },
+    {
+      "path": "results/batch-hitech-character/sensors.jsonl",
+      "bytes": 9471,
+      "sha256": "44cfeda5e4f90a351912cc2986dfbe5bc58d30783aa1ad688a5a8f8765af91b6"
+    },
+    {
+      "path": "results/batch-hitech-location/engine.log",
+      "bytes": 13117,
+      "sha256": "1dcfaf3ccfae9da45e1111724328653149efe47f01bfed121261ee9df167a63b"
+    },
+    {
+      "path": "results/batch-hitech-location/image.png",
+      "bytes": 1285657,
+      "sha256": "86361f6534969fd638e04f8c05a453d546ae5d1244b35a1a4c927d1768ecb679"
+    },
+    {
+      "path": "results/batch-hitech-location/record.json",
+      "bytes": 2147,
+      "sha256": "fb3c723386e0206bf500c6412cf62be2510bb5da8b51d4a3da89fba430185a9c"
+    },
+    {
+      "path": "results/batch-hitech-location/sensors.jsonl",
+      "bytes": 13547,
+      "sha256": "51be0497aeb9ee0737de8c4fa0e5fc3c02181e6f70b6cefd9b3f7bbbc4addf96"
+    },
+    {
+      "path": "results/batch-hitech-location-1024/engine.log",
+      "bytes": 14788,
+      "sha256": "c28eaf205ab87b0c7b7da672fa0ee4eba5f8817f4814f475ac26433d0e385949"
+    },
+    {
+      "path": "results/batch-hitech-location-1024/image.png",
+      "bytes": 2671236,
+      "sha256": "69f54f5e3269e42af71ea49fea700e72095e72ba7aa44fe0f400c1488ab35b81"
+    },
+    {
+      "path": "results/batch-hitech-location-1024/record.json",
+      "bytes": 2169,
+      "sha256": "3e29e759b222eb6de48e7d3138100c8ee5b28285bc52eb1fdf4867bc0ab46590"
+    },
+    {
+      "path": "results/batch-hitech-location-1024/sensors.jsonl",
+      "bytes": 30414,
+      "sha256": "0e73122cc357a6104dc43237f487c2427b8343a24c74848ef56685c191af2ee0"
+    },
+    {
+      "path": "results/batch-hitech-location-512/engine.log",
+      "bytes": 13121,
+      "sha256": "90f25bdb5ee4e5391ee85f62bace809401ac00b76d0a1a1bb126411400f053fb"
+    },
+    {
+      "path": "results/batch-hitech-location-512/image.png",
+      "bytes": 584903,
+      "sha256": "57a49aa3b6a534e47ee9d7d61a5ec8d2b5ac9ffefd597ce3e7557958e6a52b60"
+    },
+    {
+      "path": "results/batch-hitech-location-512/record.json",
+      "bytes": 2156,
+      "sha256": "152f73ed669c210cc7104194ab0c4a335399b3162e375e331eef4db1d507ac9c"
+    },
+    {
+      "path": "results/batch-hitech-location-512/sensors.jsonl",
+      "bytes": 7337,
+      "sha256": "959fa7ec5a50a3ffd53e2f0907664053ae6f6299e9ccbabfc115ed346a678b26"
+    },
+    {
+      "path": "results/batch-hitech-weapon/engine.log",
+      "bytes": 12946,
+      "sha256": "7575138e47aa9c61cd4b2a55d3ea1fb5b6d0d14c09d4a523f811a1a47e4f0b8e"
+    },
+    {
+      "path": "results/batch-hitech-weapon/image.png",
+      "bytes": 1083548,
+      "sha256": "89c5d073558b040ff2b156eef1bc06be17601fbf738a1242c1faeb55696c1172"
+    },
+    {
+      "path": "results/batch-hitech-weapon/record.json",
+      "bytes": 2152,
+      "sha256": "a9687c46f65f0b230982f507195575f6e3bb8ed4607d607b8957798ca620441c"
+    },
+    {
+      "path": "results/batch-hitech-weapon/sensors.jsonl",
+      "bytes": 13345,
+      "sha256": "677595b6e292045c4416805ebc913ffc7aec21510e3a454d4dfb2066d8362940"
+    },
+    {
+      "path": "results/batch-people-musician/engine.log",
+      "bytes": 12882,
+      "sha256": "02a5931c4ea15a892582e3f201a0f3e3ebfc8a0dd513654af13423baac061b2a"
+    },
+    {
+      "path": "results/batch-people-musician/image.png",
+      "bytes": 843285,
+      "sha256": "d28e07e051882f2f19c1c4f4ceef50249560d497eb10a2b5534344ba2a8151ce"
+    },
+    {
+      "path": "results/batch-people-musician/record.json",
+      "bytes": 2158,
+      "sha256": "d88611e61ae5f639cfd40ed78d5a6e0d00776b6e16c8470925b4ee86b8923538"
+    },
+    {
+      "path": "results/batch-people-musician/sensors.jsonl",
+      "bytes": 9474,
+      "sha256": "269b70dd1d4041282c7f9468883b80b0523842ea9281aee4c880ba6a45d47b39"
+    },
+    {
+      "path": "results/batch-people-portrait/engine.log",
+      "bytes": 12941,
+      "sha256": "7a7a1eb6e9360e35f5940f9fe1626c85bc6f5c8f327e322de682c48a17e44703"
+    },
+    {
+      "path": "results/batch-people-portrait/image.png",
+      "bytes": 1313305,
+      "sha256": "59dc4a56e421fbfbc4af6e0725817fc638ad4b60d2db7948062606eceef9bb2c"
+    },
+    {
+      "path": "results/batch-people-portrait/record.json",
+      "bytes": 2125,
+      "sha256": "7f3e97258a9fde4bdfcc9260f7db1c584fbdc93398e7667d9dc09d7b393be25d"
+    },
+    {
+      "path": "results/batch-people-portrait/sensors.jsonl",
+      "bytes": 13155,
+      "sha256": "2cfd9fdb137e5b205c14cb82653679fa2f74e463a2e3ace1401abde0176eb23f"
+    },
+    {
+      "path": "results/batch-people-portrait-1024/engine.log",
+      "bytes": 14612,
+      "sha256": "6dd7b9ddcd0df21c1bd5c4e595bfe8817f245280b3dbdeb270ecad85c2376f58"
+    },
+    {
+      "path": "results/batch-people-portrait-1024/image.png",
+      "bytes": 2527161,
+      "sha256": "01d60b5508211d13d725a1e14d03d68507ffed785d9e22007dc07b381698eded"
+    },
+    {
+      "path": "results/batch-people-portrait-1024/record.json",
+      "bytes": 2150,
+      "sha256": "dafb36d68410ad6d1a0bbed81d5f74027cf3e9e4461dd5fdb23e9f5ec1d51c4d"
+    },
+    {
+      "path": "results/batch-people-portrait-1024/sensors.jsonl",
+      "bytes": 29084,
+      "sha256": "7fb99ad59765fd9953812121e939d95fccc26f92d8ada516a552ff9ab00f3efa"
+    },
+    {
+      "path": "results/batch-people-portrait-512/engine.log",
+      "bytes": 12945,
+      "sha256": "81dcb27b6b24f10f330935e1f282d26bdbe74f9442ff8ed46fbe750e0d391f07"
+    },
+    {
+      "path": "results/batch-people-portrait-512/image.png",
+      "bytes": 594680,
+      "sha256": "e34ef515173a1a233c3bd634428fb280cc17eb6d536cb46e5ec1a5eda952f792"
+    },
+    {
+      "path": "results/batch-people-portrait-512/record.json",
+      "bytes": 2136,
+      "sha256": "182612739875a02ece7459646aa2363f37eb7dcf242f177348ecbc1118083b29"
+    },
+    {
+      "path": "results/batch-people-portrait-512/sensors.jsonl",
+      "bytes": 6956,
+      "sha256": "7321904260df85b9a1b453c654c58f84d99daece17cd14b2531f6e64513762f0"
+    },
+    {
+      "path": "results/batch-rural-river/engine.log",
+      "bytes": 12932,
+      "sha256": "d2201efb789f7862464d1952a2f1605782358826816332214f84b8359510d4ca"
+    },
+    {
+      "path": "results/batch-rural-river/image.png",
+      "bytes": 1147777,
+      "sha256": "8efb658dbb970995b996bfec8189b0ed7883c7a75ff89e1dee54255d78375a47"
+    },
+    {
+      "path": "results/batch-rural-river/record.json",
+      "bytes": 2136,
+      "sha256": "8214dae18e014f44cd4b25056aee5962ccfc58cfa256b29deb4f2cc143968f1e"
+    },
+    {
+      "path": "results/batch-rural-river/sensors.jsonl",
+      "bytes": 10251,
+      "sha256": "82d33166edb20abc07d75f854d7bcefc8fcefe904cd451fa9bcfbbb005d217cb"
+    },
+    {
+      "path": "results/batch-rural-winter/engine.log",
+      "bytes": 12805,
+      "sha256": "8c929dd8ae937d867a96f06945e081295f35a9dc47971bb7990673e351b4dcf8"
+    },
+    {
+      "path": "results/batch-rural-winter/image.png",
+      "bytes": 1123160,
+      "sha256": "f12e23e10b288618de45c13a33fc92c6d917da5d236fd0f00ff80725fb85b709"
+    },
+    {
+      "path": "results/batch-rural-winter/record.json",
+      "bytes": 2159,
+      "sha256": "c54ccb6a16da1ce2672818a2c341f3dfa1bfae7bc1c80d29ff08f8324a6cd394"
+    },
+    {
+      "path": "results/batch-rural-winter/sensors.jsonl",
+      "bytes": 10449,
+      "sha256": "0bb31166bf2467811f68a4cfe0a9dc6f11d6c4c86de0245796d24ca2809cc7be"
+    },
+    {
+      "path": "results/batch-steampunk-battle/engine.log",
+      "bytes": 12881,
+      "sha256": "dd9b7c0ad7900b6b9a874462e059e48eed40a5ff93fce9a96ad2060d2a961e5c"
+    },
+    {
+      "path": "results/batch-steampunk-battle/image.png",
+      "bytes": 1033190,
+      "sha256": "7eaf32f040fe514b971e86feafcf00ae69a144e09d30e86df7c770c237a7bc4f"
+    },
+    {
+      "path": "results/batch-steampunk-battle/record.json",
+      "bytes": 2143,
+      "sha256": "1073cd5a8a628384b16d018b3d1e8edc4f211f0938e1eb7db6147042a98f0a6f"
+    },
+    {
+      "path": "results/batch-steampunk-battle/sensors.jsonl",
+      "bytes": 10245,
+      "sha256": "a74da16572e7065d8fd4dd3e9366595937c826677fbfd2f6fe51ebc06e59533c"
+    },
+    {
+      "path": "results/batch-steampunk-character/engine.log",
+      "bytes": 12901,
+      "sha256": "974eee5ca0e94642217d51637ec4422b0f3b63ab3ad58b27a8341e67082a231b"
+    },
+    {
+      "path": "results/batch-steampunk-character/image.png",
+      "bytes": 971431,
+      "sha256": "4939e471b6eb0734689a33c045e479ed005ec26bd202b09773c3ab3170d4d01d"
+    },
+    {
+      "path": "results/batch-steampunk-character/record.json",
+      "bytes": 2183,
+      "sha256": "61c9a0b12ff69f37156a49efcd0aa82da20eb672ffbb7ccd9473ba53816967da"
+    },
+    {
+      "path": "results/batch-steampunk-character/sensors.jsonl",
+      "bytes": 9088,
+      "sha256": "e114ba2d51e5b8c3114d6cdb0a02afe8d6796830920d3081b2571c211c37dd86"
+    },
+    {
+      "path": "results/batch-steampunk-location/engine.log",
+      "bytes": 12938,
+      "sha256": "4366d49b68bf6ba30d4ace69b78f96c5267ce1cc55f1fa2272084698699cf9eb"
+    },
+    {
+      "path": "results/batch-steampunk-location/image.png",
+      "bytes": 1145310,
+      "sha256": "09fc5cc73e85a287c1888b7fb7ec02b5127de617ced3cb4f106a2c2aa028f8ec"
+    },
+    {
+      "path": "results/batch-steampunk-location/record.json",
+      "bytes": 2168,
+      "sha256": "61f1834bfbebee7b436942a17e911b4a55f25a5d832e082d640d6785b294a9e7"
+    },
+    {
+      "path": "results/batch-steampunk-location/sensors.jsonl",
+      "bytes": 9472,
+      "sha256": "8708daacdd8a5f5ffed74a7e22d1d69afc6f492548e593d392d3ae80542c5159"
+    },
+    {
+      "path": "results/batch-steampunk-weapon/engine.log",
+      "bytes": 12857,
+      "sha256": "6c5733c120115c9487948b3d9fa622ebff939daa1b3bfb6fa3c4fdf8add6281f"
+    },
+    {
+      "path": "results/batch-steampunk-weapon/image.png",
+      "bytes": 1263164,
+      "sha256": "340bf49860411e364566542a9af35f577094cb3739e11b4f904ad53e342ba23d"
+    },
+    {
+      "path": "results/batch-steampunk-weapon/record.json",
+      "bytes": 2163,
+      "sha256": "afec75c9aafd64e68e9df91a95a1da1893e6ac7c1af7a5d73537d47a449cb87a"
+    },
+    {
+      "path": "results/batch-steampunk-weapon/sensors.jsonl",
+      "bytes": 13931,
+      "sha256": "a99b565a8118d9c8d445efd00340ea6bd6172355416cefad523d0ff35af55f80"
+    },
+    {
+      "path": "results/batch-urban-bakery/engine.log",
+      "bytes": 12922,
+      "sha256": "275d1454098955bbb5c936ff65e1f784121eef5cead034045b15928fba453df7"
+    },
+    {
+      "path": "results/batch-urban-bakery/image.png",
+      "bytes": 1547425,
+      "sha256": "4a4cb8262140729d6a12d498fe636aab3cb466b01455f924fac6fef88ae1a836"
+    },
+    {
+      "path": "results/batch-urban-bakery/record.json",
+      "bytes": 2162,
+      "sha256": "f13ae31a0183afe4b383ed048c86178f41a5c7d1ed4bf82aea36591304df9be3"
+    },
+    {
+      "path": "results/batch-urban-bakery/sensors.jsonl",
+      "bytes": 13922,
+      "sha256": "08211944865f84ef425ea3bad3128236b95e887c63a568e451b373b11a5c49d3"
+    },
+    {
+      "path": "results/batch-urban-moscow/engine.log",
+      "bytes": 12839,
+      "sha256": "1366d8bbc895d52aca77e58510602f40b716e3ede903114ff916a1e4950148e7"
+    },
+    {
+      "path": "results/batch-urban-moscow/image.png",
+      "bytes": 1149744,
+      "sha256": "3a8c858fa03bfda6a73aed5ea6d7eb92a7f24f4a8e9a8f188b444e7a75987505"
+    },
+    {
+      "path": "results/batch-urban-moscow/record.json",
+      "bytes": 2153,
+      "sha256": "bde76f4acb4a8281568f728801a335d3eade5b796f66495b633972e1cf822355"
+    },
+    {
+      "path": "results/batch-urban-moscow/sensors.jsonl",
+      "bytes": 11026,
+      "sha256": "c17f44fca03aa3d048d6e84d2d420f5313253f6ab6ce93651a1402fd43c0a835"
+    },
+    {
+      "path": "results/battle-fantasy-clear-123/engine.log",
+      "bytes": 15139,
+      "sha256": "91b28d5bfdc6c0e4a3e616fd19b0404172e1b0df253eaf37f7b6e8c814afb7f4"
+    },
+    {
+      "path": "results/battle-fantasy-clear-123/image.png",
+      "bytes": 1058604,
+      "sha256": "68b586658025fa3ada54b5e45c0b2f50da8f2e6b5811d382e139095a164567ef"
+    },
+    {
+      "path": "results/battle-fantasy-clear-123/live.log",
+      "bytes": 15083,
+      "sha256": "600612bc639cbe90469946837f3e0260d4c2594ee31149a18fb1de8fe98bb8e3"
+    },
+    {
+      "path": "results/battle-fantasy-clear-123/record.json",
+      "bytes": 2185,
+      "sha256": "0bfd698d641ec3d52bd2247c22fbe9bc44fc09ee98fc529645eca058dcf752ad"
+    },
+    {
+      "path": "results/battle-fantasy-clear-123/sensors.jsonl",
+      "bytes": 10200,
+      "sha256": "ed4a8485653448feb592aacd4341d3f166f328abed87d56ff8d2eaddd899c7f8"
+    },
+    {
+      "path": "results/battle-fantasy-clear-42/engine.log",
+      "bytes": 15137,
+      "sha256": "c4899fbf6ef841a8303dab2add4d56e2020cb8b0ca4d23220c6c724a633e4b5b"
+    },
+    {
+      "path": "results/battle-fantasy-clear-42/image.png",
+      "bytes": 1065896,
+      "sha256": "9425b6981d0810c49f627238e58da7355c46b7f910e0618168f0fd83e4e6b30b"
+    },
+    {
+      "path": "results/battle-fantasy-clear-42/live.log",
+      "bytes": 15081,
+      "sha256": "99ee5d7801836120bad9a4d104960b9ed5b967fa33f4d83b0fc0c491e0cf362e"
+    },
+    {
+      "path": "results/battle-fantasy-clear-42/record.json",
+      "bytes": 2181,
+      "sha256": "e9419a7359e145a86e47536dfd2ccaf3f6c05dd1cecb2e98ad9e5e9996a4d7b1"
+    },
+    {
+      "path": "results/battle-fantasy-clear-42/sensors.jsonl",
+      "bytes": 10010,
+      "sha256": "e5dc3b08482ef54a91629d752e9e1b191c92b905c83c49018dd7e27d5c8b3d02"
+    },
+    {
+      "path": "results/battle-fantasy-clear-7/engine.log",
+      "bytes": 15135,
+      "sha256": "64f9ca00e3f74baef472c223bef6efabd935dde8025cc2bdf95162c4c90e8feb"
+    },
+    {
+      "path": "results/battle-fantasy-clear-7/image.png",
+      "bytes": 1047750,
+      "sha256": "b435207bede8034b518837e079788a2bb838e9cf181372b9a206efa8b74075f3"
+    },
+    {
+      "path": "results/battle-fantasy-clear-7/live.log",
+      "bytes": 15079,
+      "sha256": "c17da22190ca7dce0ef2ab1e54b5586014fa2959da5b7ac9bc7212889eacab3a"
+    },
+    {
+      "path": "results/battle-fantasy-clear-7/record.json",
+      "bytes": 2176,
+      "sha256": "46afd9048be5274d583e8e46bafcb3826e44f7ecbeb04ac7fe05c389688c3939"
+    },
+    {
+      "path": "results/battle-fantasy-clear-7/sensors.jsonl",
+      "bytes": 10201,
+      "sha256": "70808f2d7f6c95b0369ce9762a55bd6a998f882b5b6e83f92bdc24bdfc15d276"
+    },
+    {
+      "path": "results/battle-fantasy-original-123/engine.log",
+      "bytes": 13051,
+      "sha256": "d94270505c1a5623512aa3c0f41c8f2f2d7fb6e3d9e34211ff653a9a1ed49545"
+    },
+    {
+      "path": "results/battle-fantasy-original-123/image.png",
+      "bytes": 1061922,
+      "sha256": "43dee7223abd1337b8bdd95850439d1bb9be83a5304fa2297b41b4cca2493f6c"
+    },
+    {
+      "path": "results/battle-fantasy-original-123/live.log",
+      "bytes": 12995,
+      "sha256": "3eec1153e2d14eee792844e5877f7962f8281b71163588b3935dd426e1597b8f"
+    },
+    {
+      "path": "results/battle-fantasy-original-123/record.json",
+      "bytes": 2183,
+      "sha256": "0b55ad31c41bd91cd5294cbc3af72906b7e3b946c98015d4bfc856bd2d6c8dbc"
+    },
+    {
+      "path": "results/battle-fantasy-original-123/sensors.jsonl",
+      "bytes": 9434,
+      "sha256": "9f3ffc1a132834d280a693a953a99886cac7cd2e2e802e94c5ea32a8c47e3dad"
+    },
+    {
+      "path": "results/battle-fantasy-original-7/engine.log",
+      "bytes": 13047,
+      "sha256": "a0ef9911803d925212d6cb318ec61950b145235656cd8542fa9e271d16c7cde6"
+    },
+    {
+      "path": "results/battle-fantasy-original-7/image.png",
+      "bytes": 1045543,
+      "sha256": "34637e895cf032b89ba80cd2ff4c6eb409631cc4b3eca9cccc4b7ebccd5e5a69"
+    },
+    {
+      "path": "results/battle-fantasy-original-7/live.log",
+      "bytes": 12991,
+      "sha256": "ff00ffeeb2f8cb18a7ac13c81d6b1672217cddada83a26d1ed46daf876e1d249"
+    },
+    {
+      "path": "results/battle-fantasy-original-7/record.json",
+      "bytes": 2173,
+      "sha256": "e364f045ffe1a71ba13879e0e927dbc7bb36ef98c1f6064219780e9426ccd8d0"
+    },
+    {
+      "path": "results/battle-fantasy-original-7/sensors.jsonl",
+      "bytes": 9047,
+      "sha256": "c80c6ebea4c2309e74487293b8dbaf367b1d0b56edb816d57f135769f5bb8f42"
+    },
+    {
+      "path": "results/battle-robot-clear-123/engine.log",
+      "bytes": 15291,
+      "sha256": "5426acb486eaedd370d725be734c224fe87b2b47c120f73a5986ea619f34c072"
+    },
+    {
+      "path": "results/battle-robot-clear-123/image.png",
+      "bytes": 1038355,
+      "sha256": "b179aa32079a33c5c3092d0e4d8a7a05c3558affba85d887a63ece017fa70199"
+    },
+    {
+      "path": "results/battle-robot-clear-123/live.log",
+      "bytes": 15235,
+      "sha256": "8493cdabfb586e03720d25c4d7401abd8313dc8a25bc459c0824805c7e1de1cf"
+    },
+    {
+      "path": "results/battle-robot-clear-123/record.json",
+      "bytes": 2153,
+      "sha256": "636198ea7c661e58f5409d0daaa52db32722f9e394a1621b0987df52d558ecff"
+    },
+    {
+      "path": "results/battle-robot-clear-123/sensors.jsonl",
+      "bytes": 10639,
+      "sha256": "02d083d61e86c8398b86d311e6907c90c2397015279e65ccf3fbc0f1b414f9ed"
+    },
+    {
+      "path": "results/battle-robot-clear-42/engine.log",
+      "bytes": 15289,
+      "sha256": "99e1f141bcf7c2036f28378f41c82a6127420752dcec47e73229d259e6af1934"
+    },
+    {
+      "path": "results/battle-robot-clear-42/image.png",
+      "bytes": 1077626,
+      "sha256": "a6617618d530f811eb4dca834b7b723d512cd5953196d6463d50e8c3e66161e2"
+    },
+    {
+      "path": "results/battle-robot-clear-42/live.log",
+      "bytes": 15233,
+      "sha256": "bebd7b1842a5b0a3ec95b1e32f634b7b018f63666fa5a9a809039596c407ca7c"
+    },
+    {
+      "path": "results/battle-robot-clear-42/record.json",
+      "bytes": 2147,
+      "sha256": "d37827d242d439d5dea6c90773f09b5e36aae416309de9f8a44ff9b95d33a1ad"
+    },
+    {
+      "path": "results/battle-robot-clear-42/sensors.jsonl",
+      "bytes": 10606,
+      "sha256": "f86200f83aa9a64a63ba872706cb4d23e16b9ae63a6c7332825f3f3cb1e71f02"
+    },
+    {
+      "path": "results/battle-robot-clear-7/engine.log",
+      "bytes": 15287,
+      "sha256": "1596319c8bbe220c4d53cbe8df69dace70e8914b002e383b09875031f7ad69ab"
+    },
+    {
+      "path": "results/battle-robot-clear-7/image.png",
+      "bytes": 1046422,
+      "sha256": "6cce7a58788cddfb3ea7a4a6959d4740a79ab3f35b974d01a1cf6f7140edada0"
+    },
+    {
+      "path": "results/battle-robot-clear-7/live.log",
+      "bytes": 15231,
+      "sha256": "0ec5d071af94bb81dbe8d17f3e3807d08174216ce47a7c8bcfd59e38ac6b4b37"
+    },
+    {
+      "path": "results/battle-robot-clear-7/record.json",
+      "bytes": 2143,
+      "sha256": "9b5976f776f280e08d4f5e9411b1c25588c157ab73dbf1bad8f838b0a5c17208"
+    },
+    {
+      "path": "results/battle-robot-clear-7/sensors.jsonl",
+      "bytes": 10445,
+      "sha256": "d196460c838669cdfb8f9369074a2a83fb7e95a9571a5fc7b33b514298036413"
+    },
+    {
+      "path": "results/battle-robot-original-123/engine.log",
+      "bytes": 13097,
+      "sha256": "62cc75592ac08192ac38315ead2144bb221e8daafac15d0004b84697a778ba84"
+    },
+    {
+      "path": "results/battle-robot-original-123/image.png",
+      "bytes": 1059701,
+      "sha256": "c5994e971a9932647a6ed8b9722c368ed7756efa6d9d0ae0036f71d53e410fec"
+    },
+    {
+      "path": "results/battle-robot-original-123/live.log",
+      "bytes": 13041,
+      "sha256": "c15c017a57f4dbdf8ffe752630d3549b33dd70702aa86de545d827ec08bcf357"
+    },
+    {
+      "path": "results/battle-robot-original-123/record.json",
+      "bytes": 2151,
+      "sha256": "5c75042e9b0bb480027e0ed5e4ad1d95615245d5d508a5bf8a9480d9d9cea54c"
+    },
+    {
+      "path": "results/battle-robot-original-123/sensors.jsonl",
+      "bytes": 9241,
+      "sha256": "1fb99275b0df7f55ddb1959fc5140af51bcffbe02d59c61e61e1d72a82a97ddc"
+    },
+    {
+      "path": "results/battle-robot-original-7/engine.log",
+      "bytes": 13093,
+      "sha256": "9ca4265d71ead3d39c75109406ecf1f65bb432e4621263aa8bdcec176d5798db"
+    },
+    {
+      "path": "results/battle-robot-original-7/image.png",
+      "bytes": 1057105,
+      "sha256": "f4a8ac79d461b59d63a966526850e524239b5a72688977f6087782945b85e99b"
+    },
+    {
+      "path": "results/battle-robot-original-7/live.log",
+      "bytes": 13037,
+      "sha256": "43878a7a4337c5d2dfb5a68d99aa925515ebee9e09efc3c87311feb4ebaba442"
+    },
+    {
+      "path": "results/battle-robot-original-7/record.json",
+      "bytes": 2141,
+      "sha256": "df12a15e0863ba248c6c6c1b7d749a7376932a6c30ac6ce07be405edeb91f680"
+    },
+    {
+      "path": "results/battle-robot-original-7/sensors.jsonl",
+      "bytes": 9432,
+      "sha256": "0561d266363d15271558cb0df20c8afc3fa24aa7bdb0ac846886f4aa1aaed2ae"
+    },
+    {
+      "path": "results/battle-steampunk-clear-42/engine.log",
+      "bytes": 15117,
+      "sha256": "8478b77ad51cc278b385b3941d306acf09c373f1a4cc304ceabfa15a55d9ddc1"
+    },
+    {
+      "path": "results/battle-steampunk-clear-42/image.png",
+      "bytes": 974981,
+      "sha256": "d743a164205fd3991dd4a35498cadc0bbaf7d31fb19516af4864acf85f1cf686"
+    },
+    {
+      "path": "results/battle-steampunk-clear-42/live.log",
+      "bytes": 15061,
+      "sha256": "33cf27b4cf4851b15681c6429d8921d13aff9c550bd6eb164955c892b80804e3"
+    },
+    {
+      "path": "results/battle-steampunk-clear-42/record.json",
+      "bytes": 2164,
+      "sha256": "ac2dc5d7d3a22cde6921f7c80f98bed7e1ac6013b0b3446eb70ac615ffca6bfa"
+    },
+    {
+      "path": "results/battle-steampunk-clear-42/sensors.jsonl",
+      "bytes": 10246,
+      "sha256": "40b0ec4f4c2052563662a37e2e2df8bc6cf0654904fbfe3747a3062bfc5ff28a"
+    },
+    {
+      "path": "results/battle-steampunk-clear-7/engine.log",
+      "bytes": 15115,
+      "sha256": "ea5bbf533cbbfe37972fa1bb3bbc35ae52090e8fbdcbfd501d75295f3ad78332"
+    },
+    {
+      "path": "results/battle-steampunk-clear-7/image.png",
+      "bytes": 888207,
+      "sha256": "6f82e6939fe58f4fc8e649a45bb37752b1504f763b2a06c8e98b7886890c6d5e"
+    },
+    {
+      "path": "results/battle-steampunk-clear-7/live.log",
+      "bytes": 15059,
+      "sha256": "8ec40f1d788ca796c121216ef55cd23e4b376d91353d9d670429501d5fb2b5a4"
+    },
+    {
+      "path": "results/battle-steampunk-clear-7/record.json",
+      "bytes": 2158,
+      "sha256": "8285939e01b620cbbdd986924dd6ffe78d7fe2e4a35b4196fa67394c5f777f22"
+    },
+    {
+      "path": "results/battle-steampunk-clear-7/sensors.jsonl",
+      "bytes": 10061,
+      "sha256": "ebbe48ec1691ec4731e3fe32ccfc08ad9bd6264d1eaa65a5114936478ef95e3f"
+    },
+    {
+      "path": "results/toolkit-only-portrait-512/engine.log",
+      "bytes": 12945,
+      "sha256": "5d95cd56d8f6e106b285179ada8c5080fdc9f154f6466b273b7237ad02cec36a"
+    },
+    {
+      "path": "results/toolkit-only-portrait-512/image.png",
+      "bytes": 594680,
+      "sha256": "e34ef515173a1a233c3bd634428fb280cc17eb6d536cb46e5ec1a5eda952f792"
+    },
+    {
+      "path": "results/toolkit-only-portrait-512/record.json",
+      "bytes": 2136,
+      "sha256": "190c97c2ea22ebf03d1b4742dd97034759c3d6f8238756701fa37621864b2c2a"
+    },
+    {
+      "path": "results/toolkit-only-portrait-512/sensors.jsonl",
+      "bytes": 6376,
+      "sha256": "099ec2509ca85f604641e905aaf58a38f22589434660315c48dfe869ed6cdc78"
+    },
+    {
+      "path": "results/ui-67b47e1c51d34841/engine.log",
+      "bytes": 13042,
+      "sha256": "1f86689df9a7ed6736a51d72d01be5d4b7807a90be026f6abdd9ec36570ca059"
+    },
+    {
+      "path": "results/ui-67b47e1c51d34841/image.png",
+      "bytes": 594051,
+      "sha256": "25ec8e2dce56bf1ed5c53b4c03b9c6e119a815cea778b1406f4f1238b3b43e3b"
+    },
+    {
+      "path": "results/ui-67b47e1c51d34841/record.json",
+      "bytes": 2360,
+      "sha256": "1fb5f31765f2052306ef71fc5c719cbf45bb4a7d2415827aacf9a4f1e335000b"
+    },
+    {
+      "path": "results/ui-67b47e1c51d34841/sensors.jsonl",
+      "bytes": 6151,
+      "sha256": "1a235b3457363be9cb1207e67ad92518ffdb23c81386bfcbf76ce3d64c10b324"
+    },
+    {
+      "path": "results/ui-a5e49cdf769f4b2a/engine.log",
+      "bytes": 13041,
+      "sha256": "e5f971bf93fadbceb723a25a9e20d0373885c6851be856580a3c6852a1ecd4c1"
+    },
+    {
+      "path": "results/ui-a5e49cdf769f4b2a/image.png",
+      "bytes": 583059,
+      "sha256": "bfaafe27ba6d4daeefe4958f10f645a5f9ac193eb57600f443eb0745c87c6e86"
+    },
+    {
+      "path": "results/ui-a5e49cdf769f4b2a/record.json",
+      "bytes": 2357,
+      "sha256": "739c2cea310fcb676af73ead22c1359791d9f455b121a035eb7a94f0ed31f471"
+    },
+    {
+      "path": "results/ui-a5e49cdf769f4b2a/sensors.jsonl",
+      "bytes": 6351,
+      "sha256": "ec877d7f0e7764935c0bc54b99b8b250fc28a4614e3b856db7d7c344ce4cf291"
+    },
+    {
+      "path": "results.csv",
+      "bytes": 7842,
+      "sha256": "443148526f9a537bba0c66c3152111d9a968d2a79e5ce216072b0b0f41211250"
+    },
+    {
+      "path": "results.json",
+      "bytes": 182331,
+      "sha256": "1c7dcd387ab3496304f10847313084f36ebaa3f40e1e77f1482a7eaca64d982c"
+    },
+    {
+      "path": "scripts/app.py",
+      "bytes": 21330,
+      "sha256": "7910799d5d7e8c1a7a1d81f85b9b424be5d2ae4aee8153ba32708eb37da11c8b"
+    },
+    {
+      "path": "scripts/build_report.py",
+      "bytes": 14603,
+      "sha256": "43be1618a1f14e5e5471b16b44ba81c6de033c131771a0ce89a25c1021d88500"
+    },
+    {
+      "path": "scripts/download_assets.py",
+      "bytes": 3277,
+      "sha256": "d80fea4be378ecc319f4d860f092d8f5bda1d54cb70e322d4c30dcc7f4caa15f"
+    },
+    {
+      "path": "scripts/generate.py",
+      "bytes": 12275,
+      "sha256": "1c6c7a26b83f6fa8320b0ea29112c306b4458d275eaec981363633c3eb7c1ae5"
+    },
+    {
+      "path": "scripts/process_env.py",
+      "bytes": 959,
+      "sha256": "253a8c8a4a0dc9465611e4f3e236cba43da45fdd79a0204923f025d25fd394c5"
+    },
+    {
+      "path": "scripts/verify.py",
+      "bytes": 5513,
+      "sha256": "e6de5cf474bb707156be0bfe6ae502304f7b774f8d13bf6ec59fff859f29a81d"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 5004,
+      "sha256": "832ddcab846c9e923912666e83f0b6ffdbd7bda76022938538d20f1bc505e971"
+    },
+    {
+      "path": "SOURCES.md",
+      "bytes": 4478,
+      "sha256": "8c80d1170f126601c27b8214d414d4ee951e0e03d0954d201b672049987b1f00"
+    },
+    {
+      "path": "Start-FLUX3.cmd",
+      "bytes": 151,
+      "sha256": "e221bfa8c8cb47b201e364daf7e6814080be1580329167aeb4cf4ef1a9b44ad6"
+    },
+    {
+      "path": "tests/test_app.py",
+      "bytes": 11914,
+      "sha256": "9016d574c1638f97d371ee35dbfb0885597bef0cb1ec54e487b621b1c4f24aed"
+    },
+    {
+      "path": "tests/test_desktop.py",
+      "bytes": 10014,
+      "sha256": "09f9bb99c346541ca9c53a8ef3bf260f975fb4b08289c74801d83863793e1391"
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "bytes": 4099,
+      "sha256": "28cfd6cefcee9cd00230baea4c891c354ec83e45e88e6dde7326663f34d2f16e"
+    },
+    {
+      "path": "toolkit-comparison-plan.json",
+      "bytes": 402,
+      "sha256": "f142607e6a141b7ef161b7053558e8c8582522deb240b5c4223adb9889748443"
+    },
+    {
+      "path": "toolkit-dlls.json",
+      "bytes": 376,
+      "sha256": "17c34b69f98a05cdc8f20832dc6166f48d97576ec4b454114a821576d9e1ff52"
+    },
+    {
+      "path": "toolkit-loaded-modules.json",
+      "bytes": 214,
+      "sha256": "c3a5f9508be91c92da12f8c6fe084e0a39fe2db1324e49a7e3b3770288010f50"
+    },
+    {
+      "path": "ui/index.html",
+      "bytes": 15703,
+      "sha256": "48b467e3b83fc5af76e44ad23ad75aa7ce5f9855c0c449e0589c30afc98695fd"
+    },
+    {
+      "path": "ui-cases.json",
+      "bytes": 885,
+      "sha256": "61b03bc33f8f7293f893bba88dcf1a5fed4fb968aedaae0cb76e65560ea28013"
+    },
+    {
+      "path": "ui-proof/result-screenshot.jpg",
+      "bytes": 103878,
+      "sha256": "daa6e5b9ed8670c246605d76550e4b34156fd531678731450eccb5c672177713"
+    },
+    {
+      "path": "ui-proof/verification.json",
+      "bytes": 2020,
+      "sha256": "35b7d93bee7e4f24fdf140159841d3de6aa96497489c3cfa5b8fa6e34400048e"
+    },
+    {
+      "path": "VERIFICATION.json",
+      "bytes": 5082,
+      "sha256": "2acfb5f91437f0d19e8f041453101e89ae96b74495574c2d2c5286d1c49eb508"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 15,
+      "sha256": "caac86d9af3a2d373da47784b923cb8af582a6e85f358a7a30856b6236028632"
+    },
+    {
+      "path": "visual-review.json",
+      "bytes": 30156,
+      "sha256": "a15dfbc9000b344af2142d2addcdae2e887d44a05cafa5aa14a022c883b4fbac"
+    }
+  ],
+  "excluded": [
+    "MANIFEST.json itself",
+    "local configuration, user outputs, weights, runtime, caches"
+  ]
+}

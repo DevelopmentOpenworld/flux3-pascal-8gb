@@ -1,0 +1,113 @@
+[V] version: stable-diffusion.cpp version unknown, commit 39bc9d0 --- main.cpp:696
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 8191 MiB):
+  Device 0: NVIDIA GeForce GTX 1070 Ti, compute capability 6.1, VMM: yes, VRAM: 8191 MiB
+load_backend: loaded CUDA backend from runtime\ggml-cuda.dll
+load_backend: loaded CPU backend from runtime\ggml-cpu-haswell.dll
+[V] System Info: 
+   SSE3 = 1 |    SSSE3 = 1 |    AVX = 1 |    AVX2 = 1 |    F16C = 1 |    FMA = 1 |    BMI2 = 1 |    OPENMP = 1 |    REPACK = 1 |  --- main.cpp:697
+[V] using 4 threads for model loading --- model_loader.cpp:190
+[I] loading diffusion model from 'models/flux3-image-klein-Q4_0.gguf' --- diffusion_engine.cpp:739
+[I] load models/flux3-image-klein-Q4_0.gguf using gguf format --- model_loader.cpp:216
+[V] init from 'models/flux3-image-klein-Q4_0.gguf' --- model_loader.cpp:262
+[V] GGUF v3, tensor_count=359, metadata_kv_count=0 --- gguf_reader_ext.h:220
+[I] loading llm from 'models/Qwen3VL-4B-Instruct-Q4_K_M.gguf' --- diffusion_engine.cpp:796
+[I] load models/Qwen3VL-4B-Instruct-Q4_K_M.gguf using gguf format --- model_loader.cpp:216
+[V] init from 'models/Qwen3VL-4B-Instruct-Q4_K_M.gguf' --- model_loader.cpp:262
+[V] GGUF v3, tensor_count=398, metadata_kv_count=32 --- gguf_reader_ext.h:220
+[I] loading vae from 'models/flux2-vae.safetensors' --- diffusion_engine.cpp:810
+[I] load models/flux2-vae.safetensors using safetensors format --- model_loader.cpp:222
+[V] init from 'models/flux2-vae.safetensors', prefix = 'vae.' --- model_loader.cpp:290
+[I] Version: Flux.3 Image Klein  --- diffusion_engine.cpp:1017
+[V] Found 2 backend devices: --- ggml_extend_backend.cpp:714
+[V] #0: CUDA0 --- ggml_extend_backend.cpp:717
+[V] #1: CPU --- ggml_extend_backend.cpp:717
+[V] Initializing backend: CUDA0 --- ggml_extend_backend.cpp:420
+[V] Initializing backend: CPU --- ggml_extend_backend.cpp:420
+[V] using 4 threads for model loading --- model_loader.cpp:190
+[I] Weight type stat:                      f32: 395  |    q4_0: 258  |    q4_K: 216  |    q6_K: 37   |     i32: 1    |    bf16: 101   --- diffusion_engine.cpp:1650
+[I] Conditioner weight type stat:          f32: 145  |    q4_K: 216  |    q6_K: 37    --- diffusion_engine.cpp:1651
+[I] Diffusion model weight type stat:     q4_0: 258  |    bf16: 101   --- diffusion_engine.cpp:1652
+[I] VAE weight type stat:                  f32: 250  |     i32: 1     --- diffusion_engine.cpp:1653
+[V] using mmap for I/O --- model_loader.cpp:894
+[I] using mmap for 'models/flux3-image-klein-Q4_0.gguf' --- model_loader.cpp:900
+[V] using mmap for I/O --- model_loader.cpp:894
+[I] using mmap for 'models/Qwen3VL-4B-Instruct-Q4_K_M.gguf' --- model_loader.cpp:900
+[V] using mmap for I/O --- model_loader.cpp:894
+[I] using mmap for 'models/flux2-vae.safetensors' --- model_loader.cpp:900
+[V] llm: num_layers = 36, vocab_size = 151936, hidden_size = 2560, intermediate_size = 9728 --- llm.hpp:446
+[V] flux3: hidden_size = 3072, context_dim = 20480, depth = 5, single_depth = 28, flow_map = true --- flux3.hpp:52
+[I] using VAE for encoding / decoding --- model_builders.cpp:664
+[I] vae decoder: ch = 128 --- auto_encoder_kl.hpp:529
+[I] conv2d direct auto: CUDA0 -> off (no implicit GEMM path) --- conv_direct.cpp:90
+[I] conv3d direct auto: CUDA0 -> on (implicit GEMM) --- conv_direct.cpp:87
+[V] validating model metadata --- diffusion_engine.cpp:1328
+[V] model metadata validated; weights will be prepared lazily --- diffusion_engine.cpp:1398
+[I] total params memory size = 5891.57MB (VRAM 0.00MB, RAM 5891.57MB): text_encoders 2375.91MB(RAM), diffusion_model 3351.23MB(RAM), vae 164.43MB(RAM), controlnet 0.00MB(N/A), extensions 0.00MB(N/A) --- diffusion_engine.cpp:1459
+[I] running in Flux FLOW mode --- diffusion_engine.cpp:1596
+[I] generate_image 864x480 --- image.cpp:822
+[V] using 4 threads for model loading --- model_loader.cpp:190
+[I] Using 'flux2' preset for reference images --- diffusion_engine.cpp:3261
+[I] sampling using Euler method --- request.cpp:422
+[V] parse '<|im_start|>user\nA clear wide science-fiction illustration of exactly two humanoid robots facing each other on an industrial bridge at night. The left robot is orange and the right robot is dark charcoal. Each robot holds exactly one straight energy sword in its own right hand: orange robot has a blue blade, dark robot has a red blade. Each sword has one short solid black hilt; all right-hand fingers visibly close around that hilt and its thumb locks the grip. The glowing blade emerges directly from the same hilt. Keep both right hands, wrists, hilts and entire blades fully visible and spatially separate. The two blades meet once at the center between the robots. Each robot's left hand is empty, open and lowered. No shields, staffs, loose handles, extra weapons or motion trails. Show both complete robot bodies with anatomically readable arms and articulated joints. Light rain and controlled sparks do not obscure the grips. A large sign on the building behind them reads exactly "СЕКТОР 7" in Russian Cyrillic capitals and the numeral seven. Realistic industrial materials, clear silhouettes, no people or gore. Physical continuity of each grip and weapon is the main subject.\n<|im_end|>\n<|im_start|>assistant\n' to [['<|im_start|>user\n', 1], ['A clear wide science-fiction illustration of exactly two humanoid robots facing each other on an industrial bridge at night. The left robot is orange and the right robot is dark charcoal. Each robot holds exactly one straight energy sword in its own right hand: orange robot has a blue blade, dark robot has a red blade. Each sword has one short solid black hilt; all right-hand fingers visibly close around that hilt and its thumb locks the grip. The glowing blade emerges directly from the same hilt. Keep both right hands, wrists, hilts and entire blades fully visible and spatially separate. The two blades meet once at the center between the robots. Each robot's left hand is empty, open and lowered. No shields, staffs, loose handles, extra weapons or motion trails. Show both complete robot bodies with anatomically readable arms and articulated joints. Light rain and controlled sparks do not obscure the grips. A large sign on the building behind them reads exactly "СЕКТОР 7" in Russian Cyrillic capitals and the numeral seven. Realistic industrial materials, clear silhouettes, no people or gore. Physical continuity of each grip and weapon is the main subject.\n', 1], ['<|im_end|>\n<|im_start|>assistant\n', 1], ] --- conditioner.hpp:2183
+[V] split prompt "<|im_start|>user\n" to 3 tokens ["<|im_start|>", "user", "Ċ", ] --- bpe_tokenizer.cpp:245
+[V] split prompt "A clear wide science-fiction illustration of exactly two humanoid robots facing each other on an industrial bridge at night. The left robot is orange and the right robot is dark charcoal. Each robot holds exactly one straight energy sword in its own right hand: orange robot has a blue blade, dark robot has a red blade. Each sword has one short solid black hilt; all right-hand fingers visibly close around that hilt and its thumb locks the grip. The glowing blade emerges directly from the same hilt. Keep both right hands, wrists, hilts and entire blades fully visible and spatially separate. The two blades meet once at the center between the robots. Each robot's left hand is empty, open and lowered. No shields, staffs, loose handles, extra weapons or motion trails. Show both complete robot bodies with anatomically readable arms and articulated joints. Light rain and controlled sparks do not obscure the grips. A large sign on the building behind them reads exactly "СЕКТОР 7" in Russian Cyrillic capitals and the numeral seven. Realistic industrial materials, clear silhouettes, no people or gore. Physical continuity of each grip and weapon is the main subject.\n" to 239 tokens ["A", "Ġclear", "Ġwide", "Ġscience", "-fiction", "Ġillustration", "Ġof", "Ġexactly", "Ġtwo", "Ġhumanoid", "Ġrobots", "Ġfacing", "Ġeach", "Ġother", "Ġon", "Ġan", "Ġindustrial", "Ġbridge", "Ġat", "Ġnight", ".", "ĠThe", "Ġleft", "Ġrobot", "Ġis", "Ġorange", "Ġand", "Ġthe", "Ġright", "Ġrobot", "Ġis", "Ġdark", "Ġcharcoal", ".", "ĠEach", "Ġrobot", "Ġholds", "Ġexactly", "Ġone", "Ġstraight", "Ġenergy", "Ġsword", "Ġin", "Ġits", "Ġown", "Ġright", "Ġhand", ":", "Ġorange", "Ġrobot", "Ġhas", "Ġa", "Ġblue", "Ġblade", ",", "Ġdark", "Ġrobot", "Ġhas", "Ġa", "Ġred", "Ġblade", ".", "ĠEach", "Ġsword", "Ġhas", "Ġone", "Ġshort", "Ġsolid", "Ġblack", "Ġh", "ilt", ";", "Ġall", "Ġright", "-hand", "Ġfingers", "Ġvisibly", "Ġclose", "Ġaround", "Ġthat", "Ġh", "ilt", "Ġand", "Ġits", "Ġthumb", "Ġlocks", "Ġthe", "Ġgrip", ".", "ĠThe", "Ġglowing", "Ġblade", "Ġemerges", "Ġdirectly", "Ġfrom", "Ġthe", "Ġsame", "Ġh", "ilt", ".", "ĠKeep", "Ġboth", "Ġright", "Ġhands", ",", "Ġwrists", ",", "Ġhil", "ts", "Ġand", "Ġentire", "Ġblades", "Ġfully", "Ġvisible", "Ġand", "Ġspatial", "ly", "Ġseparate", ".", "ĠThe", "Ġtwo", "Ġblades", "Ġmeet", "Ġonce", "Ġat", "Ġthe", "Ġcenter", "Ġbetween", "Ġthe", "Ġrobots", ".", "ĠEach", "Ġrobot", "'s", "Ġleft", "Ġhand", "Ġis", "Ġempty", ",", "Ġopen", "Ġand", "Ġlowered", ".", "ĠNo", "Ġshields", ",", "Ġstaff", "s", ",", "Ġloose", "Ġhandles", ",", "Ġextra", "Ġweapons", "Ġor", "Ġmotion", "Ġtrails", ".", "ĠShow", "Ġboth", "Ġcomplete", "Ġrobot", "Ġbodies", "Ġwith", "Ġanatom", "ically", "Ġreadable", "Ġarms", "Ġand", "Ġarticulated", "Ġjoints", ".", "ĠLight", "Ġrain", "Ġand", "Ġcontrolled", "Ġsparks", "Ġdo", "Ġnot", "Ġobscure", "Ġthe", "Ġgrips", ".", "ĠA", "Ġlarge", "Ġsign", "Ġon", "Ġthe", "Ġbuilding", "Ġbehind", "Ġthem", "Ġreads", "Ġexactly", "Ġ"", "Ð¡", "Ðķ", "Ðļ", "Ð¢Ðŀ", "Ðł", "Ġ", "7", """, "Ġin", "ĠRussian", "ĠCyril", "lic", "Ġcapitals", "Ġand", "Ġthe", "Ġnumeral", "Ġseven", ".", "ĠReal", "istic", "Ġindustrial", "Ġmaterials", ",", "Ġclear", "Ġsil", "hou", "ettes", ",", "Ġno", "Ġpeople", "Ġor", "Ġgore", ".", "ĠPhysical", "Ġcontinuity", "Ġof", "Ġeach", "Ġgrip", "Ġand", "Ġweapon", "Ġis", "Ġthe", "Ġmain", "Ġsubject", ".Ċ", ] --- bpe_tokenizer.cpp:245
+[V] split prompt "<|im_end|>\n<|im_start|>assistant\n" to 5 tokens ["<|im_end|>", "Ċ", "<|im_start|>", "assistant", "Ċ", ] --- bpe_tokenizer.cpp:245
+[I] qwen3vl build cached graph cut plan done (taking 3 ms) --- ggml_graph_cut.cpp:1034
+[V] memory-mapping tensors... --- model_loader.cpp:934
+[I] memory-mapped 353 tensors in 1 files (2132.19 MB), taking 0.00s --- model_loader.cpp:1049
+[V] loading 353/398 tensors from models/Qwen3VL-4B-Instruct-Q4_K_M.gguf --- model_loader.cpp:1133
+
+  |##################################################| 353/353 -   0.00MB/s
+[I] loading tensors completed, taking 0.21s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s) --- model_loader.cpp:1405
+[V] model manager staged compute params (2132.19 MB, 353 tensors, 3 blocks) to CUDA0, taking 1.21s --- model_manager.cpp:623
+[V] qwen3vl compute buffer size: 62.90 MB(VRAM) on CUDA0 (peak across 1 segment) --- ggml_runner.cpp:1022
+[V] computing condition graph completed, taking 1939 ms --- conditioner.hpp:3265
+[I] get_learned_condition completed, taking 1.94s --- image.cpp:537
+[I] generating image: 1/1 - seed 123 --- image.cpp:874
+[I] flux3 build cached graph cut plan done (taking 1 ms) --- ggml_graph_cut.cpp:1034
+[V] memory-mapping tensors... --- model_loader.cpp:934
+[I] memory-mapped 240 tensors in 1 files (2913.38 MB), taking 0.00s --- model_loader.cpp:1049
+[V] loading 316/359 tensors from models/flux3-image-klein-Q4_0.gguf --- model_loader.cpp:1133
+
+  |##################################################| 316/316 -   0.09MB/s
+[I] loading tensors completed, taking 0.20s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s) --- model_loader.cpp:1405
+[V] model manager prepared params backend buffers (  0.04 MB, 76 tensors, 1 blocks, RAM) on CUDA_Host --- model_manager.cpp:494
+[V] model manager staged compute params (2913.41 MB, 316 tensors, 3 blocks) to CUDA0, taking 1.71s --- model_manager.cpp:623
+[V] flux3 compute buffer size: 345.97 MB(VRAM) on CUDA0 (peak across 1 segment) --- ggml_runner.cpp:1022
+
+  |===>                                              |  1/16 -   4.32s/it - ETA 01:04
+  |======>                                           |  2/16 -   2.39s/it - ETA 00:46
+  |=========>                                        |  3/16 -   2.39s/it - ETA 00:39
+  |============>                                     |  4/16 -   2.40s/it - ETA 00:34
+  |===============>                                  |  5/16 -   2.39s/it - ETA 00:30
+  |==================>                               |  6/16 -   2.52s/it - ETA 00:27
+  |=====================>                            |  7/16 -   2.59s/it - ETA 00:24
+  |=========================>                        |  8/16 -   2.51s/it - ETA 00:21
+  |============================>                     |  9/16 -   2.43s/it - ETA 00:18
+  |===============================>                  | 10/16 -   2.51s/it - ETA 00:15
+  |==================================>               | 11/16 -   2.41s/it - ETA 00:13
+  |=====================================>            | 12/16 -   2.40s/it - ETA 00:10
+  |========================================>         | 13/16 -   2.45s/it - ETA 00:07
+  |===========================================>      | 14/16 -   2.39s/it - ETA 00:05
+  |==============================================>   | 15/16 -   2.38s/it - ETA 00:02
+  |==================================================| 16/16 -   2.38s/it
+[I] sampling completed, taking 40.91s --- image.cpp:907
+[I] generating 1 latent images completed, taking 40.91s --- image.cpp:921
+[I] decoding 1 latents --- image.cpp:562
+[I] vae build cached graph cut plan done (taking 0 ms) --- ggml_graph_cut.cpp:1034
+[V] memory-mapping tensors... --- model_loader.cpp:934
+[I] memory-mapped 104 tensors in 1 files (4.14 MB), taking 0.00s --- model_loader.cpp:1049
+[V] loading 140/251 tensors from models/flux2-vae.safetensors --- model_loader.cpp:1133
+
+  |##################################################| 140/140 - 903.13MB/s
+[I] loading tensors completed, taking 0.20s (read: 0.03s, memcpy: 0.00s, convert: 0.05s, copy_to_backend: 0.00s) --- model_loader.cpp:1405
+[V] model manager prepared params backend buffers ( 92.57 MB, 36 tensors, 1 blocks, RAM) on CUDA_Host --- model_manager.cpp:494
+[V] model manager staged compute params ( 96.72 MB, 140 tensors, 1 blocks) to CUDA0, taking 0.02s --- model_manager.cpp:623
+[V] vae compute buffer size: 2633.29 MB(VRAM) on CUDA0 (peak across 1 segment) --- ggml_runner.cpp:1022
+[V] computing vae decode graph completed, taking 2.48s --- vae.hpp:384
+[I] latent 1 decoded, taking 2.48s --- image.cpp:628
+[I] decode_first_stage completed, taking 2.48s --- image.cpp:632
+[I] generate_image completed in 45.36s --- image.cpp:1058
+[V] model manager released params backend buffers ( 92.61 MB, 112 tensors, 2 blocks, RAM) from CUDA_Host --- model_manager.cpp:1299
+[I] save result image 0 to '.\results\battle-robot-clear-123\image.png' (success) --- main.cpp:496
+[I] 1/1 images saved --- main.cpp:572
