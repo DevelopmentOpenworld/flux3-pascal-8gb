@@ -6,16 +6,16 @@
 
 Reproducible image generation on Windows and Pascal sm_61: stable-diffusion.cpp CUDA 12, FLUX.3 Q4_0, Qwen3-VL 4B Q4_K_M and FLUX.2 VAE. Measurements used the existing CUDA Toolkit 12.6.85 installation. The graphical Manager reuses existing CUDA 12 libraries or downloads local libraries when needed. PyTorch is not required.
 
-The current app UI, full report and linked detailed guides are in Russian. This README translates the setup instructions, illustrated excerpts, measurements and limitations. Russian text inside the original images is preserved.
+The current app UI is in Russian. The full report and setup/interface guides are available in Russian and English; other linked documentation may be in Russian. Original Cyrillic text inside images is preserved. The language buttons inside either downloaded report also work offline.
 
-- [Download the standalone interactive report (Russian)](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report.html) – six themes, battle comparisons and resolution comparisons.
-- [Exact files, versions, SHA256 and commands](docs/REPRODUCE.md).
-- [Local generator](docs/INTERFACE.md) – settings and a single current result.
+- [Download the standalone interactive report](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report-EN.html) · [Русский HTML](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report-RU.html) – six themes, battle comparisons and resolution comparisons.
+- [Exact files, versions, SHA256 and commands](docs/REPRODUCE_EN.md).
+- [Local generator](docs/INTERFACE_EN.md) – settings and a single current result.
 - [All battle controls](docs/BATTLES.md), [gallery](docs/GALLERY.md), [CSV](results.csv), [JSON](results.json).
 
 ## Report excerpts: images and measurements
 
-**[Download the full interactive report (Russian) →](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report.html)** · [All images and observations](docs/GALLERY.md) · [Results table](docs/RESULTS.md)
+**[Download the full interactive report →](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report-EN.html)** · [All images and observations](docs/GALLERY.md) · [Results table](docs/RESULTS.md)
 
 Below are six examples from different themes and a separate battle recheck. The complete corpus retains the first results of 39 predefined conditions, including failures. These examples come from a limited sample and do not guarantee quality for arbitrary prompts. Click an image to open its original PNG.
 
@@ -82,7 +82,7 @@ The same portrait uses the same prompt, seed42, 16 steps and CFG1. These are thr
 | 768×768 | 59.2 | 5408 | [PNG](results/batch-people-portrait/image.png) · [Measurements](results/batch-people-portrait/record.json) |
 | 1024×1024 | 130.1 | 5322 | [PNG](results/batch-people-portrait-1024/image.png) · [Measurements](results/batch-people-portrait-1024/record.json) |
 
-At 1024², the engine automatically reduced the VAE decoding tile size; that extra time is included. Across the first 18 thematic scenes, 14 results finished within 60 s. The [full report (Russian)](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report.html) includes other scenes, resolutions and parameters.
+At 1024², the engine automatically reduced the VAE decoding tile size; that extra time is included. Across the first 18 thematic scenes, 14 results finished within 60 s. The [full report](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report-EN.html) includes other scenes, resolutions and parameters.
 
 ### Battles: a clearer grip does not mean the whole scene is correct
 
@@ -125,13 +125,13 @@ Both pairs below use seed42 and 864×480. The revised prompts simplify the compo
 
 None of the eight revised battle images received a full PASS. Visual assessment was performed by the AI author; no independent assessment was carried out. [All battles, seeds 42/7/123 and criteria](docs/BATTLES.md) are retained with the original prompts and PNGs.
 
-**[Full HTML report: theme filters, paired comparisons, resolutions and all 39 runs (Russian) →](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report.html)**. Download the HTML and open it locally; viewing its source on GitHub does not run the interactive report.
+**[Full HTML report: theme filters, paired comparisons, resolutions and all 39 runs →](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report-EN.html)**. Download the HTML and open it locally; viewing its source on GitHub does not run the interactive report.
 
 ## Install and launch without a console
 
 [Download Windows Manager](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Manager-Windows-x64.zip), extract the entire ZIP and open **FLUX3-Manager.exe**. Python is included. Choose a storage folder; select existing engine files, weights and CUDA using **Browse… («Обзор…»)**, or choose **Download missing files («Скачать недостающее»)**. The Manager checks the pinned SHA256 values and saves the settings.
 
-**Start server («Запустить сервер»)**, **Open generator («Открыть генератор»)** and **Stop server («Остановить сервер»)** control the app from the Manager window. Closing the Manager stops its server. In the generator, choose a preset or enter a prompt, set the size, seed, steps and CFG, then click **Generate («Сгенерировать»)**. The default address is `127.0.0.1:8440`; the local session persists between restarts. [Step-by-step guide (Russian)](docs/INTERFACE.md).
+**Start server («Запустить сервер»)**, **Open generator («Открыть генератор»)** and **Stop server («Остановить сервер»)** control the app from the Manager window. Closing the Manager stops its server. In the generator, choose a preset or enter a prompt, set the size, seed, steps and CFG, then click **Generate («Сгенерировать»)**. The default address is `127.0.0.1:8440`; the local session persists between restarts. [Step-by-step guide](docs/INTERFACE_EN.md).
 
 For developers, `Start-FLUX3.cmd` / `python scripts/app.py` is also available; launch the native Manager from source with `python desktop/launcher.py`. Windows Python 3.14.4 x64 / Tcl-Tk 8.6 was tested; the app uses the standard library. [Building the Windows EXE](docs/BUILD_WINDOWS.md) is a separate process; the package excludes models and CUDA.
 

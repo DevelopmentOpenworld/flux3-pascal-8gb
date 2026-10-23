@@ -54,8 +54,22 @@ def main():
         row={k:r.get(k) for k in fields};row['text_status']=r['review']['text_status'];row.update(r['review'].get('battle',{}));writer.writerow(row)
     (ROOT/'results.csv').write_text(buf.getvalue(),encoding='utf-8-sig',newline='')
     full=dict(dataset,runs=[dict(r,image_data='data:image/png;base64,'+base64.b64encode((ROOT/r['image_file']).read_bytes()).decode('ascii')) for r in runs],reproduction=(ROOT/'docs/REPRODUCE.md').read_text(encoding='utf-8'),interface=(ROOT/'docs/INTERFACE.md').read_text(encoding='utf-8'),gui_image='data:image/jpeg;base64,'+base64.b64encode((ROOT/'ui-proof/result-screenshot.jpg').read_bytes()).decode('ascii'))
-    template=(ROOT/'report.template.html').read_text(encoding='utf-8');assert template.count('__REPORT_DATA__')==1
-    (ROOT/'report.html').write_text(template.replace('__REPORT_DATA__',json.dumps(full,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')),encoding='utf-8',newline='\n')
+    full['english']=read(ROOT/'report/en.json')
+    assert set(full['english']['runs'])=={r['run_id'] for r in runs}
+    assert all(r['category'] in full['english']['categories'] for r in primary)
+    full['messages']=read(ROOT/'report/messages.json')
+    assert set(full['messages']['ru'])==set(full['messages']['en'])
+    full['shells']={lang:(ROOT/f'report/{lang}.html').read_text(encoding='utf-8') for lang in ['ru','en']}
+    full['guides']={'en':{'reproduction':(ROOT/'docs/REPRODUCE_EN.md').read_text(encoding='utf-8'),'interface':(ROOT/'docs/INTERFACE_EN.md').read_text(encoding='utf-8')}}
+    full['source_translations']={}
+    template=(ROOT/'report.template.html').read_text(encoding='utf-8')
+    script=(ROOT/'report/ui.js').read_text(encoding='utf-8')
+    for token in ['__LANG__','__REPORT_TITLE__','__REPORT_SHELL__','__REPORT_DATA__','__REPORT_SCRIPT__']:assert template.count(token)==1,token
+    for lang,name in [('ru','report.html'),('en','report.en.html')]:
+        localized=dict(full,default_language=lang)
+        document=template.replace('__LANG__',lang).replace('__REPORT_TITLE__',full['messages'][lang]['title']).replace('__REPORT_SHELL__',full['shells'][lang])
+        document=document.replace('__REPORT_DATA__',json.dumps(localized,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')).replace('__REPORT_SCRIPT__',script)
+        (ROOT/name).write_text(document,encoding='utf-8',newline='\n')
     md=['# Наблюдавшиеся результаты','',f'{len(runs)} завершённых генераций: 25 исходных, 12 дополнительных боёв и {summary["ui_runs"]} через интерфейс.','',f'В исходных 18 тематических сценах {summary["within_minute"]} уложились в 60 секунд. Дополнительные бои: {summary["minimum_battle_seconds"]:.1f}–{summary["maximum_battle_seconds"]:.1f} с. Максимум всей занятой VRAM по выборке – {summary["peak_gpu_mib"]} МиБ.','', '| Размер | n | Минимум / медиана / максимум, с |','|---|---:|---:|']
     for wh in sorted({(r['width'],r['height']) for r in runs},key=lambda x:x[0]*x[1]):
         v=[r['seconds'] for r in runs if (r['width'],r['height'])==wh];md.append(f'| {wh[0]}×{wh[1]} | {len(v)} | {min(v):.1f} / {statistics.median(v):.1f} / {max(v):.1f} |')

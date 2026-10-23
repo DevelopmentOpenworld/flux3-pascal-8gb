@@ -1,8 +1,8 @@
 {
-  "schema": 4,
+  "schema": 5,
   "version": "0.1.0-preview",
   "status": "Prepared for owner review; PASS within explicit scope",
-  "recorded_at": "2026-10-23T21:07:32.122144+00:00",
+  "recorded_at": "2026-10-23T22:04:02.132045+00:00",
   "stored_evidence_before_manifest": {
     "status": "PASS",
     "checks": 546,
@@ -10,7 +10,7 @@
     "models_run": false
   },
   "unchanged_control_pngs": 39,
-  "report_sha256": "5776d5bf6c9b58dbb6d7641029f524263fde4f4f1a1ade80b825a43f9f5941ed",
+  "report_sha256": "7448139f9828f4d5fa403a5ac8470a2bf0b530d8b9f6738772c32f30fb8c45a5",
   "application_tests": {
     "count": 23,
     "duration_seconds": 15.065,
@@ -21,98 +21,178 @@
   },
   "dom": {
     "status": "PASS",
-    "checks": 22,
-    "scope": "Report DOM fixture preserves metadata/scripts with short image URIs; every full original embedded PNG checked separately. GUI DOM uses mocked API. Actual application window evidence is separate.",
+    "checks": 42,
     "results": [
       {
-        "name": "complete initial corpus and counts",
+        "name": "report.html: correct initial language and corpus",
         "status": "PASS"
       },
       {
-        "name": "category filters select exactly the matching first results",
+        "name": "report.html/en: translated shell and observations",
         "status": "PASS"
       },
       {
-        "name": "tabs show exactly one selected section",
+        "name": "report.html/en: theme filter and real selection",
         "status": "PASS"
       },
       {
-        "name": "battle pair binds original and revised same seed",
+        "name": "report.html/en: six tabs keep one panel visible",
         "status": "PASS"
       },
       {
-        "name": "robot pair and complete retained battle set",
+        "name": "report.html/en: paired battle seed and negative statuses",
         "status": "PASS"
       },
       {
-        "name": "unmeasured steampunk original is explicit",
+        "name": "report.html/en: incomplete steampunk comparison",
         "status": "PASS"
       },
       {
-        "name": "three resolutions map to the exact matching prompt and seed",
+        "name": "report.html/en: resolution comparison has the original three runs",
         "status": "PASS"
       },
       {
-        "name": "all 39 rows carry measured data",
+        "name": "report.html/en: all measured table values retained",
         "status": "PASS"
       },
       {
-        "name": "every embedded PNG equals its original file",
+        "name": "report.html/en: original PNG downloads and prompt/command details",
         "status": "PASS"
       },
       {
-        "name": "identifiers and labelled controls",
+        "name": "report.html/ru: translated shell and observations",
         "status": "PASS"
       },
       {
-        "name": "offline report has no script errors or automatic external requests",
+        "name": "report.html/ru: theme filter and real selection",
         "status": "PASS"
       },
       {
-        "name": "public GUI starts empty with no saved-run list",
+        "name": "report.html/ru: six tabs keep one panel visible",
         "status": "PASS"
       },
       {
-        "name": "public GUI submits exact settings once",
+        "name": "report.html/ru: paired battle seed and negative statuses",
         "status": "PASS"
       },
       {
-        "name": "public GUI exposes only the current PNG",
+        "name": "report.html/ru: incomplete steampunk comparison",
         "status": "PASS"
       },
       {
-        "name": "accepting another job clears the previous preview",
+        "name": "report.html/ru: resolution comparison has the original three runs",
         "status": "PASS"
       },
       {
-        "name": "public GUI cancellation releases the button",
+        "name": "report.html/ru: all measured table values retained",
         "status": "PASS"
       },
       {
-        "name": "rejected input remains visible across status polls",
+        "name": "report.html/ru: original PNG downloads and prompt/command details",
         "status": "PASS"
       },
       {
-        "name": "connection failure gives a recovery action",
+        "name": "report.html: language switch preserves user state and expanded guide",
         "status": "PASS"
       },
       {
-        "name": "reconnect preserves settings without resubmitting",
+        "name": "report.html: labelled controls and unique IDs",
         "status": "PASS"
       },
       {
-        "name": "lost POST response cannot cause an automatic duplicate",
+        "name": "report.html: fully offline with no script errors",
         "status": "PASS"
       },
       {
-        "name": "reconnect reconciles the single active operation",
+        "name": "report.html: language switching from a local file URL",
         "status": "PASS"
       },
       {
-        "name": "public GUI never requests a saved-run API",
+        "name": "report.en.html: correct initial language and corpus",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html/en: translated shell and observations",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html/en: theme filter and real selection",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html/en: six tabs keep one panel visible",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html/en: paired battle seed and negative statuses",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html/en: incomplete steampunk comparison",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html/en: resolution comparison has the original three runs",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html/en: all measured table values retained",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html/en: original PNG downloads and prompt/command details",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html/ru: translated shell and observations",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html/ru: theme filter and real selection",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html/ru: six tabs keep one panel visible",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html/ru: paired battle seed and negative statuses",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html/ru: incomplete steampunk comparison",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html/ru: resolution comparison has the original three runs",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html/ru: all measured table values retained",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html/ru: original PNG downloads and prompt/command details",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html: language switch preserves user state and expanded guide",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html: labelled controls and unique IDs",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html: fully offline with no script errors",
+        "status": "PASS"
+      },
+      {
+        "name": "report.en.html: language switching from a local file URL",
         "status": "PASS"
       }
-    ]
+    ],
+    "scope": "Report DOM uses short image URIs; all full original embedded PNGs are separately verified byte-for-byte. No full report browser-layout or native Manager UI claim."
   },
   "browser_evidence": "ui-proof/verification.json",
   "desktop_evidence": "desktop/verification.json",
@@ -130,10 +210,33 @@
   "publication_preflight": {
     "version": "0.1.0-preview",
     "native_manager_ui_verified": false,
-    "local_markdown_targets": 86,
+    "local_markdown_targets": 187,
     "missing_targets": 0,
-    "standalone_links": "Absolute repository/release links; all images and scripts embedded",
+    "standalone_links": "External references use absolute links; images, scripts, both report languages and complete guides are embedded.",
     "report_seal_excludes_source_control_and_local_data": true,
-    "future_release_links": "Prepared for fixed v0.1.0-preview; available only after publication"
+    "future_release_links": "Additional RU/EN reports use fixed v0.1.0-preview asset names; initial assets are retained unchanged.",
+    "source_privacy": {
+      "status": "PASS",
+      "items_including_embedded_images": 341,
+      "png_metadata_chunks": 120,
+      "findings": 0
+    }
+  },
+  "report_languages": {
+    "ru": "report.html",
+    "en": "report.en.html",
+    "both_switch_offline": true,
+    "release": "report/release.json",
+    "sha256": {
+      "report.html": "7448139f9828f4d5fa403a5ac8470a2bf0b530d8b9f6738772c32f30fb8c45a5",
+      "report.en.html": "49e2dc2953a444f5337db057d85609bb8c1c1b9cded65424d726247de3fe452d"
+    },
+    "original_embedded_PNGs_unchanged": 39,
+    "original_data_fields_unchanged": true,
+    "translated_run_observations": 39,
+    "embedded_guides_languages": [
+      "ru",
+      "en"
+    ]
   }
 }

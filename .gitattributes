@@ -2,3 +2,4 @@
 *.png binary
 *.jpg binary
 report.html -diff
+report.en.html -diff

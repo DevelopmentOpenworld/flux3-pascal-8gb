@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "version": "0.1.0-preview",
+  "tag": "v0.1.0-preview",
+  "kind": "Self-contained bilingual report; each file supports instant offline RU/EN switching",
+  "reports": [
+    {
+      "language": "ru",
+      "source": "report.html",
+      "name": "FLUX3-Pascal-Report-RU.html",
+      "bytes": 58901264,
+      "sha256": "7448139f9828f4d5fa403a5ac8470a2bf0b530d8b9f6738772c32f30fb8c45a5",
+      "url": "https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report-RU.html"
+    },
+    {
+      "language": "en",
+      "source": "report.en.html",
+      "name": "FLUX3-Pascal-Report-EN.html",
+      "bytes": 58896449,
+      "sha256": "49e2dc2953a444f5337db057d85609bb8c1c1b9cded65424d726247de3fe452d",
+      "url": "https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report-EN.html"
+    }
+  ],
+  "checksums_url": "https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/SHA256SUMS-Reports.txt",
+  "preservation": "All 39 original PNGs, prompts, commands, measurements and assessments are unchanged; translations are separate view data.",
+  "limits": [
+    "Native Manager buttons/layout and complete folder-dialog installation workflow remain unverified.",
+    "No clean-machine installation or independent quality review.",
+    "DOM fixtures use short image URIs; every complete embedded PNG was separately verified. No full browser-layout QA."
+  ]
+}

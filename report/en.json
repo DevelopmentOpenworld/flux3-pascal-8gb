@@ -1,0 +1,169 @@
+{
+  "schema": 1,
+  "categories": {
+    "Персоны": "People",
+    "Загородный пейзаж": "Rural landscape",
+    "Городской пейзаж": "Urban landscape",
+    "Фэнтези": "Fantasy",
+    "Хай-тек": "High-tech",
+    "Стимпанк": "Steampunk"
+  },
+  "runs": {
+    "batch-fantasy-battle": {
+      "title": "Battle on a fortress bridge",
+      "observation": "The warrior on the right has one hand occupied by the shield and the other lowered, while a separate sword floats between the figures without a grip. This confirms the unsupported-blade defect; the image fails the physical-continuity check."
+    },
+    "batch-fantasy-character": {
+      "title": "Dawn Guardian",
+      "observation": "The shield inscription is readable and the figure is shown in full. Cape, armor, sheathed sword and mountain setting are present. One calm character does not establish robustness on complex poses."
+    },
+    "batch-fantasy-location": {
+      "title": "Star Frontier",
+      "observation": "The long two-line inscription is readable, including Ё and Й. The castle, bridge and scene depth are present. The castle stands on one dominant rock; the requested structure between two peaks and the waterfalls are not fully represented."
+    },
+    "batch-fantasy-weapon": {
+      "title": "Moonblade",
+      "observation": "Both words are readable on the tilted plaque. The entire sword fits in the image, and metal and velvet textures are distinguishable. The requested crescent-shaped pommel is not clearly represented."
+    },
+    "batch-fantasy-weapon-1024": {
+      "title": "Moonblade",
+      "observation": "Both words are readable and placed on two lines. Materials and ornament are detailed; composition differs from smaller resolutions. No obvious tile seams were noted during inspection; the shape does not fully match 512² or 768²."
+    },
+    "batch-fantasy-weapon-512": {
+      "title": "Moonblade",
+      "observation": "Both words are readable. The entire sword is in frame; its shape and ornament differ from 768². The plaque remains large and simple, so this result does not test fine engraving."
+    },
+    "batch-hitech-battle": {
+      "title": "Clash of machines",
+      "observation": "Around the orange robot’s shield, the glowing rod and its hand merge with the dark robot’s shaft: ownership and construction are not reliably readable. The weapon defect is confirmed. The original prompt gave the orange robot a shield and the dark robot a staff; it did not require a separate sword on the left."
+    },
+    "batch-hitech-character": {
+      "title": "Pilot “Iskra”",
+      "observation": "The chest inscription is readable. The full figure and helmet are visible, and suit materials are distinguishable. Five separate fingers on the lowered hand are not clear enough to confirm the exact finger count."
+    },
+    "batch-hitech-location": {
+      "title": "Orbita Station",
+      "observation": "The inscription is readable. A panoramic window, planet, plants and small figures are present. The sign takes up a large portion of the upper composition."
+    },
+    "batch-hitech-location-1024": {
+      "title": "Orbita Station",
+      "observation": "The inscription is readable. A ceiling, railings and more interior details appear; composition differs substantially from 512² and 768². Small-scale anatomy of background people remains uncertain. No obvious tile boundaries were noted during inspection."
+    },
+    "batch-hitech-location-512": {
+      "title": "Orbita Station",
+      "observation": "The inscription is readable. The window and planet occupy most of the image, and the interior is symmetrical. Small human figures have limited detail."
+    },
+    "batch-hitech-weapon": {
+      "title": "Energy weapon prop",
+      "observation": "The inscription is readable. The object’s shape and glowing chamber are distinguishable. Materials shift toward worn metal and retrofuturism; the requested ceramic panels are weakly represented."
+    },
+    "batch-people-musician": {
+      "title": "Musician with a cello",
+      "observation": "The main word is readable. An unrequested line of tiny text was added below it and is illegible. The bottom of the figure and instrument is tightly cropped; the full-body condition is not fully met. Both hands are visible, but playing technique was not separately verified."
+    },
+    "batch-people-portrait": {
+      "title": "Portrait of a craftswoman",
+      "observation": "A photorealistic portrait with readable skin texture, hair and soft window light. Hands are outside the image; this experiment does not test hand anatomy."
+    },
+    "batch-people-portrait-1024": {
+      "title": "Portrait of a craftswoman",
+      "observation": "Larger, more detailed skin and hair textures; lighting, color and framing changed. No obvious tile boundaries were noted during this inspection. Decoding automatically retried with 512×512 tiles and took substantially longer."
+    },
+    "batch-people-portrait-512": {
+      "title": "Portrait of a craftswoman",
+      "observation": "A natural-looking portrait with distinguishable hair, skin and fabric. Lighting and framing differ from 768²; this is a new generation with the same description and seed, not a downscaled copy."
+    },
+    "batch-rural-river": {
+      "title": "Summer river",
+      "observation": "The inscription is readable. The sign points right, while the visible river is to its left: the direction toward the water is incorrect. The river, vegetation and distant layers are distinguishable."
+    },
+    "batch-rural-winter": {
+      "title": "Winter house by the forest",
+      "observation": "The inscription is readable; both dots over Ё are visible. Snow, warm windows and smoke are present; the sign occupies a prominent part of the foreground."
+    },
+    "batch-steampunk-battle": {
+      "title": "Aerial battle",
+      "observation": "Arcs cross the tower and hull area; their ends cannot be reliably assigned to separate defensive devices on each ship. A striking composition does not establish consistent weapon mechanics."
+    },
+    "batch-steampunk-character": {
+      "title": "Air-port mechanic",
+      "observation": "The case inscription is readable. The figure, goggles, case and work surface are present. Costume and workshop match the theme; the precise mechanics of decorative devices were not assessed."
+    },
+    "batch-steampunk-location": {
+      "title": "Steam Port",
+      "observation": "Both words are readable. Airships, towers, pipes and steam are present. The scene contains many small mechanisms whose structural plausibility was not established."
+    },
+    "batch-steampunk-weapon": {
+      "title": "Copper prop “Groza”",
+      "observation": "The inscription is readable. Copper coils, a glass chamber, leather and a wooden stand are represented. Additional tiny markings appear on the dial; this is decorative fictional equipment, and technical functionality was not assessed."
+    },
+    "batch-urban-bakery": {
+      "title": "Square with a bakery",
+      "observation": "Both words are readable. A bread display and morning light are present. Small details in the group of bicycles overlap and become cluttered; the exact geometry of each bicycle is unconfirmed."
+    },
+    "batch-urban-moscow": {
+      "title": "Moscow after the rain",
+      "observation": "The large inscription is readable. Rain, tram and reflections match the theme. Small signs and markings were added in the background. Correspondence to a real Moscow street was not checked; this is an illustrative setting."
+    },
+    "battle-fantasy-clear-123": {
+      "title": "Battle on a fortress bridge",
+      "observation": "Both characters show continuous hand–hilt–blade connections; no floating weapon is visible. However, the character on the left holds the sword in its anatomical left hand instead of the specified right hand. The figures fit in full, but the composition has become static and simplified."
+    },
+    "battle-fantasy-clear-42": {
+      "title": "Battle on a fortress bridge",
+      "observation": "Both characters show continuous hand–hilt–blade connections; no floating weapon is visible. However, the character on the left holds the sword in its anatomical left hand instead of the specified right hand. The figures fit in full, but the composition has become static and simplified."
+    },
+    "battle-fantasy-clear-7": {
+      "title": "Battle on a fortress bridge",
+      "observation": "Both characters show continuous hand–hilt–blade connections; no floating weapon is visible. However, the character on the left holds the sword in its anatomical left hand instead of the specified right hand. The figures fit in full, but the composition has become static and simplified."
+    },
+    "battle-fantasy-original-123": {
+      "title": "Battle on a fortress bridge",
+      "observation": "The second blade emerges from behind the shield, where the grip is hidden and ambiguous. A separate hand–hilt–blade connection cannot be traced confidently for the warrior on the right. This is not counted as a correct battle scene."
+    },
+    "battle-fantasy-original-7": {
+      "title": "Battle on a fortress bridge",
+      "observation": "The warrior on the left holds a sword, and the warrior on the right holds a shield. No clearly floating sword is present, but a visible gap separates blade and shield; sparks do not establish contact. Changing the seed removed one defect without fulfilling the scene."
+    },
+    "battle-robot-clear-123": {
+      "title": "Clash of machines",
+      "observation": "Both characters show continuous hand–hilt–blade connections; no floating weapon is visible. However, the character on the left holds the sword in its anatomical left hand instead of the specified right hand. The figures are also cropped at the bottom although full bodies were required."
+    },
+    "battle-robot-clear-42": {
+      "title": "Clash of machines",
+      "observation": "Both characters show continuous hand–hilt–blade connections; no floating weapon is visible. However, the character on the left holds the sword in its anatomical left hand instead of the specified right hand. The figures are also cropped at the bottom although full bodies were required."
+    },
+    "battle-robot-clear-7": {
+      "title": "Clash of machines",
+      "observation": "Both characters show continuous hand–hilt–blade connections; no floating weapon is visible. However, the character on the left holds the sword in its anatomical left hand instead of the specified right hand. The figures are also cropped at the bottom although full bodies were required."
+    },
+    "battle-robot-original-123": {
+      "title": "Clash of machines",
+      "observation": "The dark robot has no distinguishable energy staff: the strike looks like hand contact with the shield. The large inscription is readable, but the prompt’s main action is absent."
+    },
+    "battle-robot-original-7": {
+      "title": "Clash of machines",
+      "observation": "The staff is visible in the lowered hand of the dark robot on the right, while its other hand presses against the shield. The weapon grip is visible, but the required staff strike on the shield is absent."
+    },
+    "battle-steampunk-clear-42": {
+      "title": "Aerial battle",
+      "observation": "The main beam runs continuously from the left barrel to the right ship’s hull. However, the left ship is cropped, an extra beam appears on the right, and the emitters attach to the envelopes instead of the specified gondola brackets."
+    },
+    "battle-steampunk-clear-7": {
+      "title": "Aerial battle",
+      "observation": "The main beam starts at the barrel and ends on the second ship’s hull; both ships are fully visible. However, the emitters sit on the envelopes rather than the gondola brackets required by the revised prompt. Attack readability improved, but not all constraints were met."
+    },
+    "toolkit-only-portrait-512": {
+      "title": "Portrait of a craftswoman",
+      "observation": "The PNG is byte-identical to the previously inspected batch-people-portrait-512. It repeats that image’s visual properties; this checks DLL loading from the Toolkit, not a new independent quality sample."
+    },
+    "ui-67b47e1c51d34841": {
+      "title": "Portrait from the generator UI",
+      "observation": "The portrait was generated by clicking a button in the browser interface; the PNG and parameters were saved. This tests that user workflow, not the anatomy of hands outside the image."
+    },
+    "ui-a5e49cdf769f4b2a": {
+      "title": "Portrait from the generator UI",
+      "observation": "The portrait was generated by clicking a button in the browser interface; the PNG and parameters were saved. This tests that user workflow, not the anatomy of hands outside the image."
+    }
+  }
+}

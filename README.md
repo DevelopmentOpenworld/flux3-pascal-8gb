@@ -6,14 +6,14 @@
 
 Воспроизводимый запуск на Windows и Pascal sm_61: stable-diffusion.cpp CUDA 12, FLUX.3 Q4_0, Qwen3-VL 4B Q4_K_M и FLUX.2 VAE. Измерения выполнены с уже установленным CUDA Toolkit 12.6.85. Графический Manager использует имеющуюся CUDA 12 или скачивает локальные библиотеки, когда их нет. PyTorch не требуется.
 
-- [Скачать автономный интерактивный отчёт](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report.html) – шесть тем, сравнение боёв и разрешений.
+- [Скачать автономный интерактивный отчёт](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report-RU.html) · [English HTML](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report-EN.html) – шесть тем, сравнение боёв и разрешений.
 - [Точные файлы, версии, SHA256 и команды](docs/REPRODUCE.md).
 - [Публичный генератор](docs/INTERFACE.md) – настройки и только текущий результат.
 - [Все контрольные бои](docs/BATTLES.md), [галерея](docs/GALLERY.md), [CSV](results.csv), [JSON](results.json).
 
 ## Фрагменты отчёта: изображения и замеры
 
-**[Скачать полный интерактивный отчёт →](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report.html)** · [Все изображения и замечания](docs/GALLERY.md) · [Таблица результатов](docs/RESULTS.md)
+**[Скачать полный интерактивный отчёт →](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report-RU.html)** · [Все изображения и замечания](docs/GALLERY.md) · [Таблица результатов](docs/RESULTS.md)
 
 Ниже шесть примеров из разных тематик и отдельная перепроверка боёв. Во всём корпусе сохранены 39 первых результатов заданных условий, включая неудачные. Это иллюстрации из ограниченной выборки, не гарантия качества на произвольном промпте. Нажатие на изображение открывает исходный PNG.
 
@@ -80,7 +80,7 @@
 | 768×768 | 59,2 | 5408 | [PNG](results/batch-people-portrait/image.png) · [Замеры](results/batch-people-portrait/record.json) |
 | 1024×1024 | 130,1 | 5322 | [PNG](results/batch-people-portrait-1024/image.png) · [Замеры](results/batch-people-portrait-1024/record.json) |
 
-На 1024² движок автоматически уменьшал плитки декодирования VAE; дополнительное время включено. Для всех первых 18 тематических сцен 14 результатов уложились в 60 с. В [полном отчёте](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report.html) есть другие сцены, размеры и параметры.
+На 1024² движок автоматически уменьшал плитки декодирования VAE; дополнительное время включено. Для всех первых 18 тематических сцен 14 результатов уложились в 60 с. В [полном отчёте](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report-RU.html) есть другие сцены, размеры и параметры.
 
 ### Бои: улучшение хвата ещё не означает корректную сцену
 
@@ -123,7 +123,7 @@
 
 Полного PASS нет ни у одного из восьми уточнённых боевых кадров. Визуальную оценку выполнил автор ИИ; независимой оценки не было. [Все бои, seed42/7/123 и критерии](docs/BATTLES.md) сохранены вместе с исходными промптами и PNG.
 
-**[Полный HTML-отчёт: фильтры тем, парные сравнения, разрешения и все 39 запусков →](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report.html)**. Скачайте HTML и откройте локально; обычный просмотр исходника на GitHub не запускает интерактивную часть.
+**[Полный HTML-отчёт: фильтры тем, парные сравнения, разрешения и все 39 запусков →](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report-RU.html)**. Скачайте HTML и откройте локально; обычный просмотр исходника на GitHub не запускает интерактивную часть.
 
 ## Установка и запуск без консоли
 

@@ -1,11 +1,11 @@
 {
   "schema": 2,
-  "created_at": "2026-10-23T21:41:08.761245+00:00",
+  "created_at": "2026-10-23T22:04:02.133819+00:00",
   "files": [
     {
       "path": ".gitattributes",
-      "bytes": 56,
-      "sha256": "f4e6e7af5e993a52262b80bf4acc270a0c3c502685a473966fcca28d62d7b0d7"
+      "bytes": 78,
+      "sha256": "8f6b6818404543c1e8841f1c7138fb78fc6c7d6445cb7bdd47cd28737cd8c455"
     },
     {
       "path": ".gitignore",
@@ -128,9 +128,19 @@
       "sha256": "141aa33e5fca7196a954f97fe53b7620b9b0e247472b3dae0aea88385475869e"
     },
     {
+      "path": "docs/INTERFACE_EN.md",
+      "bytes": 7640,
+      "sha256": "d458b940065806eda4f9717f56f60c373d3c566d93b60eb4c8d010226ac48e09"
+    },
+    {
       "path": "docs/REPRODUCE.md",
       "bytes": 14144,
       "sha256": "462b71e2aa9e40287879bdd76a665e876ee7a5ba07e38b010f9f78371b5cd89c"
+    },
+    {
+      "path": "docs/REPRODUCE_EN.md",
+      "bytes": 9678,
+      "sha256": "0a83bf108483ba3570a29e22e87b26830461a6cd0bda071e7d9efb33d2121427"
     },
     {
       "path": "docs/RESULTS.md",
@@ -274,13 +284,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 21074,
-      "sha256": "571cb93e05de76579f518ef309d9067f3b52e1e5f29eaf2bac13701a46a03a29"
+      "bytes": 21223,
+      "sha256": "3c0857f1b2f10deebaec5523a6e60e65a7abdd24fb6b2c281507e5f0b4bc99e7"
     },
     {
       "path": "README_EN.md",
-      "bytes": 16242,
-      "sha256": "26f5f8f572913ff9d1a0551879349c282afc6f06511dbb1cc625480bdd718d16"
+      "bytes": 16413,
+      "sha256": "95b0c5f75f35a4efdf4726c5b43bb22976d133025986a074a30c37dab95ad617"
     },
     {
       "path": "RELEASE_NOTES.md",
@@ -288,14 +298,49 @@
       "sha256": "05b486daee28e0c350bde7815a55019aa7cbb1d9a023a9b867a863cf1ea4ce64"
     },
     {
+      "path": "report/en.html",
+      "bytes": 12712,
+      "sha256": "732d452bbe670161c342d4c5be1712718abf38b5e46f580f4474c58d58018b76"
+    },
+    {
+      "path": "report/en.json",
+      "bytes": 12917,
+      "sha256": "f9b8cb7d5b00b9e128bdc010604f93c7c4a1b774bf4f0dadb4355231b5e4f01e"
+    },
+    {
+      "path": "report/messages.json",
+      "bytes": 4018,
+      "sha256": "cc2ccd6f8c592c66db005a7afbbcb9608023e801639b01eeeabab8ab4f866c33"
+    },
+    {
+      "path": "report/release.json",
+      "bytes": 1495,
+      "sha256": "91e6292cf9757cc1d51b37cd2e3d4fdeaaf36de745e2524174a2734a64cac849"
+    },
+    {
+      "path": "report/ru.html",
+      "bytes": 17493,
+      "sha256": "9ce62e822d0d6a50164c6f0d3423998c6cc52992faf8f7bf294879de3b212642"
+    },
+    {
+      "path": "report/ui.js",
+      "bytes": 7980,
+      "sha256": "6b4219b0c608578d359b1e0f2addebc3669532a0ced6588d43e9eced66df8c18"
+    },
+    {
+      "path": "report.en.html",
+      "bytes": 58896449,
+      "sha256": "49e2dc2953a444f5337db057d85609bb8c1c1b9cded65424d726247de3fe452d"
+    },
+    {
       "path": "report.html",
-      "bytes": 58835377,
-      "sha256": "5776d5bf6c9b58dbb6d7641029f524263fde4f4f1a1ade80b825a43f9f5941ed"
+      "bytes": 58901264,
+      "sha256": "7448139f9828f4d5fa403a5ac8470a2bf0b530d8b9f6738772c32f30fb8c45a5"
     },
     {
       "path": "report.template.html",
-      "bytes": 29017,
-      "sha256": "6d074a7ad0aecd4808b23e1001a55a9d5c5603b3a8f911e0d896e912bc4e4f6d"
+      "bytes": 5139,
+      "sha256": "4fdfb2485f8de35ed130cd517e590318f95c73637ada1afb9889c8df99661b69"
     },
     {
       "path": "results/batch-fantasy-battle/engine.log",
@@ -1154,8 +1199,8 @@
     },
     {
       "path": "scripts/build_report.py",
-      "bytes": 14603,
-      "sha256": "43be1618a1f14e5e5471b16b44ba81c6de033c131771a0ce89a25c1021d88500"
+      "bytes": 15753,
+      "sha256": "4a81c89528c76355e6a4086f41c08e799501df506807a97ba0279cbea13f7e34"
     },
     {
       "path": "scripts/download_assets.py",
@@ -1244,8 +1289,8 @@
     },
     {
       "path": "VERIFICATION.json",
-      "bytes": 5082,
-      "sha256": "2acfb5f91437f0d19e8f041453101e89ae96b74495574c2d2c5286d1c49eb508"
+      "bytes": 8371,
+      "sha256": "c6ac1508319dc976e155443482e9bf6ece365d95748911dc1d72556a289d58b0"
     },
     {
       "path": "VERSION",
