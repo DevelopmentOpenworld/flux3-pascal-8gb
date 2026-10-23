@@ -1,13 +1,19 @@
-# FLUX.3 Pascal 8GB – первый публичный preview
+# FLUX.3 Pascal 8GB · 0.1.1-preview
 
-Воспроизводимый запуск FLUX.3 Image Klein Q4_0 на GTX 1070 Ti 8 ГБ под Windows: закреплённый sd.cpp CUDA 12, Qwen3-VL 4B, FLUX.2 VAE и переиспользование установленной CUDA. PyTorch не требуется.
+Генератор и Windows Manager теперь переключаются между **Русский / English**. Переведены подписи, подсказки, примеры, проверки, ошибки и этапы операций. Выбор языка сохраняется; промпт, параметры, пути, текущий PNG и выполняющаяся операция сохраняются при переключении. Новый запрос генерации не отправляется.
 
-- Windows Manager: выбор имеющихся файлов или скачивание с SHA256, настройки и кнопки управления сервером. Python включён в Windows ZIP.
-- Браузерный генератор: примеры, промпт, размер, seed, шаги, CFG и один текущий результат. История пользовательских запусков не ведётся.
-- 39 фиксированных контрольных PNG с промптами, параметрами, временем и ограничениями качества; автономный интерактивный HTML.
+Windows ZIP пересобран из этой версии исходников. Для обновления остановите сервер старым Manager, закройте его и распакуйте новый пакет отдельно. Настройки, выбранные модели и установленная CUDA переиспользуются. [Инструкция](docs/INTERFACE.md) · [English guide](docs/INTERFACE_EN.md).
 
-Проверены автоматические тесты, сервер и встроенный worker; функциональный PNG 512×512 совпал с контролем. Полный путь через нативные кнопки Manager и установка на чистой машине **не подтверждены**. EXE не подписан сертификатом издателя. Поэтому это предварительный выпуск.
+Проверки выполнены программно, без computer use, открытия нативного окна и новых GPU-генераций: Python-тесты, DOM, встроенные ресурсы EXE и его отдельный сервер. В тестах Manager виджеты и диалоги заменены заглушками. Отрисовка окна, нажатия настоящих кнопок, системные диалоги и установка на чистой машине **не подтверждены**. EXE не подписан; статус preview сохранён.
 
-14 из 18 первых тематических сцен уложились в минуту на испытанном ПК. В сложных боях остаются ошибки рук и оружия; полного PASS нет ни у одного из восьми упрощённых боевых условий. Это ограниченная выборка, не обещание скорости или качества на другом компьютере.
+39 контрольных PNG, промпты, замеры и автономные RU/EN отчёты из 0.1.0-preview сохранены. 14 из 18 исходных тематических кадров уложились в минуту; ни один из восьми уточнённых боевых кадров не получил полного PASS. Эти прежние измерения не являются новым бенчмарком сборки 0.1.1.
 
-Скачайте весь Windows ZIP и сохраните папку _internal рядом с EXE. Модели, движок и CUDA скачиваются отдельно. Контрольные суммы активов – в SHA256SUMS.txt. Для отчёта скачайте HTML и откройте локально. MIT относится к собственному коду/документации; внешние компоненты и результаты модели сохраняют свои отдельные условия.
+## English
+
+The generator and Windows Manager now support **Русский / English** with a saved choice. Labels, hints, presets, validation, errors and operation stages are translated. Switching preserves prompts, paths, parameters, the current PNG and active operations; it never submits a new generation.
+
+The Windows package is rebuilt from this source version. Stop the old server, close the old Manager and extract the new package into a separate folder. Existing settings, selected models and installed CUDA are reused.
+
+Checks are programmatic: Python, DOM, bundled resources and an isolated server from the actual EXE. No computer use, native window or new GPU generations. Manager widgets/dialogs are replaced in tests; real native controls, layout, system dialogs and clean-machine setup remain **unverified**. The EXE is unsigned; this remains a preview.
+
+The 39 control PNGs, prompts, measurements and standalone RU/EN reports from 0.1.0-preview are preserved. Prior performance/quality observations are not a new benchmark of 0.1.1. MIT covers project code/documentation; external components and model outputs retain their separate terms.

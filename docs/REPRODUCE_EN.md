@@ -144,6 +144,8 @@ Compare files, settings and the assessed quality level. Byte-identical images ar
 
 The main graphical route is [Windows Manager](INTERFACE_EN.md): select existing files or download them, then start the server with its button. Developers can use `Start-FLUX3.cmd` or `python scripts/app.py`. The complete native-button installation workflow remains unverified; the server and worker were checked programmatically.
 
+Manager and the generator offer **Русский / English** with a saved choice. See the [interface guide](INTERFACE_EN.md#interface-language-and-updating) for updating the Windows package and switching languages. Interface language does not change control prompts, commands or generation parameters.
+
 Reproduce an additional battle with:
 
 ```powershell

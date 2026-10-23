@@ -2,131 +2,20 @@
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><link rel="icon" href="data:,"><title>FLUX.3 – локальная генерация</title>
 <style>
 :root{color-scheme:light dark;--bg:light-dark(#f5f4f0,#14171a);--fg:light-dark(#272b2e,#f1f0eb);--muted:light-dark(#616a70,#aab4bd);--panel:light-dark(#fff,#1f2429);--line:light-dark(#d4d9dc,#3b454d);--accent:light-dark(#305e72,#aad5e9);--primary:light-dark(#254f62,#c6e1ed);--onprimary:light-dark(#fff,#183443);--error:light-dark(#a12c35,#ffb3b5)}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 "Segoe UI",Arial,sans-serif}main{max-width:1320px;margin:auto;padding:24px clamp(16px,4vw,48px) 48px}header{display:flex;justify-content:space-between;align-items:start;gap:20px;border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:24px}h1{font-size:32px;line-height:1.2;margin:4px 0 8px;font-weight:600;letter-spacing:-1px}h2{font-size:20px;margin:0 0 16px;font-weight:550}.eyebrow{font-size:12px;letter-spacing:1.6px;color:var(--muted)}p{margin:0 0 12px}.subtle{color:var(--muted);font-size:14px}.layout{display:grid;grid-template-columns:minmax(340px,.85fr) minmax(0,1.2fr);gap:28px}label{display:block;font-size:14px;margin-bottom:14px}input,select,textarea,button{font:inherit}input,select,textarea{width:100%;margin-top:5px;padding:9px 10px;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:7px}textarea{min-height:220px;resize:vertical;line-height:1.45;font-size:14px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.triplet{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}.actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}button{border:1px solid var(--line);border-radius:7px;background:var(--panel);color:var(--fg);padding:10px 15px;cursor:pointer}button.primary{background:var(--primary);color:var(--onprimary);border-color:var(--primary);font-weight:600;flex:1;min-width:190px}button:disabled{opacity:.5;cursor:default}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}a{color:var(--accent)}.status{margin:18px 0 10px;min-height:26px;font-variant-numeric:tabular-nums}.error{color:var(--error)}progress{width:100%;height:7px;accent-color:var(--accent)}.preview{min-height:460px;background:var(--panel);display:flex;align-items:center;justify-content:center;padding:12px;border-radius:8px}.preview img{display:block;max-width:100%;height:auto;max-height:720px;object-fit:contain}.placeholder{max-width:370px;text-align:center;color:var(--muted);padding:28px}.result-meta{font-variant-numeric:tabular-nums;font-size:14px;margin:12px 0;color:var(--muted)}details{border-top:1px solid var(--line);padding-top:14px;margin-top:26px}summary{cursor:pointer;color:var(--accent);margin-bottom:15px}.settings{margin-top:16px}.settings input{font-size:13px}.path-label{font-family:Consolas,monospace}.tip{font-size:13px;color:var(--muted);margin:12px 0}.danger{font-size:13px}footer{margin-top:35px;border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:13px}.hide{display:none!important}@media(max-width:850px){.layout{grid-template-columns:1fr}.preview{min-height:280px}header{flex-wrap:wrap}}@media(max-width:430px){.triplet{grid-template-columns:1fr 1fr}.actions button{min-height:44px}h1{font-size:28px}}
-</style></head><body><main>
-<header><div><div class="eyebrow">FLUX.3 IMAGE KLEIN · LOCAL</div><h1>От описания к изображению</h1><p class="subtle">Локальная генерация на видеокарте. Промпт и параметры включаются в PNG.</p></div><button id="shutdown" class="danger" type="button">Завершить приложение</button></header>
-<div class="layout"><section aria-labelledby="controls-title"><h2 id="controls-title">Параметры</h2>
-<label for="preset">Начать с примера<select id="preset"><option value="custom">Свой промпт</option></select></label>
-<label for="prompt">Описание изображения<textarea id="prompt" maxlength="12000" placeholder="Опишите сцену, композицию, свет и нужную надпись в кавычках."></textarea></label>
-<label for="size-preset">Размер<select id="size-preset"><option value="512x512">512 × 512 · быстрый пример</option><option value="864x480">864 × 480 · широкий кадр</option><option value="512x768">512 × 768 · персонаж</option><option value="768x768">768 × 768 · больше деталей</option><option value="1024x1024">1024 × 1024 · дольше</option><option value="custom">Свой размер</option></select></label>
-<div class="row"><label for="width">Ширина<input id="width" type="number" min="256" max="1536" step="16" value="512"></label><label for="height">Высота<input id="height" type="number" min="256" max="1536" step="16" value="512"></label></div>
-<div class="triplet"><label for="seed">Seed<input id="seed" type="number" min="0" max="2147483647" step="1" value="42"></label><label for="steps">Шаги<input id="steps" type="number" min="1" max="64" step="1" value="16"></label><label for="cfg">CFG<input id="cfg" type="number" min="1" max="8" step="0.1" value="1"></label></div>
-<p class="tip">Для дистиллированной модели исходный профиль: 16 шагов и CFG 1. На 1024² декодирование может автоматически разбиваться на плитки.</p>
-<div class="actions"><button id="generate" class="primary" type="button" disabled>Сгенерировать</button><button id="cancel" type="button" disabled>Отменить</button></div>
-<div id="status" class="status" role="status" aria-live="polite">Проверка настроек…</div><button id="reconnect" class="hide" type="button">Повторить подключение</button><progress id="progress" max="100" value="0" aria-label="Ход генерации"></progress>
-<details id="setup"><summary>Пути к уже установленным файлам</summary><p class="subtle">Новая CUDA и повторное скачивание весов не нужны, если эти файлы уже есть. Укажите полные пути или пути относительно проекта.</p><div id="config-fields" class="settings"></div><button id="save-config" type="button">Проверить и сохранить пути</button><p id="config-status" class="tip" role="status"></p></details>
-</section><section aria-labelledby="result-title"><h2 id="result-title">Результат</h2><div class="preview"><p id="placeholder" class="placeholder">Выберите готовый пример или напишите свой промпт и нажмите «Сгенерировать».</p><img id="result" class="hide" alt="Сгенерированное изображение"></div><p id="result-meta" class="result-meta"></p><p><a id="download" class="hide" download="flux3-image.png">Сохранить исходный PNG</a></p></section></div>
-<footer>Интерфейс работает только на 127.0.0.1. Показывается только текущий результат. Сохраните PNG до следующей генерации или выхода. Одновременно выполняется одна генерация; закрытие вкладки не останавливает приложение.</footer>
-</main><script>
-'use strict';
-const $=id=>document.getElementById(id);
-const session=new URLSearchParams(location.hash.slice(1)).get('session')||'';
-let presets=[],ready=false,busy=false,lastImage=null,blobUrl=null;
-let polling=false,stopped=false,connected=true,uiError='',initialized=false;
-const fields={sd_cli:'Движок sd-cli.exe',diffusion_model:'Модель FLUX.3 GGUF',llm:'Кодировщик Qwen3-VL GGUF',vae:'VAE',cuda_bin:'Существующий CUDA bin',cuda_runtime_dir:'Дополнительный каталог CUDA DLL (необязательно)',max_vram_gib:'Бюджет VRAM, ГиБ'};
 
-async function request(path,body){
-  const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),15000);
-  try{
-    return await fetch(path,{method:body===undefined?'GET':'POST',headers:{'X-Session':session,...(body===undefined?{}:{'Content-Type':'application/json'})},...(body===undefined?{}:{body:JSON.stringify(body)}),signal:controller.signal});
-  }catch(cause){
-    connected=false;
-    const error=Error('Нет связи с локальным генератором. Запустите Start-FLUX3.cmd и нажмите «Повторить подключение». Если открыта старая вкладка, используйте окно из файла запуска. Запрос генерации автоматически не повторяется.');
-    error.connection=true;throw error;
-  }finally{clearTimeout(timeout)}
-}
-async function api(path,body){
-  const response=await request(path,body);
-  const value=await response.json();
-  if(!response.ok){const error=Error(value.error||'Запрос не выполнен');if(response.status===403){connected=false;error.connection=true}throw error}
-  return value;
-}
-function status(message,error=false){$('status').textContent=message;$('status').classList.toggle('error',error)}
-function buttons(){
-  $('generate').disabled=!ready||busy||stopped||!connected;
-  $('cancel').disabled=!busy||stopped||!connected;
-  $('save-config').disabled=busy||stopped||!connected;
-  $('reconnect').classList.toggle('hide',connected||stopped);
-}
-function showError(error){uiError=error.message;status(uiError,true);buttons()}
-function settings(config){
-  $('config-fields').replaceChildren();
-  for(const [key,label] of Object.entries(fields)){
-    const l=document.createElement('label');l.textContent=label;
-    const input=document.createElement('input');input.id='path-'+key;input.value=config[key]??'';input.type=key==='max_vram_gib'?'number':'text';
-    if(key==='max_vram_gib'){input.min='1';input.max='6';input.step='.5'}
-    l.htmlFor=input.id;l.append(input);$('config-fields').append(l);
-  }
-}
-async function init(){
-  try{
-    const config=await api('/api/config');
-    if(!$('config-fields').children.length)settings(config.config);
-    ready=!config.errors.length;connected=true;uiError='';
-    if(!ready){$('setup').open=true;uiError='Укажите файлы в настройках ниже';$('config-status').textContent=config.errors.join('; ')}
-    presets=await api('/api/presets');
-    const oldPreset=$('preset').value;
-    $('preset').replaceChildren();
-    const custom=document.createElement('option');custom.value='custom';custom.textContent='Свой промпт';$('preset').append(custom);
-    for(const p of presets){const option=document.createElement('option');option.value=p.id;option.textContent=p.title;$('preset').append(option)}
-    $('preset').value=[...$('preset').options].some(o=>o.value===oldPreset)?oldPreset:'custom';
-    if(!initialized){const first=presets.find(p=>p.id==='people-portrait');if(first&&!$('prompt').value)$('prompt').value=first.prompt}
-    initialized=true;status(uiError||'Готово к генерации',Boolean(uiError));buttons();await refresh();
-  }catch(error){showError(error)}
-}
-$('preset').addEventListener('change',()=>{
-  const p=presets.find(p=>p.id===$('preset').value);if(!p)return;
-  $('prompt').value=p.prompt;$('width').value=p.width;$('height').value=p.height;$('seed').value=p.seed;
-  const size=p.width+'x'+p.height;$('size-preset').value=[...$('size-preset').options].some(o=>o.value===size)?size:'custom';
-});
-$('size-preset').addEventListener('change',()=>{const value=$('size-preset').value;if(value==='custom')return;const [width,height]=value.split('x');$('width').value=width;$('height').value=height});
-for(const id of ['width','height'])$(id).addEventListener('input',()=>{$('size-preset').value='custom'});
-$('save-config').addEventListener('click',async()=>{
-  const config={};for(const key of Object.keys(fields))config[key]=key==='max_vram_gib'?Number($('path-'+key).value):$('path-'+key).value;
-  try{const result=await api('/api/config',config);ready=true;uiError='';$('config-status').textContent=result.message;status('Готово к генерации');$('setup').open=false}
-  catch(error){ready=false;$('config-status').textContent=error.message;showError(error)}buttons();
-});
-$('generate').addEventListener('click',async()=>{
-  if(busy||!ready||!connected)return;
-  busy=true;uiError='';buttons();status('Запуск…');
-  try{const job=await api('/api/generate',{prompt:$('prompt').value,width:Number($('width').value),height:Number($('height').value),seed:Number($('seed').value),steps:Number($('steps').value),cfg_scale:Number($('cfg').value)});resetImage();await refresh()}
-  catch(error){busy=false;showError(error)}
-});
-$('cancel').addEventListener('click',async()=>{try{uiError='';await api('/api/cancel',{});await refresh()}catch(error){showError(error)}});
-$('reconnect').addEventListener('click',()=>init());
-async function showImage(job){
-  if(!job.image_url||lastImage===job.id)return;
-  const response=await request(job.image_url);if(!response.ok)throw Error('Изображение пока недоступно');
-  const blob=await response.blob();if(blobUrl)URL.revokeObjectURL(blobUrl);blobUrl=URL.createObjectURL(blob);
-  $('result').src=blobUrl;$('result').classList.remove('hide');$('placeholder').classList.add('hide');
-  $('download').href=blobUrl;$('download').download=job.id+'.png';$('download').classList.remove('hide');
-  $('result-meta').textContent=job.width+'×'+job.height+' · seed '+job.seed+' · '+job.steps+' шагов · '+Number(job.seconds).toFixed(1)+' с';lastImage=job.id;
-}
-function resetImage(){
-  if(blobUrl)URL.revokeObjectURL(blobUrl);blobUrl=null;lastImage=null;
-  $('result').removeAttribute('src');$('result').classList.add('hide');
-  $('download').removeAttribute('href');$('download').classList.add('hide');
-  $('result-meta').textContent='';$('placeholder').classList.remove('hide');
-}
-async function refresh(){
-  if(polling||stopped)return;polling=true;
-  try{
-    const wasOffline=!connected,value=await api('/api/current');connected=true;
-    if(!initialized){polling=false;await init();return}
-    if(wasOffline)uiError='';
-    busy=Boolean(value.active);
-    const job=value.job;
-    if(job){
-      if(!uiError)status(job.message,job.status==='FAILED');
-      $('progress').value=job.progress||0;
-      if(job.status==='DONE')await showImage(job);
-      else if(lastImage&&lastImage!==job.id)resetImage();
-    }else{
-      if(lastImage)resetImage();
-      if(!uiError)status(ready?'Готово к генерации':'Укажите файлы в настройках ниже');
-    }
-    buttons();
-  }catch(error){showError(error)}finally{polling=false}
-}
-$('shutdown').addEventListener('click',async()=>{try{await api('/api/shutdown',{});stopped=true;busy=false;buttons();status('Приложение завершено. Для нового запуска используйте файл запуска.')}catch(error){showError(error)}});
-init();setInterval(()=>refresh(),1200);
-</script></body></html>
+.language{display:flex;gap:4px;justify-content:flex-end;margin-bottom:10px}.language button{padding:6px 10px;font-size:14px}.language button[aria-pressed="true"]{border-color:var(--accent);font-weight:600}.header-actions{flex-shrink:0}
+</style></head><body><main>
+<header><div><div class="eyebrow">FLUX.3 IMAGE KLEIN · LOCAL</div><h1 data-i18n="ui_heading">От описания к изображению</h1><p class="subtle" data-i18n="ui_subtitle">Локальная генерация на видеокарте. Промпт и параметры включаются в PNG.</p></div><div class="header-actions"><nav class="language" aria-label="Language / Язык"><button id="language-ru" type="button" lang="ru" aria-pressed="true">Русский</button><button id="language-en" type="button" lang="en" aria-pressed="false">English</button></nav><button id="shutdown" class="danger" type="button" data-i18n="shutdown">Завершить приложение</button></div></header>
+<div class="layout"><section aria-labelledby="controls-title"><h2 id="controls-title" data-i18n="parameters">Параметры</h2>
+<label for="preset"><span data-i18n="preset_label">Начать с примера</span><select id="preset"><option value="custom">Свой промпт</option></select></label>
+<label for="prompt"><span data-i18n="prompt_label">Описание изображения</span><textarea id="prompt" maxlength="12000"></textarea></label>
+<label for="size-preset"><span data-i18n="size_label">Размер</span><select id="size-preset"><option value="512x512" data-i18n="size_fast">512 × 512</option><option value="864x480" data-i18n="size_wide">864 × 480</option><option value="512x768" data-i18n="size_character">512 × 768</option><option value="768x768" data-i18n="size_detail">768 × 768</option><option value="1024x1024" data-i18n="size_large">1024 × 1024</option><option value="custom" data-i18n="custom_size">Свой размер</option></select></label>
+<div class="row"><label for="width"><span data-i18n="width">Ширина</span><input id="width" type="number" min="256" max="1536" step="16" value="512"></label><label for="height"><span data-i18n="height">Высота</span><input id="height" type="number" min="256" max="1536" step="16" value="512"></label></div>
+<div class="triplet"><label for="seed">Seed<input id="seed" type="number" min="0" max="2147483647" step="1" value="42"></label><label for="steps"><span data-i18n="steps">Шаги</span><input id="steps" type="number" min="1" max="64" step="1" value="16"></label><label for="cfg">CFG<input id="cfg" type="number" min="1" max="8" step="0.1" value="1"></label></div>
+<p class="tip" data-i18n="profile_hint"></p>
+<div class="actions"><button id="generate" class="primary" type="button" disabled data-i18n="generate">Сгенерировать</button><button id="cancel" type="button" disabled data-i18n="cancel">Отменить</button></div>
+<div id="status" class="status" role="status" aria-live="polite">Проверка настроек…</div><button id="reconnect" class="hide" type="button" data-i18n="reconnect">Повторить подключение</button><progress id="progress" max="100" value="0"></progress>
+<details id="setup"><summary data-i18n="paths_heading">Пути к уже установленным файлам</summary><p class="subtle" data-i18n="paths_hint"></p><div id="config-fields" class="settings"></div><button id="save-config" type="button" data-i18n="save_paths">Проверить и сохранить пути</button><p id="config-status" class="tip" role="status"></p></details>
+</section><section aria-labelledby="result-title"><h2 id="result-title" data-i18n="result">Результат</h2><div class="preview"><p id="placeholder" class="placeholder" data-i18n="placeholder"></p><img id="result" class="hide" alt="Сгенерированное изображение"></div><p id="result-meta" class="result-meta"></p><p><a id="download" class="hide" download="flux3-image.png" data-i18n="download_png">Сохранить исходный PNG</a></p></section></div>
+<footer data-i18n="footer"></footer>
+</main><script>window.FLUX3_MESSAGES=__FLUX_MESSAGES__;</script><script src="/ui/app.js"></script></body></html>

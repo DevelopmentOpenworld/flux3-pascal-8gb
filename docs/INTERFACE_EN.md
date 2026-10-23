@@ -1,10 +1,10 @@
 # Install, launch and generate through the interface
 
-**Preview 0.1.0-preview:** the server and bundled worker were checked separately. Native buttons, folder-selection dialogs and the full installation workflow through the native window remain unverified; installation on a clean machine was not tested. The current app UI is in Russian; exact button labels are included below.
+**Preview 0.1.1-preview:** the server, translations and bundled worker resources were checked programmatically; no new GPU generations were run in this update. Native buttons, folder-selection dialogs and the full installation workflow through the native window remain unverified; installation on a clean machine was not tested. The app supports Russian and English.
 
 ## For Windows users
 
-1. Extract the **entire** [FLUX3-Manager-Windows-x64.zip](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Manager-Windows-x64.zip) archive to a convenient folder. Double-click **FLUX3-Manager.exe**. Keep `_internal` beside it: this contains Python, window libraries and app data. This route does not require CMD, PowerShell or a separate Python installation.
+1. Extract the **entire** [FLUX3-Manager-Windows-x64.zip](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.1-preview/FLUX3-Manager-Windows-x64.zip) archive to a convenient folder. Double-click **FLUX3-Manager.exe**. Keep `_internal` beside it: this contains Python, window libraries and app data. This route does not require CMD, PowerShell or a separate Python installation.
 2. Under **Storage folder («Где хранить скачанные файлы»)**, choose a folder with roughly 10 GiB free space. The engine and three models total about 6.23 GiB of downloads; without existing CUDA, about 411 MiB of downloads plus extracted libraries are added.
 3. For existing files, use **Browse… («Обзор…»)** to select the folder containing `sd-cli.exe` and its DLLs, the FLUX.3 model, Qwen, VAE and the CUDA folder or its `bin`. Exact versions are pinned in `assets.lock.json`. CUDA 12 is detected automatically when the required DLLs are present. Selected files are used in place without copying.
 4. For missing files, leave the corresponding fields empty and choose **Download missing files («Скачать недостающее»)**. The engine comes from GitHub, models from Hugging Face and CUDA Runtime/cuBLAS from NVIDIA. The current filename, byte count and SHA256 verification are shown. **Cancel download («Отменить загрузку»)** retains the accepted partial download. Retrying resumes it when HTTP Range is supported; otherwise that file restarts.
@@ -19,9 +19,19 @@ The EXE is distributed in a separate portable package without model weights, eng
 
 Use the source route for additional external launch wrappers. The ordinary Windows package uses its direct bundled worker.
 
+## Interface language and updating
+
+Choose **Русский / English** at the top right of Manager. The choice is saved in local `manager.json` and restored on the next launch. Manager opens the generator in that language; the generator also has **Русский / English** buttons. The browser remembers its own choice in local storage; when storage is blocked, the tab address retains it. Interface language does not translate prompts, lettering inside images, filenames or raw diagnostics from external components.
+
+Switching remains available during checks, downloads and generation. It updates labels, hints, errors and stages while preserving paths, parameters, progress and the current PNG. Switching never starts or retries a generation and never stops the server.
+
+To update, stop the server with the old Manager, close it and extract the new ZIP into a separate folder. Launch the new EXE; settings in `%LOCALAPPDATA%/FLUX3Pascal`, selected models and existing CUDA are reused. Keep the old folder until the new version starts successfully. A running server is not upgraded in place. For the source route, stop and restart the server from the updated sources, then reload the generator page.
+
+This update was checked without opening a native window or running new GPU generations. Manager tests replace widgets and file dialogs with programmatic doubles; real servers use separate temporary settings and ports. This verifies handlers and the server, not native layout or system dialog behavior. System buttons within file dialogs follow the Windows language.
+
 ## Run from source
 
-Developer route: `Start-FLUX3.cmd` or `python scripts/app.py`. Launch the Manager itself with `python desktop/launcher.py`. Python 3.14.4 x64 was tested; the native window requires working Tk. The app needs no external Python packages. Prepare the engine and weights using [REPRODUCE_EN.md](REPRODUCE_EN.md); EXE building is described in [BUILD_WINDOWS.md (Russian)](BUILD_WINDOWS.md).
+Developer route: `Start-FLUX3.cmd` or `python scripts/app.py`. Launch the Manager itself with `python desktop/launcher.py`. Python 3.14.4 x64 was tested; the native window requires working Tk. The app needs no external Python packages. Prepare the engine and weights using [REPRODUCE_EN.md](REPRODUCE_EN.md); EXE building is described in [BUILD_WINDOWS_EN.md](BUILD_WINDOWS_EN.md).
 
 For the source server, set paths to sd-cli.exe, FLUX.3 Q4_0, Qwen3-VL 4B Q4_K_M, FLUX.2 VAE and CUDA Toolkit 12.6 bin. The additional DLL directory can remain empty. The VRAM budget is 6 GiB. The browser’s **Check and save paths («Проверить и сохранить пути»)** button checks existence; `python scripts/verify.py --config config.local.json` checks SHA256. The Manager’s readiness check includes SHA256.
 

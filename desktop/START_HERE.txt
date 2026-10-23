@@ -1,28 +1,48 @@
-FLUX.3 Manager · Windows x64
+FLUX.3 Manager · Windows x64 · 0.1.1-preview
+Русский / English
 
+РУССКИЙ
 1. Распакуйте всю папку. Откройте FLUX3-Manager.exe.
    Не переносите EXE отдельно от _internal.
-2. Выберите папку для скачанных файлов.
-3. Укажите имеющиеся файлы кнопками «Обзор…»
+2. Выберите Русский / English вверху справа. Выбор сохраняется.
+3. Выберите папку для скачанных файлов.
+4. Укажите имеющиеся файлы кнопками «Обзор…»
    ИЛИ оставьте поля пустыми и нажмите «Скачать недостающее».
-4. Нажмите «Проверить и сохранить», затем «Запустить сервер».
-5. В браузере выберите пример, параметры и нажмите «Сгенерировать».
-6. Сохраните PNG до следующей генерации или остановки.
-7. «Остановить сервер» в Manager останавливает приложение.
-   Закрытие Manager также останавливает его сервер.
+5. Нажмите «Проверить и сохранить», затем «Запустить сервер».
+6. В браузере также доступны Русский / English.
+   Выберите пример, параметры и нажмите «Сгенерировать».
+7. Сохраните PNG до следующей генерации или остановки.
+8. «Остановить сервер» или закрытие Manager останавливает его сервер.
 
-Python уже включён. Имеющаяся CUDA 12 переиспользуется.
-Если её нет, кнопка скачивания подготовит локальные библиотеки CUDA.
-Драйвер NVIDIA, системная CUDA и системный PATH не меняются.
-Для файлов оставьте примерно 10 ГиБ свободного места.
+Для обновления остановите старый сервер, закройте старый Manager
+и распакуйте новый пакет отдельно. Настройки, выбранные модели
+и установленная CUDA будут использованы повторно.
 
-Настройки сохраняются локально в %LOCALAPPDATA%/FLUX3Pascal.
-История генераций не ведётся. При перезапуске результат пуст.
-Модели, движок и CUDA скачиваются отдельно из закреплённых источников.
-Неподписанный EXE может потребовать решения владельца компьютера.
+ENGLISH
+1. Extract the whole folder and open FLUX3-Manager.exe.
+   Keep _internal beside the EXE.
+2. Choose English at the top right. The language choice is saved.
+3. Choose a download storage folder.
+4. Use Browse… to select existing files OR leave missing fields empty
+   and click Download missing files.
+5. Click Check and save, then Start server.
+6. The browser generator also offers Русский / English.
+   Choose a preset, set parameters and click Generate.
+7. Save the PNG before the next generation or shutdown.
+8. Stop server or closing Manager stops its own server.
 
-Дополнительные внешние команды запуска подключаются в версии из исходников;
-обычный Windows-пакет использует прямой встроенный worker.
+To update, stop the old server, close the old Manager and extract
+the new package separately. Settings, selected models and existing
+CUDA are reused.
 
-Предварительный публичный выпуск 0.1.0-preview. Установка на чистой машине
-и визуальная проверка нативного окна не подтверждены.
+Python is bundled. Existing CUDA 12 is reused; if missing, pinned local
+CUDA libraries can be downloaded. System CUDA, PATH and the NVIDIA
+driver are not changed. Allow about 10 GiB for downloads/install files.
+Settings: %LOCALAPPDATA%/FLUX3Pascal. No saved generation list.
+Language switching preserves prompts, parameters and current results;
+it does not translate prompt text or lettering inside images.
+Models, engine and CUDA are downloaded separately. The EXE is unsigned.
+External launch wrappers are supported through the source route.
+
+PREVIEW: programmatic tests only in this update. No native-window,
+folder-dialog or clean-machine installation verification is claimed.

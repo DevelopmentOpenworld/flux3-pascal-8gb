@@ -2,14 +2,18 @@
 
 **Язык / Language:** **Русский** · [English](README_EN.md)
 
-**Предварительный выпуск 0.1.0-preview.** Сервер и генерация проверены программно. Полный путь через кнопки нативного Manager и установка на чистой машине не подтверждены.
+**Предварительный выпуск 0.1.1-preview.** Сервер и интерфейсы проверены программно. Полный путь через кнопки нативного Manager и установка на чистой машине не подтверждены.
 
 Воспроизводимый запуск на Windows и Pascal sm_61: stable-diffusion.cpp CUDA 12, FLUX.3 Q4_0, Qwen3-VL 4B Q4_K_M и FLUX.2 VAE. Измерения выполнены с уже установленным CUDA Toolkit 12.6.85. Графический Manager использует имеющуюся CUDA 12 или скачивает локальные библиотеки, когда их нет. PyTorch не требуется.
+
+Генератор и Manager поддерживают **Русский / English** и сохраняют выбор языка. Переключение сохраняет промпт, настройки, текущую операцию и результат. [Как сменить язык и обновить пакет](docs/INTERFACE.md#язык-интерфейса-и-обновление).
 
 - [Скачать автономный интерактивный отчёт](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report-RU.html) · [English HTML](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report-EN.html) – шесть тем, сравнение боёв и разрешений.
 - [Точные файлы, версии, SHA256 и команды](docs/REPRODUCE.md).
 - [Публичный генератор](docs/INTERFACE.md) – настройки и только текущий результат.
 - [Все контрольные бои](docs/BATTLES.md), [галерея](docs/GALLERY.md), [CSV](results.csv), [JSON](results.json).
+
+Обновление интерфейса проверено без computer use: Python-тесты, DOM и отдельный сервер нового EXE. Новые генерации на GPU не запускались; изображения, замеры и автономные отчёты сохраняют корпус 0.1.0-preview. Актуальные действия по установке и выбору языка описаны в инструкции интерфейса.
 
 ## Фрагменты отчёта: изображения и замеры
 
@@ -127,7 +131,7 @@
 
 ## Установка и запуск без консоли
 
-[Скачайте Windows Manager](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Manager-Windows-x64.zip), распакуйте весь ZIP и откройте **FLUX3-Manager.exe**. Python уже включён. Выберите папку для файлов; укажите имеющиеся движок, веса и CUDA кнопками «Обзор…» либо нажмите «Скачать недостающее». Окно проверит закреплённые SHA256 и сохранит настройки.
+[Скачайте Windows Manager](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.1-preview/FLUX3-Manager-Windows-x64.zip), распакуйте весь ZIP и откройте **FLUX3-Manager.exe**. Python уже включён. Выберите папку для файлов; укажите имеющиеся движок, веса и CUDA кнопками «Обзор…» либо нажмите «Скачать недостающее». Окно проверит закреплённые SHA256 и сохранит настройки.
 
 **«Запустить сервер»**, **«Открыть генератор»** и **«Остановить сервер»** управляют приложением из окна. Закрытие Manager останавливает его сервер. В генераторе выберите пример или свой промпт, размер, seed, шаги, CFG и нажмите «Сгенерировать». Адрес по умолчанию `127.0.0.1:8440` и локальная сессия сохраняются между перезапусками. [Пошаговая инструкция](docs/INTERFACE.md).
 
@@ -182,6 +186,6 @@ python scripts/verify.py
 
 [MIT](LICENSE) относится к собственному коду и документации. Условия изображений зависят от используемой модели; MIT не перелицензирует результаты модели. Отдельные условия внешних компонентов – [THIRD_PARTY.md](THIRD_PARTY.md), первичные источники – [SOURCES.md](SOURCES.md).
 
-[Первый публичный выпуск](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/tag/v0.1.0-preview) · [Описание выпуска](RELEASE_NOTES.md) · [SHA256 пакетов](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/SHA256SUMS.txt).
+[Текущий preview](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/tag/v0.1.1-preview) · [Описание выпуска](RELEASE_NOTES.md) · [SHA256 пакетов](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.1-preview/SHA256SUMS.txt).
 
 HTML нужно скачать и открыть локально; обычный просмотр исходника HTML на GitHub не запускает интерактивный отчёт.

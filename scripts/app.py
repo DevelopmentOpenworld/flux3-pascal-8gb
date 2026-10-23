@@ -20,11 +20,18 @@ from urllib.parse import urlparse
 import urllib.request
 import uuid
 import webbrowser
-if not getattr(sys,'frozen',False):sys.path.insert(0,str(Path(__file__).resolve().parent))
+if not getattr(sys,'frozen',False):
+    sys.path.insert(0,str(Path(__file__).resolve().parent))
+    sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from process_env import external_dll_search
+from scripts.i18n import MESSAGES, Message, msg, joined, render, with_translations
 
 ROOT=Path(getattr(sys,'_MEIPASS',Path(__file__).resolve().parents[1]))
 FIELDS=['sd_cli','diffusion_model','llm','vae','cuda_bin','cuda_runtime_dir','max_vram_gib','timeout_seconds']
+
+
+def preset_title(case):
+    return msg('preset_' + case['id'].replace('-', '_'))
 
 
 class OwnedProcessTree:
@@ -67,7 +74,7 @@ def session_token(path):
     if path.exists():
         token=json.loads(path.read_text(encoding='utf-8'))['token']
         if not isinstance(token,str) or not re.fullmatch(r'[A-Za-z0-9_-]{32,128}',token):
-            raise ValueError('Повреждён локальный файл сессии')
+            raise ValueError(msg('session_corrupt'))
         return token
     token=secrets.token_urlsafe(32)
     save(path,dict(token=token))
@@ -76,20 +83,20 @@ def session_token(path):
 
 def safe_error(error):
     # Do not return a traceback containing machine paths to the page.
-    return str(error) if isinstance(error,ValueError) else 'Операция не выполнена. Проверьте файлы и локальный журнал.'
+    return error.args[0] if isinstance(error,ValueError) and error.args and isinstance(error.args[0],Message) else msg('operation_failed')
 
 
 def generation_progress(text,steps):
     """Native weight-loading counters use MB/s; only sampler iterations use s/it."""
     if re.search(r'decoding \d+ latents|computing vae decode|loading \d+/\d+ tensors from .*vae',text,re.I):
-        return 96,'Преобразование в изображение и сохранение'
+        return 96,msg('decode')
     matches=re.findall(r'(\d+)\s*/\s*(\d+)\s+-\s+[\d.]+\s*(?:s/it|it/s)',text)
     for a,b in reversed(matches):
         a,b=int(a),int(b)
-        if b==steps and 1<=a<=b:return min(95,20+round(a/b*70)),f'Генерация изображения: шаг {a} из {steps}'
-    if re.search(r'loading \d+/\d+ tensors from .*flux3',text,re.I):return 15,'Загрузка модели изображения'
-    if re.search(r'loading \d+/\d+ tensors from .*Qwen',text,re.I):return 8,'Подготовка описания'
-    return 3,'Подготовка моделей'
+        if b==steps and 1<=a<=b:return min(95,20+round(a/b*70)),msg('sample_step', step=a, steps=steps)
+    if re.search(r'loading \d+/\d+ tensors from .*flux3',text,re.I):return 15,msg('load_image')
+    if re.search(r'loading \d+/\d+ tensors from .*Qwen',text,re.I):return 8,msg('load_prompt')
+    return 3,msg('load_models')
 
 
 class App:
@@ -107,25 +114,25 @@ class App:
     def check_config(self,config=None):
         config=config or self.config
         errors=[]
-        for key,label in [('sd_cli','Движок sd-cli.exe'),('diffusion_model','Модель FLUX.3'),('llm','Кодировщик Qwen3-VL'),('vae','VAE')]:
+        for key,label in [('sd_cli',msg('engine_label')),('diffusion_model',msg('model_label')),('llm',msg('qwen_label')),('vae','VAE')]:
             p=Path(str(config.get(key,'')));p=p if p.is_absolute() else ROOT/p
-            if not p.is_file():errors.append(label+': файл не найден')
+            if not p.is_file():errors.append(msg('file_missing', name=label))
         cuda=Path(str(config.get('cuda_bin','')));cuda=cuda if cuda.is_absolute() else ROOT/cuda
-        if not str(config.get('cuda_bin','')).strip() or not cuda.is_dir():errors.append('Каталог CUDA bin не найден')
-        if not 1<=float(config.get('max_vram_gib',6))<=6:errors.append('Для профиля 8 ГБ бюджет VRAM должен быть от 1 до 6 ГиБ')
+        if not str(config.get('cuda_bin','')).strip() or not cuda.is_dir():errors.append(msg('cuda_missing'))
+        if not 1<=float(config.get('max_vram_gib',6))<=6:errors.append(msg('vram_limit'))
         return errors
 
     def update_config(self,values):
         with self.lock:
-            if self.active:raise ValueError('Дождитесь окончания текущей генерации')
+            if self.active:raise ValueError(msg('wait_generation'))
             updated=dict(self.config)
             for key in FIELDS:
                 if key in values:updated[key]=values[key]
             updated['max_vram_gib']=float(updated.get('max_vram_gib',6));updated['timeout_seconds']=900
             errors=self.check_config(updated)
-            if errors:raise ValueError('; '.join(errors))
+            if errors:raise ValueError(joined(errors, '; '))
             save(self.config_path,updated);self.config=updated
-        return {'ok':True,'message':'Пути проверены и сохранены'}
+        return {'ok':True,'message':msg('paths_saved')}
 
     def view_job(self,job):
         result={k:job.get(k) for k in ['id','status','message','progress','created_at','width','height','seed','steps','cfg_scale','prompt','seconds','image_sha256']}
@@ -139,9 +146,9 @@ class App:
     def clear_workspace(self):
         # Only remove this process's own temporary workspace, never configured user folders.
         base=self.data.resolve()
-        if base!=Path(self.workspace.name).resolve():raise ValueError('Неверная временная папка')
+        if base!=Path(self.workspace.name).resolve():raise ValueError(msg('temp_folder'))
         for p in base.iterdir():
-            if not p.resolve().is_relative_to(base):raise ValueError('Неверный временный путь')
+            if not p.resolve().is_relative_to(base):raise ValueError(msg('temp_path'))
             if p.is_dir():shutil.rmtree(p)
             else:p.unlink()
 
@@ -153,23 +160,23 @@ class App:
 
     def create(self,values):
         errors=self.check_config()
-        if errors:raise ValueError('; '.join(errors))
+        if errors:raise ValueError(joined(errors, '; '))
         prompt=str(values.get('prompt','')).strip()
-        if not prompt or len(prompt)>12000:raise ValueError('Введите промпт от 1 до 12000 символов')
+        if not prompt or len(prompt)>12000:raise ValueError(msg('prompt_limit'))
         def integer(key,default):
             value=values.get(key,default)
-            if isinstance(value,bool) or not isinstance(value,(int,float)) or int(value)!=value:raise ValueError('Целые параметры должны быть числами без дробной части')
+            if isinstance(value,bool) or not isinstance(value,(int,float)) or int(value)!=value:raise ValueError(msg('integer_parameters'))
             return int(value)
         width=integer('width',512);height=integer('height',512)
         if not 256<=width<=1536 or not 256<=height<=1536 or width%16 or height%16 or width*height>1024*1024:
-            raise ValueError('Размеры: кратные 16, от 256 до 1536; площадь не больше 1024×1024')
+            raise ValueError(msg('dimension_limit'))
         seed=integer('seed',42);steps=integer('steps',16);cfg=float(values.get('cfg_scale',1))
-        if not 0<=seed<=2147483647 or not 1<=steps<=64 or not 1<=cfg<=8:raise ValueError('Проверьте seed, шаги и CFG')
+        if not 0<=seed<=2147483647 or not 1<=steps<=64 or not 1<=cfg<=8:raise ValueError(msg('parameter_limit'))
         with self.lock:
-            if self.active:raise ValueError('Генерация уже запущена; дождитесь результата')
+            if self.active:raise ValueError(msg('already_generating'))
             self.clear_workspace()
             jid='ui-'+uuid.uuid4().hex[:16]
-            job=dict(id=jid,status='QUEUED',message='Ожидание запуска',progress=0,created_at=dt.datetime.now(dt.timezone.utc).isoformat(),
+            job=dict(id=jid,status='QUEUED',message=msg('queued'),progress=0,created_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                      width=width,height=height,seed=seed,steps=steps,cfg_scale=cfg,prompt=prompt)
             self.jobs={jid:job};self.active=jid;self.current=jid
             (self.data/jid).mkdir()
@@ -196,7 +203,7 @@ class App:
         worker=[sys.executable,'--generate-worker'] if getattr(sys,'frozen',False) else [sys.executable,str(ROOT/'scripts/generate.py')]
         cmd=worker+['--config',str(inputs/'config.json'),'--cases-file',str(inputs/'case.json'),'--case',jid,'--run-id',jid]
         prefix=self.config.get('execution_prefix',[])
-        if not isinstance(prefix,list) or any(not isinstance(x,str) for x in prefix):raise ValueError('Неверный формат внешней команды запуска')
+        if not isinstance(prefix,list) or any(not isinstance(x,str) for x in prefix):raise ValueError(msg('prefix_invalid'))
         generated=self.data/'generated'/jid
         tree=None
         try:
@@ -212,7 +219,7 @@ class App:
                     with self.lock:
                         if job['status']=='CANCELLED':break
                         if generated.exists() and job['status']!='STOPPING':
-                            job['status']='RUNNING';job['message']='Генерация изображения'
+                            job['status']='RUNNING';job['message']=msg('generating')
                             live=generated/'live.log'
                             if live.exists():
                                 text=live.read_text(encoding='utf-8',errors='replace')[-20000:]
@@ -227,10 +234,10 @@ class App:
                 if p.returncode==0 and r.get('status')=='PASS' and (generated/'image.png').is_file():
                     import shutil
                     shutil.copyfile(generated/'image.png',folder/'image.png')
-                    job.update(status='DONE',message='Готово',progress=100,seconds=r['seconds'],image_sha256=r['image_sha256'])
+                    job.update(status='DONE',message=msg('done'),progress=100,seconds=r['seconds'],image_sha256=r['image_sha256'])
                 else:
                     save(folder/'runtime-status.json',dict(returncode=p.returncode,record_present=record.exists()))
-                    job.update(status='FAILED',message='Генерация не завершена: '+str(r.get('stop_reason') or 'проверьте файлы и журнал'))
+                    job.update(status='FAILED',message=msg('generation_failed', detail=r.get('stop_reason') or msg('check_log')))
         except Exception as error:
             import traceback
             (folder/'error.log').write_text(traceback.format_exc(),encoding='utf-8')
@@ -245,14 +252,14 @@ class App:
         with self.lock:
             if not self.active:return {'ok':True}
             job=self.jobs[self.active];p=job.get('process')
-            job.update(status='STOPPING' if p else 'CANCELLED',message='Остановка…',progress=0)
+            job.update(status='STOPPING' if p else 'CANCELLED',message=msg('stopping'),progress=0)
         if p and p.poll() is None:
             subprocess.run(['taskkill','/PID',str(p.pid),'/T','/F'],capture_output=True,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
             try:p.wait(timeout=10)
             except subprocess.TimeoutExpired:
-                with self.lock:job.update(status='RUNNING',message='Остановка не подтверждена; задача ещё выполняется')
-                raise ValueError('Остановка процесса не подтверждена')
-        with self.lock:job.update(status='CANCELLED',message='Отменено',progress=0)
+                with self.lock:job.update(status='RUNNING',message=msg('stop_pending'))
+                raise ValueError(msg('process_stop_failed'))
+        with self.lock:job.update(status='CANCELLED',message=msg('cancelled'),progress=0)
         return {'ok':True}
 
 
@@ -271,7 +278,7 @@ def main():
     class Handler(BaseHTTPRequestHandler):
         def log_message(self,*args):pass
         def send(self,value,status=200,kind='application/json; charset=utf-8'):
-            data=value if isinstance(value,bytes) else json.dumps(value,ensure_ascii=False).encode('utf-8')
+            data=value if isinstance(value,bytes) else json.dumps(render(with_translations(value), 'en' if self.headers.get('Accept-Language','').lower().startswith('en') else 'ru'),ensure_ascii=False).encode('utf-8')
             self.send_response(status);self.send_header('Content-Type',kind);self.send_header('Content-Length',str(len(data)));self.send_header('Cache-Control','no-store');self.send_header('X-Content-Type-Options','nosniff');self.end_headers();self.wfile.write(data)
         def allowed(self):
             return self.headers.get('Host')==f'127.0.0.1:{self.server.server_port}'
@@ -279,44 +286,45 @@ def main():
             return self.allowed() and secrets.compare_digest(self.headers.get('X-Session',''),app.token)
         def do_GET(self):
             path=urlparse(self.path).path
-            if not self.allowed():return self.send({'error':'Host rejected'},403)
+            if not self.allowed():return self.send({'error':msg('host_rejected')},403)
             if path=='/api/health':return self.send({'app':'flux3-local','instance':instance})
-            if path=='/':return self.send((ROOT/'ui/index.html').read_bytes(),kind='text/html; charset=utf-8')
-            if not self.authorized():return self.send({'error':'Сессия не подтверждена. Откройте интерфейс через файл запуска.'},403)
+            if path=='/ui/app.js':return self.send((ROOT/'ui/app.js').read_bytes(),kind='text/javascript; charset=utf-8')
+            if path=='/':return self.send((ROOT/'ui/index.html').read_bytes().replace(b'__FLUX_MESSAGES__',json.dumps(MESSAGES,ensure_ascii=False).replace('<','\\u003c').encode('utf-8')),kind='text/html; charset=utf-8')
+            if not self.authorized():return self.send({'error':msg('session_invalid')},403)
             if path=='/api/config':return self.send({'config':app.exposed_config(),'errors':app.check_config()})
             if path=='/api/presets':
                 cases=json.loads((ROOT/'cases.json').read_text(encoding='utf-8'))['cases']
                 result=[]
                 for c in cases:
                     if c['role']!='thematic-first-result':continue
-                    result.append(dict(id=c['id'],title=c['title_ru'],prompt=(ROOT/c['prompt_file']).read_text(encoding='utf-8'),width=c['width'],height=c['height'],seed=c['seed']))
+                    result.append(dict(id=c['id'],title=preset_title(c),prompt=(ROOT/c['prompt_file']).read_text(encoding='utf-8'),width=c['width'],height=c['height'],seed=c['seed']))
                 extra=json.loads((ROOT/'battle-cases.json').read_text(encoding='utf-8'))['cases']
                 for c in extra:
                     if c['variant']=='clear' and c['seed']==42:
-                        result.append(dict(id=c['id'],title=c['title_ru']+' · упрощённая композиция',prompt=(ROOT/c['prompt_file']).read_text(encoding='utf-8'),width=c['width'],height=c['height'],seed=c['seed']))
+                        result.append(dict(id=c['id'],title=msg('simple_composition', title=preset_title(c)),prompt=(ROOT/c['prompt_file']).read_text(encoding='utf-8'),width=c['width'],height=c['height'],seed=c['seed']))
                 return self.send(result)
             if path=='/api/current':return self.send(app.current_job())
             if path.startswith('/api/image/'):
                 jid=path.rsplit('/',1)[-1]
-                if not re.fullmatch(r'ui-[a-f0-9]{16}',jid):return self.send({'error':'Нет изображения'},404)
+                if not re.fullmatch(r'ui-[a-f0-9]{16}',jid):return self.send({'error':msg('no_image')},404)
                 p=app.data/jid/'image.png'
-                if jid!=app.current or not p.is_file():return self.send({'error':'Нет изображения'},404)
+                if jid!=app.current or not p.is_file():return self.send({'error':msg('no_image')},404)
                 return self.send(p.read_bytes(),kind='image/png')
-            return self.send({'error':'Не найдено'},404)
+            return self.send({'error':msg('not_found')},404)
         def do_POST(self):
-            if not self.authorized():return self.send({'error':'Доступ запрещён'},403)
+            if not self.authorized():return self.send({'error':msg('forbidden')},403)
             origin=self.headers.get('Origin')
-            if origin and origin!=f'http://127.0.0.1:{self.server.server_port}':return self.send({'error':'Origin rejected'},403)
+            if origin and origin!=f'http://127.0.0.1:{self.server.server_port}':return self.send({'error':msg('origin_rejected')},403)
             try:
                 n=int(self.headers.get('Content-Length','0'))
-                if n<0 or n>65536:raise ValueError('Слишком большой запрос')
+                if n<0 or n>65536:raise ValueError(msg('large_request'))
                 value=json.loads(self.rfile.read(n) or b'{}')
                 if self.path=='/api/config':return self.send(app.update_config(value))
                 if self.path=='/api/generate':return self.send(app.create(value),202)
                 if self.path=='/api/cancel':return self.send(app.cancel())
                 if self.path=='/api/shutdown':
                     app.cancel();self.send({'ok':True});threading.Thread(target=self.server.shutdown,daemon=True).start();return
-                return self.send({'error':'Не найдено'},404)
+                return self.send({'error':msg('not_found')},404)
             except (ValueError,TypeError,KeyError) as error:return self.send({'error':safe_error(error)},400)
             except Exception as error:return self.send({'error':safe_error(error)},500)
     port=args.port if args.port is not None else int(app.config.get('port',8440))

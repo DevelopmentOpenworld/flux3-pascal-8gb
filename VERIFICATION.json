@@ -1,8 +1,8 @@
 {
-  "schema": 5,
-  "version": "0.1.0-preview",
-  "status": "Prepared for owner review; PASS within explicit scope",
-  "recorded_at": "2026-10-23T22:04:02.132045+00:00",
+  "schema": 6,
+  "version": "0.1.1-preview",
+  "status": "PASS within explicit programmatic scope; preview limitations retained",
+  "recorded_at": "2026-10-23T22:31:36.174598+00:00",
   "stored_evidence_before_manifest": {
     "status": "PASS",
     "checks": 546,
@@ -12,12 +12,11 @@
   "unchanged_control_pngs": 39,
   "report_sha256": "7448139f9828f4d5fa403a5ac8470a2bf0b530d8b9f6738772c32f30fb8c45a5",
   "application_tests": {
-    "count": 23,
-    "duration_seconds": 15.065,
+    "count": 33,
+    "duration_seconds": 19.283,
     "result": "PASS",
     "command": "python -B -m unittest discover -s tests -v",
-    "models_run": false,
-    "rechecked_at": "2026-10-23T21:02:55.172155+00:00"
+    "models_run": false
   },
   "dom": {
     "status": "PASS",
@@ -238,5 +237,213 @@
       "ru",
       "en"
     ]
-  }
+  },
+  "interface_languages": {
+    "generator_dom": {
+      "status": "PASS",
+      "method": "jsdom with mocked HTTP; no browser or native window",
+      "checks": 18,
+      "results": [
+        {
+          "name": "Russian default and all controls enabled when ready",
+          "status": "PASS"
+        },
+        {
+          "name": "English labels, placeholders, aria labels, preset titles and status",
+          "status": "PASS"
+        },
+        {
+          "name": "Switch preserves all entered fields and expanded settings; no POST",
+          "status": "PASS"
+        },
+        {
+          "name": "Every marked English label matches catalog",
+          "status": "PASS"
+        },
+        {
+          "name": "Language persists in browser and address without altering session",
+          "status": "PASS"
+        },
+        {
+          "name": "Switch during submission preserves busy controls and sends one exact payload",
+          "status": "PASS"
+        },
+        {
+          "name": "Active step translates immediately; progress and cancellation stay live",
+          "status": "PASS"
+        },
+        {
+          "name": "Completed PNG and metadata survive language switch",
+          "status": "PASS"
+        },
+        {
+          "name": "English result metadata and original prompt retained",
+          "status": "PASS"
+        },
+        {
+          "name": "Validation error translates without retry and keeps input",
+          "status": "PASS"
+        },
+        {
+          "name": "Failed-to-fetch recovery message translates and never retries generation",
+          "status": "PASS"
+        },
+        {
+          "name": "Reconnect keeps form and current PNG; no duplicate POST",
+          "status": "PASS"
+        },
+        {
+          "name": "Stopped-app status translates and generate remains disabled",
+          "status": "PASS"
+        },
+        {
+          "name": "No removed history API called and no DOM runtime errors",
+          "status": "PASS"
+        },
+        {
+          "name": "Saved English choice is restored on a fresh page",
+          "status": "PASS"
+        },
+        {
+          "name": "Manager language argument overrides older browser preference",
+          "status": "PASS"
+        },
+        {
+          "name": "Invalid language safely falls back to Russian",
+          "status": "PASS"
+        },
+        {
+          "name": "Blocked local storage still allows switching",
+          "status": "PASS"
+        }
+      ]
+    },
+    "manager_and_frozen_checks": {
+      "status": "PASS",
+      "checks": 23,
+      "results": [
+        {
+          "name": "Frozen import/resource dispatch exits successfully",
+          "status": "PASS"
+        },
+        {
+          "name": "All resources and both languages bundled",
+          "status": "PASS"
+        },
+        {
+          "name": "Frozen Python renders English sampler stage",
+          "status": "PASS"
+        },
+        {
+          "name": "Bundled Tcl initializes without creating a window",
+          "status": "PASS"
+        },
+        {
+          "name": "Bundled resource matches source: ui/index.html",
+          "status": "PASS"
+        },
+        {
+          "name": "Bundled resource matches source: ui/app.js",
+          "status": "PASS"
+        },
+        {
+          "name": "Bundled resource matches source: ui/messages.json",
+          "status": "PASS"
+        },
+        {
+          "name": "Actual frozen server starts on isolated port",
+          "status": "PASS"
+        },
+        {
+          "name": "Controller reuses its own server",
+          "status": "PASS"
+        },
+        {
+          "name": "Real served HTML embeds RU/EN catalog",
+          "status": "PASS"
+        },
+        {
+          "name": "Real served generator JS matches source",
+          "status": "PASS"
+        },
+        {
+          "name": "English validation returned by actual EXE",
+          "status": "PASS"
+        },
+        {
+          "name": "Russian validation retained for immediate switching",
+          "status": "PASS"
+        },
+        {
+          "name": "All 21 frozen presets translated",
+          "status": "PASS"
+        },
+        {
+          "name": "All prompts remain byte-equivalent after text decoding",
+          "status": "PASS"
+        },
+        {
+          "name": "Frozen authorization error in en",
+          "status": "PASS"
+        },
+        {
+          "name": "Frozen authorization error in ru",
+          "status": "PASS"
+        },
+        {
+          "name": "Invalid generation rejected without model launch",
+          "status": "PASS"
+        },
+        {
+          "name": "No model job or history created",
+          "status": "PASS"
+        },
+        {
+          "name": "Frozen server stops through actual controller",
+          "status": "PASS"
+        },
+        {
+          "name": "Frozen restart retains bookmark and gets a fresh instance",
+          "status": "PASS"
+        },
+        {
+          "name": "Old bookmark authenticates after restart and result is empty",
+          "status": "PASS"
+        },
+        {
+          "name": "All owned frozen test processes stopped",
+          "status": "PASS"
+        }
+      ],
+      "models_run": false,
+      "native_window_opened": false,
+      "method": "Actual frozen service/worker-check modes via HTTP and controller; no native UI",
+      "exe_sha256": "68c7da5c4d806a62c6941d83ed3be3cc5dff281604061d16d252807ddac5205d",
+      "resources": {
+        "frozen": true,
+        "app_root_ok": true,
+        "generator_root_ok": true,
+        "resource_checks": {
+          "ui/index.html": true,
+          "ui/app.js": true,
+          "ui/messages.json": true,
+          "assets.lock.json": true,
+          "config.example.json": true,
+          "cases.json": true,
+          "battle-cases.json": true,
+          "prompts/people-portrait.txt": true
+        },
+        "languages": [
+          "ru",
+          "en"
+        ],
+        "english_step": "Generating image: step 3 of 16",
+        "tcl_patchlevel": "8.6.15"
+      }
+    },
+    "proof": "desktop/verification.json",
+    "no_computer_use": true,
+    "models_run": false
+  },
+  "report_artifact_scope": "Existing 0.1.0-preview reports, 39-image corpus, metrics and report DOM evidence are unchanged. Current app instructions are in docs/INTERFACE.md and docs/INTERFACE_EN.md."
 }

@@ -10,6 +10,23 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def check_tcl():
+    """Fail before building if the current process cannot load Tcl data. No window."""
+    import tkinter
+    try:
+        interpreter = tkinter.Tcl()
+        return interpreter.eval('info patchlevel')
+    except tkinter.TclError as error:
+        raise RuntimeError('Tcl data is unavailable in this build environment; no package was built.') from error
+
+
+def check_bundle(bundle):
+    required = ['_tkinter.pyd', 'tcl86t.dll', 'tk86t.dll', '_tcl_data/init.tcl', '_tk_data/tk.tcl', 'ui/messages.json', 'ui/app.js']
+    missing = [name for name in required if not (Path(bundle) / '_internal' / name).is_file()]
+    if missing:
+        raise RuntimeError('Incomplete Windows bundle: ' + ', '.join(missing))
+
+
 def include_notices(bundle):
     bundle = Path(bundle)
     licenses = bundle / 'licenses'
@@ -37,6 +54,7 @@ def main():
     ap.add_argument('--output', type=Path, required=True)
     ap.add_argument('--work', type=Path, required=True)
     args = ap.parse_args()
+    check_tcl()
     args.output.mkdir(parents=True, exist_ok=True)
     args.work.mkdir(parents=True, exist_ok=True)
     command = [sys.executable, '-m', 'PyInstaller', '--noconfirm', '--onedir', '--windowed', '--name', 'FLUX3-Manager',
@@ -46,6 +64,7 @@ def main():
         command += ['--add-data', str(ROOT / name) + ';' + name if (ROOT / name).is_dir() else str(ROOT / name) + ';.']
     command += [str(ROOT / 'desktop/launcher.py')]
     subprocess.run(command, cwd=ROOT, check=True)
+    check_bundle(args.output / 'FLUX3-Manager')
     include_notices(args.output / 'FLUX3-Manager')
     print(json.dumps(dict(status='PASS', directory=str(args.output / 'FLUX3-Manager'))))
 

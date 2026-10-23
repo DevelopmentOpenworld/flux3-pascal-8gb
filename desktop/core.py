@@ -15,6 +15,8 @@ import urllib.error
 import urllib.request
 from urllib.parse import urlparse
 
+from scripts.i18n import msg, joined
+
 ROOT = Path(getattr(sys, '_MEIPASS', Path(__file__).resolve().parents[1]))
 CUDA_DLLS = ('cudart64_12.dll', 'cublas64_12.dll', 'cublasLt64_12.dll')
 
@@ -25,7 +27,7 @@ class Cancelled(Exception):
 
 def checkpoint(cancel):
     if cancel and cancel.is_set():
-        raise Cancelled('Операция отменена; скачанные части сохранены для продолжения.')
+        raise Cancelled(msg('download_cancelled'))
 
 
 def sha(path, cancel=None):
@@ -80,29 +82,29 @@ def download(asset, target, cancel, progress, opener=urllib.request.urlopen):
     target = Path(target)
     target.parent.mkdir(parents=True, exist_ok=True)
     if target.exists():
-        progress(0, asset['bytes'], 'Проверка уже скачанного файла: ' + target.name)
+        progress(0, asset['bytes'], msg('checking_existing', file=target.name))
         if not asset_matches(target, asset, cancel):
-            raise ValueError('Имеющийся файл отличается от закреплённого: ' + target.name + '. Выберите другую папку.')
-        progress(asset['bytes'], asset['bytes'], 'Используется имеющийся файл: ' + target.name)
+            raise ValueError(msg('existing_mismatch', file=target.name))
+        progress(asset['bytes'], asset['bytes'], msg('reuse_existing', file=target.name))
         return target
     partial = target.with_name(target.name + '.part')
     owner = partial.with_name(partial.name + '.json')
     identity = {k: asset[k] for k in ('url', 'bytes', 'sha256')}
     if partial.exists():
         if not owner.is_file() or json.loads(owner.read_text(encoding='utf-8')) != identity:
-            raise ValueError('Неизвестный частичный файл: ' + partial.name + '. Выберите другую папку.')
+            raise ValueError(msg('unknown_partial', file=partial.name))
     else:
         if owner.exists():
             if json.loads(owner.read_text(encoding='utf-8')) != identity:
-                raise ValueError('Конфликт метаданных загрузки: ' + target.name)
+                raise ValueError(msg('metadata_conflict', file=target.name))
         save(owner, identity)
         partial.touch(exist_ok=False)
     offset = partial.stat().st_size
     if offset > asset['bytes']:
-        raise ValueError('Частичная загрузка больше ожидаемого файла: ' + target.name)
+        raise ValueError(msg('partial_large', file=target.name))
     checkpoint(cancel)
     if shutil.disk_usage(target.parent).free < asset['bytes'] - offset + 512 * 1024**2:
-        raise ValueError('Недостаточно свободного места для ' + target.name)
+        raise ValueError(msg('disk_download', file=target.name))
     if offset < asset['bytes']:
         headers = {'User-Agent': 'FLUX3-Pascal-Manager/3', 'Accept-Encoding': 'identity'}
         if offset:
@@ -111,11 +113,11 @@ def download(asset, target, cancel, progress, opener=urllib.request.urlopen):
             status = response.status
             if offset and status == 206:
                 if not response.headers.get('Content-Range', '').startswith(f'bytes {offset}-'):
-                    raise ValueError('Сервер прислал неверный диапазон файла')
+                    raise ValueError(msg('range_invalid'))
             elif status == 200:
                 offset = 0
             else:
-                raise ValueError('Неожиданный ответ сервера загрузки')
+                raise ValueError(msg('download_response'))
             with partial.open('ab' if offset else 'wb') as output:
                 while True:
                     checkpoint(cancel)
@@ -123,20 +125,20 @@ def download(asset, target, cancel, progress, opener=urllib.request.urlopen):
                     if not chunk:
                         break
                     if offset + len(chunk) > asset['bytes']:
-                        raise ValueError('Сервер прислал файл больше ожидаемого')
+                        raise ValueError(msg('download_oversize'))
                     output.write(chunk)
                     offset += len(chunk)
-                    progress(offset, asset['bytes'], 'Скачивание: ' + target.name)
-    progress(offset, asset['bytes'], 'Проверка SHA256: ' + target.name)
+                    progress(offset, asset['bytes'], msg('downloading', file=target.name))
+    progress(offset, asset['bytes'], msg('checking_sha', file=target.name))
     if not asset_matches(partial, asset, cancel):
-        raise ValueError('Размер или SHA256 не совпал: ' + target.name + '. Файл не принят.')
+        raise ValueError(msg('hash_mismatch', file=target.name))
     checkpoint(cancel)
     # target may have appeared while the network request was in flight.
     if target.exists():
-        raise ValueError('Целевой файл появился во время загрузки; он не перезаписан.')
+        raise ValueError(msg('target_appeared'))
     partial.rename(target)
     owner.unlink()
-    progress(asset['bytes'], asset['bytes'], 'Готово: ' + target.name)
+    progress(asset['bytes'], asset['bytes'], msg('file_done', file=target.name))
     return target
 
 
@@ -147,23 +149,23 @@ def zip_members(archive, destination):
     total = 0
     members = archive.infolist()
     if len(members) > 20000:
-        raise ValueError('Слишком много файлов в архиве')
+        raise ValueError(msg('zip_count'))
     for m in members:
         p = PurePosixPath(m.filename.replace('\\', '/'))
         if p.is_absolute() or not p.parts or any(x in ('.', '..') or x.rstrip(' .') != x or re.search(r'[<>:"|?*\x00-\x1f]', x) or re.fullmatch(r'(?i)(con|prn|aux|nul|com[0-9]|lpt[0-9])(?:\..*)?', x) for x in p.parts):
-            raise ValueError('Небезопасное имя в архиве')
+            raise ValueError(msg('zip_unsafe'))
         if stat.S_ISLNK(m.external_attr >> 16):
-            raise ValueError('Ссылки в архиве не разрешены')
+            raise ValueError(msg('zip_links'))
         key = str(p).casefold().rstrip('/')
         if key in seen:
-            raise ValueError('Повторяющееся имя в архиве')
+            raise ValueError(msg('zip_duplicate'))
         seen.add(key)
         target = base.joinpath(*p.parts)
         if not target.resolve().is_relative_to(base):
-            raise ValueError('Путь архива выходит из папки')
+            raise ValueError(msg('zip_escape'))
         total += m.file_size
         if total > 5 * 1024**3:
-            raise ValueError('Архив больше допустимого размера')
+            raise ValueError(msg('zip_size'))
     return members
 
 
@@ -172,7 +174,7 @@ def extract_zip(path, destination, cancel):
     with zipfile.ZipFile(path) as z:
         members = zip_members(z, destination)
         if shutil.disk_usage(Path(destination).parent).free < sum(m.file_size for m in members) + 512 * 1024**2:
-            raise ValueError('Недостаточно места для распаковки')
+            raise ValueError(msg('disk_extract'))
         for m in members:
             checkpoint(cancel)
             z.extract(m, destination)
@@ -186,19 +188,19 @@ class Installer:
         errors = []
         for key in ('sd_cli', 'diffusion_model', 'llm', 'vae'):
             path = Path(config.get(key) or '__missing__')
-            progress(0, 1, 'Проверка: ' + self.lock['configured_assets'][key]['file'])
+            progress(0, 1, msg('checking_file', file=self.lock['configured_assets'][key]['file']))
             if not asset_matches(path, self.lock['configured_assets'][key], cancel):
-                errors.append(self.lock['configured_assets'][key]['file'] + ': файл отсутствует или отличается SHA256')
+                errors.append(msg('asset_invalid', file=self.lock['configured_assets'][key]['file']))
         engine_dir = Path(config.get('sd_cli') or '__missing__').parent
         for a in self.lock['runtime_files']:
             checkpoint(cancel)
             if not asset_matches(engine_dir / a['file'], a, cancel):
-                errors.append(a['file'] + ': проверьте полный каталог движка')
+                errors.append(msg('engine_incomplete_file', file=a['file']))
         if not config.get('cuda_bin') or not cuda_bin(config['cuda_bin']):
-            errors.append('Выберите CUDA 12 bin с cudart64_12.dll, cublas64_12.dll и cublasLt64_12.dll')
+            errors.append(msg('cuda_select'))
         port = config.get('port', 8440)
         if isinstance(port, bool) or not isinstance(port, int) or not 1024 <= port <= 65535:
-            errors.append('Порт должен быть целым числом от 1024 до 65535')
+            errors.append(msg('port_range'))
         return errors
 
     def install(self, config, storage, cancel, progress):
@@ -210,26 +212,26 @@ class Installer:
             existing = Path(result.get(key) or '__missing__')
             if asset_matches(existing, self.lock['configured_assets'][key], cancel):
                 if key != 'sd_cli' or all(asset_matches(existing.parent / f['file'], f, cancel) for f in self.lock['runtime_files']):
-                    progress(1, 1, 'Используется выбранный файл: ' + existing.name)
+                    progress(1, 1, msg('reuse_selected', file=existing.name))
                     continue
-                raise ValueError('Каталог выбранного движка неполон; выберите пустую папку или полный комплект.')
+                raise ValueError(msg('engine_incomplete'))
             if result.get(key) and existing.exists():
-                raise ValueError('Выбранный файл отличается от закреплённого: ' + existing.name + '. Он не заменён.')
+                raise ValueError(msg('selected_mismatch', file=existing.name))
             target = storage / a['target']
             archive = download(a, target, cancel, progress)
             if key == 'sd_cli':
                 destination = storage / 'runtime'
                 if destination.exists():
                     if not all(asset_matches(destination / f['file'], f, cancel) for f in self.lock['runtime_files']):
-                        raise ValueError('Имеющийся каталог runtime отличается; выберите другую папку загрузки.')
+                        raise ValueError(msg('runtime_mismatch'))
                 else:
                     with tempfile.TemporaryDirectory(prefix='.flux3-unpack-', dir=storage) as tmp:
                         stage = Path(tmp) / 'runtime'
                         stage.mkdir()
-                        progress(0, 1, 'Распаковка движка')
+                        progress(0, 1, msg('extract_engine'))
                         extract_zip(archive, stage, cancel)
                         if not all(asset_matches(stage / f['file'], f, cancel) for f in self.lock['runtime_files']):
-                            raise ValueError('Состав скачанного движка не совпал с закреплённым')
+                            raise ValueError(msg('engine_contents'))
                         stage.rename(destination)
                 result[key] = str(destination / 'sd-cli.exe')
             else:
@@ -242,7 +244,7 @@ class Installer:
                 result['cuda_bin'] = str(self.install_cuda(storage, cancel, progress))
         errors = self.validate(result, cancel, progress)
         if errors:
-            raise ValueError('\n'.join(errors))
+            raise ValueError(joined(errors))
         return result
 
     def install_cuda(self, storage, cancel, progress):
@@ -253,24 +255,24 @@ class Installer:
             with tempfile.TemporaryDirectory(prefix='.flux3-cuda-', dir=storage) as tmp:
                 stage = Path(tmp) / 'unpack'
                 stage.mkdir()
-                progress(0, 1, 'Распаковка локальной CUDA: ' + a['name'])
+                progress(0, 1, msg('extract_cuda', file=a['name']))
                 extract_zip(archive, stage, cancel)
                 files = [f for f in stage.rglob('*') if f.is_file() and (f.name in a['dlls'] or f.name.lower().startswith('license'))]
                 for name in a['dlls']:
                     if sum(f.name == name for f in files) != 1:
-                        raise ValueError('В пакете CUDA не найден однозначный файл ' + name)
+                        raise ValueError(msg('cuda_ambiguous', file=name))
                 for f in files:
                     checkpoint(cancel)
                     dest = target_bin / f.name if f.name in a['dlls'] else storage / 'cuda/licenses' / a['id'] / f.name
                     dest.parent.mkdir(parents=True, exist_ok=True)
                     if dest.exists():
                         if sha(dest, cancel) != sha(f, cancel):
-                            raise ValueError('Имеющаяся CUDA отличается: ' + dest.name + '. Она не заменена.')
+                            raise ValueError(msg('cuda_mismatch', file=dest.name))
                     else:
                         with f.open('rb') as src, dest.open('xb') as out:
                             shutil.copyfileobj(src, out)
         if not cuda_bin(target_bin):
-            raise ValueError('Локальная CUDA не прошла проверку наличия DLL')
+            raise ValueError(msg('cuda_check_failed'))
         return target_bin
 
 
@@ -303,7 +305,7 @@ class ServerController:
         if current:
             return current
         if self.process and self.process.poll() is None:
-            raise ValueError('Сервер ещё запускается. Дождитесь результата.')
+            raise ValueError(msg('server_starting'))
         args = [sys.executable, '--server'] if getattr(sys, 'frozen', False) else [sys.executable, str(ROOT / 'desktop/launcher.py'), '--server']
         args += ['--config', str(self.config_path), '--no-browser']
         log_path = self.config_path.parent / 'server.log'
@@ -319,10 +321,10 @@ class ServerController:
             if self.process.poll() is not None:
                 if self.tree:
                     self.tree.close(); self.tree = None
-                raise ValueError('Сервер не запустился. Проверьте порт: возможно, он занят другим приложением. Подробности – в локальном server.log.')
+                raise ValueError(msg('server_start_failed'))
             time.sleep(0.15)
         self.stop()
-        raise ValueError('Сервер не подтвердил запуск за отведённое время.')
+        raise ValueError(msg('server_timeout'))
 
     def stop(self):
         current = self.state()
@@ -345,6 +347,6 @@ class ServerController:
                     self.tree.close(); self.tree = None
                 self.process.wait(timeout=5)
         if self.state():
-            raise ValueError('Остановка сервера не подтверждена; проверьте открытый интерфейс.')
+            raise ValueError(msg('server_stop_failed'))
         if self.tree:
             self.tree.close(); self.tree = None

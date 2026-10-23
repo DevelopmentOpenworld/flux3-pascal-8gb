@@ -2,16 +2,18 @@
 
 **Language / Язык:** [Русский](README.md) · **English**
 
-**Preview release 0.1.0-preview.** The server and image generation have been checked programmatically. The complete workflow through the native Manager buttons and installation on a clean machine have not been verified.
+**Preview release 0.1.1-preview.** The server and interfaces have been checked programmatically. The complete workflow through the native Manager buttons and installation on a clean machine have not been verified.
 
 Reproducible image generation on Windows and Pascal sm_61: stable-diffusion.cpp CUDA 12, FLUX.3 Q4_0, Qwen3-VL 4B Q4_K_M and FLUX.2 VAE. Measurements used the existing CUDA Toolkit 12.6.85 installation. The graphical Manager reuses existing CUDA 12 libraries or downloads local libraries when needed. PyTorch is not required.
 
-The current app UI is in Russian. The full report and setup/interface guides are available in Russian and English; other linked documentation may be in Russian. Original Cyrillic text inside images is preserved. The language buttons inside either downloaded report also work offline.
+Both the generator and Manager support **Русский / English**, with a saved language choice. Switching preserves prompts, settings, operations and the current result. The full report and setup/interface guides are available in Russian and English; other linked documentation may be in Russian. Original Cyrillic text inside images is preserved. The language buttons inside either downloaded report also work offline.
 
 - [Download the standalone interactive report](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report-EN.html) · [Русский HTML](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Pascal-Report-RU.html) – six themes, battle comparisons and resolution comparisons.
 - [Exact files, versions, SHA256 and commands](docs/REPRODUCE_EN.md).
 - [Local generator](docs/INTERFACE_EN.md) – settings and a single current result.
 - [All battle controls](docs/BATTLES.md), [gallery](docs/GALLERY.md), [CSV](results.csv), [JSON](results.json).
+
+This interface update was checked without computer use: Python tests, DOM and an isolated server from the new EXE. No new GPU generations were run; images, measurements and standalone reports retain the 0.1.0-preview corpus. Follow the current interface guide for installation and language selection.
 
 ## Report excerpts: images and measurements
 
@@ -129,17 +131,19 @@ None of the eight revised battle images received a full PASS. Visual assessment 
 
 ## Install and launch without a console
 
-[Download Windows Manager](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/FLUX3-Manager-Windows-x64.zip), extract the entire ZIP and open **FLUX3-Manager.exe**. Python is included. Choose a storage folder; select existing engine files, weights and CUDA using **Browse… («Обзор…»)**, or choose **Download missing files («Скачать недостающее»)**. The Manager checks the pinned SHA256 values and saves the settings.
+[Download Windows Manager](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.1-preview/FLUX3-Manager-Windows-x64.zip), extract the entire ZIP and open **FLUX3-Manager.exe**. Python is included. Choose a storage folder; select existing engine files, weights and CUDA using **Browse… («Обзор…»)**, or choose **Download missing files («Скачать недостающее»)**. The Manager checks the pinned SHA256 values and saves the settings.
 
 **Start server («Запустить сервер»)**, **Open generator («Открыть генератор»)** and **Stop server («Остановить сервер»)** control the app from the Manager window. Closing the Manager stops its server. In the generator, choose a preset or enter a prompt, set the size, seed, steps and CFG, then click **Generate («Сгенерировать»)**. The default address is `127.0.0.1:8440`; the local session persists between restarts. [Step-by-step guide](docs/INTERFACE_EN.md).
 
-For developers, `Start-FLUX3.cmd` / `python scripts/app.py` is also available; launch the native Manager from source with `python desktop/launcher.py`. Windows Python 3.14.4 x64 / Tcl-Tk 8.6 was tested; the app uses the standard library. [Building the Windows EXE](docs/BUILD_WINDOWS.md) is a separate process; the package excludes models and CUDA.
+For developers, `Start-FLUX3.cmd` / `python scripts/app.py` is also available; launch the native Manager from source with `python desktop/launcher.py`. Windows Python 3.14.4 x64 / Tcl-Tk 8.6 was tested; the app uses the standard library. [Building the Windows EXE](docs/BUILD_WINDOWS_EN.md) is a separate process; the package excludes models and CUDA.
 
 The app shows one current operation. **Save the PNG before the next generation or before exiting.** The next generation removes the previous result from the temporary working folder; normal app shutdown removes that folder entirely. Previously saved user folders are neither read nor deleted. Restarting the server starts with an empty result.
 
 The random session, configuration and launcher state remain local and are excluded from Git and distribution packages. The Manager uses `%LOCALAPPDATA%/FLUX3Pascal`; the source server uses the selected configuration directory. The public project includes no machine-specific configuration. The browser’s **Exit app («Завершить приложение»)** button also closes the server; closing only the browser tab leaves the current operation running.
 
-![Generator interface: only the current result](ui-proof/result-screenshot.jpg)
+![Generator in the 0.1.0 control series](ui-proof/result-screenshot.jpg)
+
+Screenshot from the 0.1.0 control series; language controls were added in 0.1.1.
 
 ## Tested components and settings
 
@@ -184,6 +188,6 @@ python scripts/verify.py
 
 [MIT](LICENSE) covers this project’s own code and documentation. Image usage terms depend on the model; MIT does not relicense model outputs. External component terms are listed in [THIRD_PARTY.md](THIRD_PARTY.md); primary sources are in [SOURCES.md](SOURCES.md).
 
-[First public release](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/tag/v0.1.0-preview) · [Release description (Russian)](RELEASE_NOTES.md) · [Package SHA256 values](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.0-preview/SHA256SUMS.txt).
+[Current preview](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/tag/v0.1.1-preview) · [Release description / Описание выпуска](RELEASE_NOTES.md) · [Package SHA256 values](https://github.com/DevelopmentOpenworld/flux3-pascal-8gb/releases/download/v0.1.1-preview/SHA256SUMS.txt).
 
 Download the HTML and open it locally; GitHub’s normal HTML source view does not run the interactive report.
